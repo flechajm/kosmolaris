@@ -1,8 +1,7 @@
 <br />
 <br />
-<br />
 <p align="center">
-  <img src="">
+  <img src="https://github.com/flechajm/kosmolaris/blob/main/img/logo/logo_m.png">
 </p>
 <br />
 <br />
