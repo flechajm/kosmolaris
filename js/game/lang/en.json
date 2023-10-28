@@ -1,0 +1,713 @@
+{
+  "common": {
+    "loading": "Loading...",
+    "searchElement": "Search element...",
+    "discoveredElements": {
+      "title": "DISCOVERED ELEMENTS",
+      "common": "Comunes",
+      "special": "Especiales"
+    }
+  },
+  "tooltips": {
+    "clear": "Clear board items",
+    "settings": "Options",
+    "help": "Help",
+    "wipeData": "⚠️ Wipe all game data and restarts the game completely.<br />This action cannot be undone."
+  },
+  "settings": {
+    "title": "OPTIONS",
+    "language": "Language",
+    "sfx": "Sound Effects Volume",
+    "bgm": "Music Volume",
+    "resetGame": "Reset game",
+    "wipeData": "Wipe data",
+    "close": "Apply",
+    "promptWipe": "Are you sure you want to erase all saved data?"
+  },
+  "help": {
+    "title": "WELCOME",
+    "close": "Got it",
+    "elements": ["Air", "Fire", "Earth", "Water"],
+    "welcome": "Welcome to {game}!<br /><br />In this game you'll have to combine a large kind of elements each other to create a new ones, starting with the 4 basic elements: {air}, {fire}, {earth} and {water}.<br /><br />Some elements are based on principles chemical rules, while some others are not so much, rather in common sense.",
+    "elementTypes": {
+      "types": ["Common", "Special"],
+      "description": "There are two types of elements: {common} and {special}.",
+      "commonElementDesc": "{common} elements are public knowledge and you can achieve all without restrictions at all: some chemical rules and common sense, that's all.",
+      "specialElementDesc": "{special} elements are mainly easter eggs and you may need a specific minimum knowledge about some topic. These lements commonly are not real, indeed they are part of a fiction, from iconic moments of our lives and the entire world (maybe).<br /><br />Don't feel bad if you don't find them, they are not the main goal of the game. But, if you are curious..."
+    },
+    "guide": {
+      "title": "How the game works 👇:",
+      "highlights": {
+        "dragAndDrop": "Drag and drop",
+        "doubleClick": "double click",
+        "copy": "copy",
+        "rightClick": "right click",
+        "delete": "delete",
+        "twoElements": "two elements",
+        "drag": "drag",
+        "drop": "drop"
+      },
+      "list": [
+        {
+          "text": "{dragAndDrop} elements from the sidebar to the board.",
+          "gif": "drag"
+        },
+        {
+          "text": "Do {doubleClick} on an element from the board to create a {copy} of it. Also, you can perform {doubleClick} on a sidebar element to directly stack it to the top left corner on the board.",
+          "gif": "dblclick"
+        },
+        {
+          "text": "Do {rightClick} on an element from the board to {delete} it.",
+          "gif": "rightclick"
+        },
+        {
+          "text": "You can only combine {twoElements} to create a new one.<br /><br />To do it just {drag} an element from the sidebar (or board) and {drop} it onto other one else. If you have success, congrats! you have discovered a new element.",
+          "gif": "combine"
+        },
+        {
+          "text": "The game save its state everytime you make an action with any element, including moving it."
+        }
+      ]
+    },
+    "footer": "Remember that you can change your preferred language and audio volume anytime in options ⚙️, as well as you can wipe the game data to start over from scratch.<br /></br />That's all, easy right?<br />Good luck, and enjoy the game! 😊"
+  },
+  "console": {
+    "welcome": "Welcome to {game}!",
+    "version": "Version:",
+    "lastUpdate": "Updated:",
+    "saveProgress": "Progress saved",
+    "specialElement": "especial",
+    "newElement": "{emoji} You have discovered a new{special} element combining {element1} and {element2} ➜ {result}!",
+    "achievementUnlocked": "Achievement unlocked!"
+  },
+  "achievements": [
+    {
+      "id": 1,
+      "title": "That was easy",
+      "description": "Discover your first element!"
+    },
+    {
+      "id": 2,
+      "title": "Sometimes I envy the dead",
+      "description": "Discover Michonne, from The Walking Dead."
+    },
+    {
+      "id": 3,
+      "title": "After all this time?",
+      "description": "Discover Harry Potter."
+    },
+    {
+      "id": 4,
+      "title": "You know nothing...",
+      "description": "Discover Jon Snow, from Game of Thrones."
+    },
+    {
+      "id": 5,
+      "title": "She's a vampire bat",
+      "description": "Discover Negan and Lucille, from The Walking Dead."
+    },
+    {
+      "id": 6,
+      "title": "COVID-19",
+      "description": "Discover COVID-19, but doesn't spread it, please."
+    },
+    {
+      "id": 7,
+      "title": "Lucille is thirsty...",
+      "description": "Discover Lucille, Negan's bat from The Walking Dead."
+    },
+    {
+      "id": 8,
+      "title": "In your image and likeness",
+      "description": "Discover the World where we live."
+    }
+  ],
+  "elements": [
+    {
+      "id": "air",
+      "name": "Air",
+      "description": ""
+    },
+    {
+      "id": "fire",
+      "name": "Fire",
+      "description": ""
+    },
+    {
+      "id": "earth",
+      "name": "Earth",
+      "description": ""
+    },
+    {
+      "id": "water",
+      "name": "Water",
+      "description": ""
+    },
+    {
+      "id": "love",
+      "name": "Love",
+      "description": ""
+    },
+    {
+      "id": "heat",
+      "name": "Heat",
+      "description": ""
+    },
+    {
+      "id": "weather",
+      "name": "Weather",
+      "description": ""
+    },
+    {
+      "id": "energy",
+      "name": "Energy",
+      "description": ""
+    },
+    {
+      "id": "explosion",
+      "name": "Explosion",
+      "description": ""
+    },
+    {
+      "id": "cold",
+      "name": "Cold",
+      "description": ""
+    },
+    {
+      "id": "light",
+      "name": "Light",
+      "description": ""
+    },
+    {
+      "id": "magic",
+      "name": "Magic",
+      "description": ""
+    },
+    {
+      "id": "oxygen",
+      "name": "Oxygen",
+      "description": ""
+    },
+    {
+      "id": "pressure",
+      "name": "Pressure",
+      "description": ""
+    },
+    {
+      "id": "time",
+      "name": "Time",
+      "description": ""
+    },
+    {
+      "id": "moon",
+      "name": "Moon",
+      "description": ""
+    },
+    {
+      "id": "star",
+      "name": "Star",
+      "description": ""
+    },
+    {
+      "id": "solar-system",
+      "name": "Solar<br/>System",
+      "description": ""
+    },
+    {
+      "id": "milky-way",
+      "name": "Milky Way",
+      "description": ""
+    },
+    {
+      "id": "galaxy",
+      "name": "Galaxy",
+      "description": ""
+    },
+    {
+      "id": "universe",
+      "name": "Universe",
+      "description": ""
+    },
+    {
+      "id": "mercury",
+      "name": "Mercury",
+      "description": ""
+    },
+    {
+      "id": "nebula",
+      "name": "Nebula",
+      "description": ""
+    },
+    {
+      "id": "planet",
+      "name": "Planet",
+      "description": ""
+    },
+    {
+      "id": "planet-earth",
+      "name": "Planet<br />Earth",
+      "description": ""
+    },
+    {
+      "id": "venus",
+      "name": "Venus",
+      "description": ""
+    },
+    {
+      "id": "sun",
+      "name": "Sun",
+      "description": ""
+    },
+    {
+      "id": "uranus",
+      "name": "Uranus",
+      "description": ""
+    },
+    {
+      "id": "valyrian-steel",
+      "name": "Valyrian Steel",
+      "description": ""
+    },
+    {
+      "id": "harry-potter",
+      "name": "Harry Potter",
+      "description": ""
+    },
+    {
+      "id": "hord",
+      "name": "Hord",
+      "description": ""
+    },
+    {
+      "id": "jon-snow",
+      "name": "Jon Snow",
+      "description": ""
+    },
+    {
+      "id": "michonne",
+      "name": "Michonne",
+      "description": ""
+    },
+    {
+      "id": "negan",
+      "name": "Negan & Lucille",
+      "description": ""
+    },
+    {
+      "id": "zombie",
+      "name": "Zombie",
+      "description": ""
+    },
+    {
+      "id": "gas",
+      "name": "Gas",
+      "description": ""
+    },
+    {
+      "id": "smoke",
+      "name": "Smoke",
+      "description": ""
+    },
+    {
+      "id": "clouds",
+      "name": "Clouds",
+      "description": ""
+    },
+    {
+      "id": "steam",
+      "name": "Steam",
+      "description": ""
+    },
+    {
+      "id": "lake",
+      "name": "Lake",
+      "description": ""
+    },
+    {
+      "id": "lava",
+      "name": "Lava",
+      "description": ""
+    },
+    {
+      "id": "rain",
+      "name": "Rain",
+      "description": ""
+    },
+    {
+      "id": "magma",
+      "name": "Magma",
+      "description": ""
+    },
+    {
+      "id": "sea",
+      "name": "Sea",
+      "description": ""
+    },
+    {
+      "id": "ocean",
+      "name": "Ocean",
+      "description": ""
+    },
+    {
+      "id": "storm",
+      "name": "Storm",
+      "description": ""
+    },
+    {
+      "id": "tsunami",
+      "name": "Tsunami",
+      "description": ""
+    },
+    {
+      "id": "steel",
+      "name": "Steel",
+      "description": ""
+    },
+    {
+      "id": "barbed-wire",
+      "name": "Barbed<br />Wire",
+      "description": ""
+    },
+    {
+      "id": "iron",
+      "name": "Iron",
+      "description": ""
+    },
+    {
+      "id": "lens",
+      "name": "Lens",
+      "description": ""
+    },
+    {
+      "id": "wood",
+      "name": "Wood",
+      "description": ""
+    },
+    {
+      "id": "metal",
+      "name": "Metal",
+      "description": ""
+    },
+    {
+      "id": "stick",
+      "name": "Stick",
+      "description": ""
+    },
+    {
+      "id": "paper",
+      "name": "Paper",
+      "description": ""
+    },
+    {
+      "id": "stone",
+      "name": "Stone",
+      "description": ""
+    },
+    {
+      "id": "sand",
+      "name": "Sand",
+      "description": ""
+    },
+    {
+      "id": "gem",
+      "name": "Gem",
+      "description": ""
+    },
+    {
+      "id": "diamond",
+      "name": "Diamond",
+      "description": ""
+    },
+    {
+      "id": "mineral-rock",
+      "name": "Mineral<br />Rock",
+      "description": ""
+    },
+    {
+      "id": "coal",
+      "name": "Coal",
+      "description": ""
+    },
+    {
+      "id": "salt",
+      "name": "Salt",
+      "description": ""
+    },
+    {
+      "id": "glass",
+      "name": "Glass",
+      "description": ""
+    },
+    {
+      "id": "night",
+      "name": "Night",
+      "description": ""
+    },
+    {
+      "id": "sky",
+      "name": "Sky",
+      "description": ""
+    },
+    {
+      "id": "continent",
+      "name": "Continent",
+      "description": ""
+    },
+    {
+      "id": "covid",
+      "name": "COVID-19",
+      "description": ""
+    },
+    {
+      "id": "electricity",
+      "name": "Electricity",
+      "description": ""
+    },
+    {
+      "id": "disease",
+      "name": "Disease",
+      "description": ""
+    },
+    {
+      "id": "ice",
+      "name": "Ice",
+      "description": ""
+    },
+    {
+      "id": "hurricane",
+      "name": "Hurricane",
+      "description": ""
+    },
+    {
+      "id": "iceberg",
+      "name": "Iceberg",
+      "description": ""
+    },
+    {
+      "id": "island",
+      "name": "Island",
+      "description": ""
+    },
+    {
+      "id": "mountain",
+      "name": "Mountain",
+      "description": ""
+    },
+    {
+      "id": "death",
+      "name": "Death",
+      "description": ""
+    },
+    {
+      "id": "snow",
+      "name": "Snow",
+      "description": ""
+    },
+    {
+      "id": "pandemic",
+      "name": "Pandemic",
+      "description": ""
+    },
+    {
+      "id": "plant",
+      "name": "Plant",
+      "description": ""
+    },
+    {
+      "id": "soil",
+      "name": "Organic<br />Soil",
+      "description": ""
+    },
+    {
+      "id": "beach",
+      "name": "Beach",
+      "description": ""
+    },
+    {
+      "id": "ray",
+      "name": "Ray",
+      "description": ""
+    },
+    {
+      "id": "earthquake",
+      "name": "Earthquake",
+      "description": ""
+    },
+    {
+      "id": "land",
+      "name": "Land",
+      "description": ""
+    },
+    {
+      "id": "tornado",
+      "name": "Tornado",
+      "description": ""
+    },
+    {
+      "id": "wind",
+      "name": "Wind",
+      "description": ""
+    },
+    {
+      "id": "strong-wind",
+      "name": "Strong<br />Wind",
+      "description": ""
+    },
+    {
+      "id": "volcano",
+      "name": "Volcano",
+      "description": ""
+    },
+    {
+      "id": "lucille",
+      "name": "Lucille",
+      "description": ""
+    },
+    {
+      "id": "baseball-bat",
+      "name": "Baseball<br />Bat",
+      "description": ""
+    },
+    {
+      "id": "blade",
+      "name": "Blade",
+      "description": ""
+    },
+    {
+      "id": "sword",
+      "name": "Sword",
+      "description": ""
+    },
+    {
+      "id": "tool",
+      "name": "Workbench",
+      "description": ""
+    },
+    {
+      "id": "katana",
+      "name": "Katana",
+      "description": ""
+    },
+    {
+      "id": "microscope",
+      "name": "Microscope",
+      "description": ""
+    },
+    {
+      "id": "shovel",
+      "name": "Shovel",
+      "description": ""
+    },
+    {
+      "id": "pickaxe",
+      "name": "Pickaxe",
+      "description": ""
+    },
+    {
+      "id": "magic-wand",
+      "name": "Magic<br />Wand",
+      "description": ""
+    },
+    {
+      "id": "tree",
+      "name": "Tree",
+      "description": ""
+    },
+    {
+      "id": "bacterium",
+      "name": "Bacterium",
+      "description": ""
+    },
+    {
+      "id": "forest",
+      "name": "Forest",
+      "description": ""
+    },
+    {
+      "id": "family",
+      "name": "Family",
+      "description": ""
+    },
+    {
+      "id": "human",
+      "name": "Human",
+      "description": ""
+    },
+    {
+      "id": "wizard",
+      "name": "Wizard",
+      "description": ""
+    },
+    {
+      "id": "monkey",
+      "name": "Monkey",
+      "description": ""
+    },
+    {
+      "id": "world",
+      "name": "World",
+      "description": ""
+    },
+    {
+      "id": "population",
+      "name": "Population",
+      "description": ""
+    },
+    {
+      "id": "life",
+      "name": "Life",
+      "description": ""
+    },
+    {
+      "id": "virus",
+      "name": "Virus",
+      "description": ""
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Four elements"
+    },
+    {
+      "id": 2,
+      "name": "Abstracts"
+    },
+    {
+      "id": 3,
+      "name": "Space"
+    },
+    {
+      "id": 4,
+      "name": "Fiction"
+    },
+    {
+      "id": 5,
+      "name": "Gaseous"
+    },
+    {
+      "id": 6,
+      "name": "Liquids"
+    },
+    {
+      "id": 7,
+      "name": "Materials"
+    },
+    {
+      "id": 8,
+      "name": "Minerals"
+    },
+    {
+      "id": 9,
+      "name": "Natural"
+    },
+    {
+      "id": 10,
+      "name": "Objects"
+    },
+    {
+      "id": 11,
+      "name": "Lifeforms"
+    }
+  ]
+}

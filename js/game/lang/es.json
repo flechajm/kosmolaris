@@ -1,0 +1,713 @@
+{
+  "common": {
+    "loading": "Cargando...",
+    "searchElement": "Buscar elemento...",
+    "discoveredElements": {
+      "title": "ELEMENTOS DESCUBIERTOS",
+      "common": "Comunes",
+      "special": "Especiales"
+    }
+  },
+  "tooltips": {
+    "clear": "Limpiar elementos del tablero",
+    "settings": "Opciones",
+    "help": "Ayuda",
+    "wipeData": "⚠️ Borra todos los datos del juego y lo reinicia completamente.<br />Esta acción no se puede deshacer."
+  },
+  "settings": {
+    "title": "OPCIONES",
+    "language": "Idioma",
+    "sfx": "Volumen de Efectos",
+    "bgm": "Volumen de Música",
+    "resetGame": "Reiniciar juego",
+    "wipeData": "Borrar datos",
+    "close": "Aceptar",
+    "promptWipe": "¿Estás seguro que quieres borrar todos los datos guardados?"
+  },
+  "help": {
+    "title": "BIENVENIDO",
+    "close": "Entendido",
+    "elements": ["Aire", "Fuego", "Tierra", "Agua"],
+    "welcome": "Bienvenido a {game}!<br /><br />En este juego tendrás que combinar una gran variedad de elementos entre sí para crear otros nuevos, comenzando con los 4 elementos básicos: {air}, {fire}, {earth} y {water}.<br /><br />Algunos elementos se basan en principios de reglas químicas básicas, mientras que otros no tanto, más bien se aplca el sentido común.",
+    "elementTypes": {
+      "types": ["comunes", "especiales"],
+      "description": "Hay dos tipos de elementos distintos: {common} y {special}.",
+      "commonElementDesc": "Los elementos {common} son de público conocimiento y podrás desbloquearlos sin ninguna restricción: algunas reglas de química y sentido común, eso es todo.",
+      "specialElementDesc": "Los elementos {special} son principalmente <i>easter eggs</i> y puede que necesites un conocimiento específico mínimo sobre algún tema. Estos elementos comunmente no son reales, de hecho son parte de la ficción, de momentos icónicos de nuestras vidas y del mundo entero (quizá).<br /><br />No te sientas mal si no los encuentras, no son el objetivo principal del juego. Pero, si ere curioso..."
+    },
+    "guide": {
+      "title": "Cómo funciona el juego 👇:",
+      "highlights": {
+        "dragAndDrop": "Arrastra y suelta",
+        "doubleClick": "doble clic",
+        "copy": "copia",
+        "rightClick": "clic derecho",
+        "delete": "eliminarlo",
+        "twoElements": "dos elementos",
+        "drag": "arrastra",
+        "drop": "suéltalo"
+      },
+      "list": [
+        {
+          "text": "{dragAndDrop} elementos desde la barra lateral hacia el tablero.",
+          "gif": "drag"
+        },
+        {
+          "text": "Haz {doubleClick} sobre un elemento del tablero para crear una {copy} de él mismo. También puedes hacer {doubleClick} en un elemento de la barra lateral para apilarlo directamente en la esquina superior izquierda del tablero.",
+          "gif": "dblclick"
+        },
+        {
+          "text": "Haz {rightClick} sobre un elemento del tablero para {delete}.",
+          "gif": "rightclick"
+        },
+        {
+          "text": "Solamente puedes combinar {twoElements} para crear uno nuevo.<br /><br />Para hacerlo, {drag} un elemento desde la barra lateral (o del tablero) y {drop} sobre cualquier otro. Si tienes éxito, ¡felicitaciones! has descubierto un nuevo elemento.",
+          "gif": "combine"
+        },
+        {
+          "text": "El juego guarda su progreso cada vez que realizas una acción con algún elemento, incluído moverlo."
+        }
+      ]
+    },
+    "footer": "Recuerda que también puedes cambiar tu idioma preferido y el volumen de audio en las ⚙️, así como también puedes borrar los datos del juego completamente para comenzar desde cero.<br /><br />Eso es todo. Fácil, ¿verdad?<br />¡Buena suerte, y disfruta del juego! 😊"
+  },
+  "console": {
+    "welcome": "¡Bienvenido a {game}!",
+    "version": "Versión:",
+    "lastUpdate": "Actualizado:",
+    "saveProgress": "Progreso guardado",
+    "specialElement": "especial",
+    "newElement": "{emoji} ¡Has descubierto un nuevo elemento{special} combinando {element1} y {element2} ➜ {result}!",
+    "achievementUnlocked": "¡Logro desbloqueado!"
+  },
+  "achievements": [
+    {
+      "id": 1,
+      "title": "Eso fue fácil",
+      "description": "¡Descubre tu primer elemento!"
+    },
+    {
+      "id": 2,
+      "title": "A veces envidio a los muertos",
+      "description": "Descubre a Michonne, de The Walking Dead."
+    },
+    {
+      "id": 3,
+      "title": "¿Después de todo este tiempo?",
+      "description": "Descubre a Harry Potter."
+    },
+    {
+      "id": 4,
+      "title": "No sabes nada...",
+      "description": "Descubre a Jon Snow, de Game of Thrones."
+    },
+    {
+      "id": 5,
+      "title": "Es un bate vampiro",
+      "description": "Descubre a Negan y Lucille, de The Walking Dead."
+    },
+    {
+      "id": 6,
+      "title": "COVID-19",
+      "description": "Descubre el COVID-19, pero no lo propagues, por favor."
+    },
+    {
+      "id": 7,
+      "title": "Lucille está sedienta...",
+      "description": "Descubre a Lucille, el bate de Negan de The Walking Dead."
+    },
+    {
+      "id": 8,
+      "title": "A tu imagen y semejanza",
+      "description": "Descubre el Mundo donde vivimos."
+    }
+  ],
+  "elements": [
+    {
+      "id": "air",
+      "name": "Aire",
+      "description": ""
+    },
+    {
+      "id": "fire",
+      "name": "Fuego",
+      "description": ""
+    },
+    {
+      "id": "earth",
+      "name": "Tierra",
+      "description": ""
+    },
+    {
+      "id": "water",
+      "name": "Agua",
+      "description": ""
+    },
+    {
+      "id": "love",
+      "name": "Amor",
+      "description": ""
+    },
+    {
+      "id": "heat",
+      "name": "Calor",
+      "description": ""
+    },
+    {
+      "id": "weather",
+      "name": "Clima",
+      "description": ""
+    },
+    {
+      "id": "energy",
+      "name": "Energía",
+      "description": ""
+    },
+    {
+      "id": "explosion",
+      "name": "Explosión",
+      "description": ""
+    },
+    {
+      "id": "cold",
+      "name": "Frío",
+      "description": ""
+    },
+    {
+      "id": "light",
+      "name": "Luz",
+      "description": ""
+    },
+    {
+      "id": "magic",
+      "name": "Magia",
+      "description": ""
+    },
+    {
+      "id": "oxygen",
+      "name": "Oxígeno",
+      "description": ""
+    },
+    {
+      "id": "pressure",
+      "name": "Presión",
+      "description": ""
+    },
+    {
+      "id": "time",
+      "name": "Tiempo",
+      "description": ""
+    },
+    {
+      "id": "moon",
+      "name": "Luna",
+      "description": ""
+    },
+    {
+      "id": "star",
+      "name": "Estrella",
+      "description": ""
+    },
+    {
+      "id": "solar-system",
+      "name": "Sistema<br />Solar",
+      "description": ""
+    },
+    {
+      "id": "milky-way",
+      "name": "Vía<br />Láctea",
+      "description": ""
+    },
+    {
+      "id": "galaxy",
+      "name": "Galaxia",
+      "description": ""
+    },
+    {
+      "id": "universe",
+      "name": "Universo",
+      "description": ""
+    },
+    {
+      "id": "mercury",
+      "name": "Mercurio",
+      "description": ""
+    },
+    {
+      "id": "nebula",
+      "name": "Nebulosa",
+      "description": ""
+    },
+    {
+      "id": "planet",
+      "name": "Planeta",
+      "description": ""
+    },
+    {
+      "id": "planet-earth",
+      "name": "Planeta Tierra",
+      "description": ""
+    },
+    {
+      "id": "venus",
+      "name": "Venus",
+      "description": ""
+    },
+    {
+      "id": "sun",
+      "name": "Sol",
+      "description": ""
+    },
+    {
+      "id": "uranus",
+      "name": "Urano",
+      "description": ""
+    },
+    {
+      "id": "valyrian-steel",
+      "name": "Acero Valyrio",
+      "description": ""
+    },
+    {
+      "id": "harry-potter",
+      "name": "Harry Potter",
+      "description": ""
+    },
+    {
+      "id": "hord",
+      "name": "Horda",
+      "description": ""
+    },
+    {
+      "id": "jon-snow",
+      "name": "Jon Snow",
+      "description": ""
+    },
+    {
+      "id": "michonne",
+      "name": "Michonne",
+      "description": ""
+    },
+    {
+      "id": "negan",
+      "name": "Negan y Lucille",
+      "description": ""
+    },
+    {
+      "id": "zombie",
+      "name": "Zombie",
+      "description": ""
+    },
+    {
+      "id": "gas",
+      "name": "Gas",
+      "description": ""
+    },
+    {
+      "id": "smoke",
+      "name": "Humo",
+      "description": ""
+    },
+    {
+      "id": "clouds",
+      "name": "Nubes",
+      "description": ""
+    },
+    {
+      "id": "steam",
+      "name": "Vapor",
+      "description": ""
+    },
+    {
+      "id": "lake",
+      "name": "Lago",
+      "description": ""
+    },
+    {
+      "id": "lava",
+      "name": "Lava",
+      "description": ""
+    },
+    {
+      "id": "rain",
+      "name": "Lluvia",
+      "description": ""
+    },
+    {
+      "id": "magma",
+      "name": "Magma",
+      "description": ""
+    },
+    {
+      "id": "sea",
+      "name": "Mar",
+      "description": ""
+    },
+    {
+      "id": "ocean",
+      "name": "Océano",
+      "description": ""
+    },
+    {
+      "id": "storm",
+      "name": "Tormenta",
+      "description": ""
+    },
+    {
+      "id": "tsunami",
+      "name": "Tsunami",
+      "description": ""
+    },
+    {
+      "id": "steel",
+      "name": "Acero",
+      "description": ""
+    },
+    {
+      "id": "barbed-wire",
+      "name": "Alambre de Púas",
+      "description": ""
+    },
+    {
+      "id": "iron",
+      "name": "Hierro",
+      "description": ""
+    },
+    {
+      "id": "lens",
+      "name": "Lente",
+      "description": ""
+    },
+    {
+      "id": "wood",
+      "name": "Madera",
+      "description": ""
+    },
+    {
+      "id": "metal",
+      "name": "Metal",
+      "description": ""
+    },
+    {
+      "id": "stick",
+      "name": "Palo",
+      "description": ""
+    },
+    {
+      "id": "paper",
+      "name": "Papel",
+      "description": ""
+    },
+    {
+      "id": "stone",
+      "name": "Piedra",
+      "description": ""
+    },
+    {
+      "id": "sand",
+      "name": "Arena",
+      "description": ""
+    },
+    {
+      "id": "gem",
+      "name": "Gema",
+      "description": ""
+    },
+    {
+      "id": "diamond",
+      "name": "Diamante",
+      "description": ""
+    },
+    {
+      "id": "mineral-rock",
+      "name": "Roca<br />Mineral",
+      "description": ""
+    },
+    {
+      "id": "coal",
+      "name": "Carbón",
+      "description": ""
+    },
+    {
+      "id": "salt",
+      "name": "Sal",
+      "description": ""
+    },
+    {
+      "id": "glass",
+      "name": "Vidrio",
+      "description": ""
+    },
+    {
+      "id": "night",
+      "name": "Noche",
+      "description": ""
+    },
+    {
+      "id": "sky",
+      "name": "Cielo",
+      "description": ""
+    },
+    {
+      "id": "continent",
+      "name": "Continente",
+      "description": ""
+    },
+    {
+      "id": "covid",
+      "name": "COVID-19",
+      "description": ""
+    },
+    {
+      "id": "electricity",
+      "name": "Electricidad",
+      "description": ""
+    },
+    {
+      "id": "disease",
+      "name": "Enfermedad",
+      "description": ""
+    },
+    {
+      "id": "ice",
+      "name": "Hielo",
+      "description": ""
+    },
+    {
+      "id": "hurricane",
+      "name": "Huracán",
+      "description": ""
+    },
+    {
+      "id": "iceberg",
+      "name": "Iceberg",
+      "description": ""
+    },
+    {
+      "id": "island",
+      "name": "Isla",
+      "description": ""
+    },
+    {
+      "id": "mountain",
+      "name": "Montaña",
+      "description": ""
+    },
+    {
+      "id": "death",
+      "name": "Muerte",
+      "description": ""
+    },
+    {
+      "id": "snow",
+      "name": "Nieve",
+      "description": ""
+    },
+    {
+      "id": "pandemic",
+      "name": "Pandemia",
+      "description": ""
+    },
+    {
+      "id": "plant",
+      "name": "Planta",
+      "description": ""
+    },
+    {
+      "id": "soil",
+      "name": "Suelo<br />Orgánico",
+      "description": ""
+    },
+    {
+      "id": "beach",
+      "name": "Playa",
+      "description": ""
+    },
+    {
+      "id": "ray",
+      "name": "Rayo",
+      "description": ""
+    },
+    {
+      "id": "earthquake",
+      "name": "Terremoto",
+      "description": ""
+    },
+    {
+      "id": "land",
+      "name": "Terreno",
+      "description": ""
+    },
+    {
+      "id": "tornado",
+      "name": "Tornado",
+      "description": ""
+    },
+    {
+      "id": "wind",
+      "name": "Viento",
+      "description": ""
+    },
+    {
+      "id": "strong-wind",
+      "name": "Viento Fuerte",
+      "description": ""
+    },
+    {
+      "id": "volcano",
+      "name": "Volcán",
+      "description": ""
+    },
+    {
+      "id": "lucille",
+      "name": "Lucille",
+      "description": ""
+    },
+    {
+      "id": "baseball-bat",
+      "name": "Bate de Beísbol",
+      "description": ""
+    },
+    {
+      "id": "blade",
+      "name": "Hoja Afilada",
+      "description": ""
+    },
+    {
+      "id": "sword",
+      "name": "Espada",
+      "description": ""
+    },
+    {
+      "id": "tool",
+      "name": "Banco de Trabajo",
+      "description": ""
+    },
+    {
+      "id": "katana",
+      "name": "Katana",
+      "description": ""
+    },
+    {
+      "id": "microscope",
+      "name": "Microscopio",
+      "description": ""
+    },
+    {
+      "id": "shovel",
+      "name": "Pala",
+      "description": ""
+    },
+    {
+      "id": "pickaxe",
+      "name": "Pico",
+      "description": ""
+    },
+    {
+      "id": "magic-wand",
+      "name": "Varita<br />Mágica",
+      "description": ""
+    },
+    {
+      "id": "tree",
+      "name": "Árbol",
+      "description": ""
+    },
+    {
+      "id": "bacterium",
+      "name": "Bacteria",
+      "description": ""
+    },
+    {
+      "id": "forest",
+      "name": "Bosque",
+      "description": ""
+    },
+    {
+      "id": "family",
+      "name": "Familia",
+      "description": ""
+    },
+    {
+      "id": "human",
+      "name": "Humano",
+      "description": ""
+    },
+    {
+      "id": "wizard",
+      "name": "Mago",
+      "description": ""
+    },
+    {
+      "id": "monkey",
+      "name": "Mono",
+      "description": ""
+    },
+    {
+      "id": "world",
+      "name": "Mundo",
+      "description": ""
+    },
+    {
+      "id": "population",
+      "name": "Población",
+      "description": ""
+    },
+    {
+      "id": "life",
+      "name": "Vida",
+      "description": ""
+    },
+    {
+      "id": "virus",
+      "name": "Virus",
+      "description": ""
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Cuatro elementos"
+    },
+    {
+      "id": 2,
+      "name": "Abstractos"
+    },
+    {
+      "id": 3,
+      "name": "Espacio"
+    },
+    {
+      "id": 4,
+      "name": "Ficción"
+    },
+    {
+      "id": 5,
+      "name": "Gaseosos"
+    },
+    {
+      "id": 6,
+      "name": "Líquidos"
+    },
+    {
+      "id": 7,
+      "name": "Materiales"
+    },
+    {
+      "id": 8,
+      "name": "Minerales"
+    },
+    {
+      "id": 9,
+      "name": "Naturales"
+    },
+    {
+      "id": 10,
+      "name": "Objetots"
+    },
+    {
+      "id": 11,
+      "name": "Formas de vida"
+    }
+  ]
+}

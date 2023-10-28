@@ -1,0 +1,208 @@
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kosmolaris</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Merriweather:900&amp;subset=latin,latin-ext"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/libs/helper.js"></script>
+  </head>
+  <body>
+    <div id="loader">
+      <span></span>
+    </div>
+    <div id="game">
+      <div class="board-container">
+        <div class="background"></div>
+        <board> </board>
+        <div id="log">
+          <div class="text"></div>
+        </div>
+      </div>
+      <sidebar>
+        <img src="img/logo/logo_s.png" class="logo" alt="" />
+        <div id="input-container">
+          <div id="btn-clear" class="button clear">
+            <tooltip></tooltip>
+          </div>
+          <div id="btn-settings" class="button settings">
+            <tooltip></tooltip>
+          </div>
+          <div id="btn-help" class="button help">
+            <tooltip></tooltip>
+          </div>
+          <input
+            type="search"
+            name="search-element"
+            id="search-element"
+            placeholder=""
+            maxlength="20"
+          />
+        </div>
+        <div id="sidebar-elements"></div>
+        <div id="unlocked-container">
+          <div class="horizontal-band"></div>
+          <span></span>
+          <div class="horizontal-band"></div>
+          <div id="unlocked-elements"></div>
+        </div>
+      </sidebar>
+      <div id="settings">
+        <div class="popup settings">
+          <div class="close-x"></div>
+          <div class="container">
+            <div class="title"></div>
+            <div class="horizontal-band"></div>
+          </div>
+          <div class="content">
+            <div id="option-lang" class="option">
+              <div>
+                <span class="icon lang"></span>
+                <span class="text"></span>
+              </div>
+              <span>
+                <select id="select-lang">
+                  <option value="es">Español</option>
+                  <option value="en" selected>English</option>
+                </select>
+              </span>
+            </div>
+            <div id="option-bgm" class="option">
+              <div>
+                <span class="icon sound"></span>
+                <span class="text"></span>
+              </div>
+              <div class="slide-volume-container">
+                <span>
+                  <input
+                    id="volume-bgm"
+                    title="🎵"
+                    placeholder=""
+                    type="range"
+                    min="0"
+                    max="100"
+                    value=""
+                  />
+                </span>
+                <span></span>
+              </div>
+            </div>
+            <div id="option-sfx" class="option">
+              <div>
+                <span class="icon sound"></span>
+                <span class="text"></span>
+              </div>
+              <div class="slide-volume-container">
+                <span>
+                  <input
+                    id="volume-sfx"
+                    title="🎵"
+                    placeholder=""
+                    type="range"
+                    min="0"
+                    max="100"
+                    value=""
+                  />
+                </span>
+                <span></span>
+              </div>
+            </div>
+            <div id="option-wipe" class="option">
+              <div>
+                <span class="icon reset"></span>
+                <span class="text"></span>
+              </div>
+              <div id="btn-wipe" class="button red wipe">
+                <span></span>
+                <tooltip></tooltip>
+              </div>
+            </div>
+          </div>
+          <div class="container footer">
+            <div class="horizontal-band"></div>
+            <div id="btn-apply" class="button ok">
+              <span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="help">
+        <div class="popup help">
+          <div class="close-x"></div>
+          <div class="container">
+            <div class="title"></div>
+            <div class="horizontal-band"></div>
+          </div>
+          <div class="content">
+            <img src="img/logo/logo_s.png" alt="" />
+            <div id="welcome"></div>
+          </div>
+          <div class="container footer">
+            <div class="horizontal-band"></div>
+            <div id="btn-ok" class="button ok">
+              <span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="content">
+        <div class="by">
+          Kosmolaris © 2023 by
+          <a href="https://flechajm.github.io" target="_blank"
+            >John Arrow Games</a
+          >
+        </div>
+        <div class="social twitter">
+          <a href="https://twitter.com/JohnArrowGames" target="_blank"
+            >Twitter</a
+          >
+        </div>
+        <div class="social youtube">
+          <a href="https://youtube.com/JohnArrowGames" target="_blank"
+            >YouTube</a
+          >
+        </div>
+        <div class="social github">
+          <a href="https://github.com/flechajm/kosmolaris" target="_blank"
+            >GitHub</a
+          >
+        </div>
+      </div>
+      <div class="music">
+        <span></span>
+        <span>
+          <input
+            id="volume-control"
+            title="🎵"
+            placeholder=""
+            type="range"
+            min="0"
+            max="100"
+            value="30"
+          />
+        </span>
+        <div id="music-controls">
+          <span id="previous-track" class="previous"></span>
+          <span id="play-track" class="play"></span>
+          <span id="pause-track" class="pause"></span>
+          <span id="next-track" class="next"></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+  <script type="module" src="js/game/main.js"></script>
+</html>
