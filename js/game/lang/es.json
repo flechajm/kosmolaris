@@ -1,6 +1,6 @@
 {
   "common": {
-    "loading": "Cargando...",
+    "loading": "Cargando {percent}% ...",
     "searchElement": "Buscar elemento...",
     "discoveredElements": {
       "title": "ELEMENTOS DESCUBIERTOS",

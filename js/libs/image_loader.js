@@ -1,4 +1,10 @@
+import LanguageManager from "./language_manager.js";
+
 class ImageLoader {
+    #totalImages = 0;
+    #loadedImages = 0;
+    #loaderDOM;
+
     #backgroundImages = {
         path: "img/bg/",
         count: 17,
@@ -45,28 +51,34 @@ class ImageLoader {
         ],
     };
 
-
-    #elements = {
-        path: "images/elements/",
-        images: [
-
-        ],
-    };
-
     async loadAll() {
+        this.#loaderDOM = $('#loader').find('span');
+
+        this.#totalImages = this.#backgroundImages.count
+            + this.#logoImages.images.length
+            + this.#miscImages.images.length
+            + this.#socialMediaImages.images.length
+            + this.#gifs.images.length;
+
         await this.#preloadImages(this.#backgroundImages);
         await this.#preloadImages(this.#logoImages);
         await this.#preloadImages(this.#miscImages);
         await this.#preloadImages(this.#socialMediaImages);
         await this.#preloadImages(this.#gifs);
-        await this.#preloadImages(this.#elements);
     }
 
     async #loadImage(src) {
         const img = new Image();
+        const langData = LanguageManager.getData();
+
 
         return new Promise((resolve, reject) => {
-            img.onload = () => resolve(img);
+            img.onload = () => {
+                this.#loadedImages += 1;
+                const percent = ((100 * this.#loadedImages) / this.#totalImages).toFixed(0);
+                this.#loaderDOM.html(langData.common.loading.replace('{percent}', percent));
+                resolve(img);
+            };
             img.onerror = e => reject(e);
             img.src = src;
         });

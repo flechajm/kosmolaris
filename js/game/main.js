@@ -27,7 +27,7 @@ let gameConfig;
     const imageLoader = new ImageLoader();
     const loader = $('#loader');
 
-    loader.find('span').html(langData.common.loading);
+    loader.find('span').html(langData.common.loading.replace('{percent}', 0));
     setInterval(() => {
         loader.find('span').fadeToggle(1500);
     }, 1500);
