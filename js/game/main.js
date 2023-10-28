@@ -235,7 +235,7 @@ function setupHelp(langData) {
 
     const templateLi = `<li>
                             <div>{text}</div>
-                            <img src="/img/gif/{image}.gif" alt="" />
+                            <img src="img/gif/{image}.gif" alt="" />
                         </li>`;
 
     const templateLiDv = `<li>
