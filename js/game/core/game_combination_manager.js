@@ -174,16 +174,15 @@ class GameCombinationManager {
             const spanColorText = "<span style='color: {color}'>{text}</span>";
 
             const langData = LanguageManager.getData();
-            const fixedName = elementUnlocked.name.replaceAll('<br />', ' ').replaceAll('<br>', ' ');
             const emoji = elementUnlocked.isSpecial ? '🍭' : '✨';
             const special = elementUnlocked.isSpecial ? spanColorText.replace('{color}', 'var(--color-special)').replace('{text}', ` ${langData.console.specialElement}`) : '';
 
             GameLog.write(langData.console.newElement
                 .replace('{emoji}', emoji)
                 .replace('{special}', special)
-                .replace('{element1}', spanColorText.replace('{color}', element1.color).replace('{text}', element1.name))
-                .replace('{element2}', spanColorText.replace('{color}', element2.color).replace('{text}', element2.name))
-                .replace('{result}', spanColorText.replace('{color}', elementUnlocked.color).replace('{text}', fixedName))
+                .replace('{element1}', spanColorText.replace('{color}', element1.color).replace('{text}', element1.getFixedName()))
+                .replace('{element2}', spanColorText.replace('{color}', element2.color).replace('{text}', element2.getFixedName()))
+                .replace('{result}', spanColorText.replace('{color}', elementUnlocked.color).replace('{text}', elementUnlocked.getFixedName()))
             );
         }
     }

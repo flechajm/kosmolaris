@@ -36,6 +36,10 @@ class Element {
         return Math.random().toString(36).slice(-8);
     }
 
+    getFixedName() {
+        return this.name.replaceAll('<br />', ' ').replaceAll('<br>', ' ');
+    }
+
     createElementDOM({ onBoard, posX, posY, ghost, shortcut }) {
         let uuid = this.uuid ? `id="${this.uuid}"` : '';
         let classOnBoard = `${onBoard ? ' on-board' : ''}`;
