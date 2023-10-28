@@ -132,6 +132,7 @@ input[type="search"] {
 
 #loader {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100vw;
@@ -140,6 +141,7 @@ input[type="search"] {
   position: absolute;
   padding: 50px;
   z-index: 9999;
+  gap: 1em;
 
   span {
     font-family: var(--font-primary);

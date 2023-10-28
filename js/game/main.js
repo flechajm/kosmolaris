@@ -39,9 +39,9 @@ let gameConfig;
     await imageLoader.loadAll().then(() => {
         initialConfig(langData);
 
-        loader.fadeOut(300, function () {
-            loader.remove();
-        });
+        // loader.fadeOut(300, function () {
+        //     loader.remove();
+        // });
     });
 })();
 

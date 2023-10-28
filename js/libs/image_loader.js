@@ -7,6 +7,26 @@ class ImageLoader {
         ],
     };
 
+    #logoImages = {
+        path: "img/logo/",
+        images: [
+            "logo_s.png",
+            "logo_m.png",
+            "logo_xl.png",
+        ],
+    };
+
+    #miscImages = {
+        path: "img/misc/",
+        images: [
+            "chevron.png",
+            "clear.png",
+            "popup_bg.png",
+            "tooltip_border.png",
+            "top_bar.jpg"
+        ],
+    };
+
     #socialMediaImages = {
         path: "img/social/",
         images: [
@@ -35,10 +55,12 @@ class ImageLoader {
     };
 
     async loadAll() {
-        await this.#preloadImages(this.#elements);
         await this.#preloadImages(this.#backgroundImages);
+        await this.#preloadImages(this.#logoImages);
+        await this.#preloadImages(this.#miscImages);
         await this.#preloadImages(this.#socialMediaImages);
         await this.#preloadImages(this.#gifs);
+        await this.#preloadImages(this.#elements);
     }
 
     async #loadImage(src) {
