@@ -4,8 +4,8 @@
     "searchElement": "Search element...",
     "discoveredElements": {
       "title": "DISCOVERED ELEMENTS",
-      "common": "Comunes",
-      "special": "Especiales"
+      "common": "Common",
+      "special": "Special"
     }
   },
   "tooltips": {
