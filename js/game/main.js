@@ -92,6 +92,8 @@ function setupButtons(langData) {
     $('#btn-help').click(function () {
         $('#settings').hide();
         $('#help').fadeIn();
+        $('#help').find('.content').scrollTop(0);
+
     });
 
     $('#btn-wipe').click(function () {
