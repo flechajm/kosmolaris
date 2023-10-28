@@ -6,7 +6,8 @@ class LanguageManager {
   }
 
   static async setLanguage(lang) {
-    await fetch("./js/game/lang/" + lang + ".json")
+    const date = new Date().getTime();
+    await fetch(`./js/game/lang/${lang}.json?v=${date}`)
       .then((response) => {
         return response.json();
       })
