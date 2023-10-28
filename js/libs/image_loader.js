@@ -20,7 +20,6 @@ class ImageLoader {
         path: "img/misc/",
         images: [
             "chevron.png",
-            "clear.png",
             "popup_bg.png",
             "tooltip_border.png",
             "top_bar.jpg"
