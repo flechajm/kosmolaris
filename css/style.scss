@@ -142,6 +142,7 @@ input[type="search"] {
   padding: 50px;
   z-index: 9999;
   gap: 1em;
+  pointer-events: none;
 
   span {
     font-family: var(--font-primary);
