@@ -21,7 +21,6 @@ class GameElements {
 
     static #populateElements() {
         const langData = LanguageManager.getData();
-        console.log(this.#elements.filter((e) => !e.isSpecial));
 
         for (let i = 0; i < this.#elements.length; i++) {
             const element = this.#elements[i];
