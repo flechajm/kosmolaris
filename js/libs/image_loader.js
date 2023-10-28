@@ -16,6 +16,16 @@ class ImageLoader {
         ],
     };
 
+    #gifs = {
+        path: "img/gif/",
+        images: [
+            "combine.gif",
+            "dblclick.gif",
+            "drag.gif",
+            "rightclick.gif"
+        ],
+    };
+
 
     #elements = {
         path: "images/elements/",
@@ -28,6 +38,7 @@ class ImageLoader {
         await this.#preloadImages(this.#elements);
         await this.#preloadImages(this.#backgroundImages);
         await this.#preloadImages(this.#socialMediaImages);
+        await this.#preloadImages(this.#gifs);
     }
 
     async #loadImage(src) {
