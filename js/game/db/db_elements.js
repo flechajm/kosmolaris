@@ -227,16 +227,16 @@ class DbElements {
             new Element({
                 id: 'valyrian-steel',
                 color: '#81deff',
-                isSpecial: true,
                 category: 4,
+                isSpecial: true,
             }),
 
             // Harry Potter
             new Element({
                 id: 'harry-potter',
                 color: '#ffa500',
-                isSpecial: true,
                 category: 4,
+                isSpecial: true,
             }),
 
             // Hord
@@ -250,32 +250,32 @@ class DbElements {
             new Element({
                 id: 'jon-snow',
                 color: '#3f5474',
-                isSpecial: true,
                 category: 4,
+                isSpecial: true,
             }),
 
             // Michonne
             new Element({
                 id: 'michonne',
                 color: '#917b33',
-                isSpecial: true,
                 category: 4,
+                isSpecial: true,
             }),
 
             // Lucille
             new Element({
                 id: 'lucille',
                 color: '#be5252',
-                isSpecial: true,
                 category: 4,
+                isSpecial: true,
             }),
 
             // Negan
             new Element({
                 id: 'negan',
                 color: '#633942',
-                isSpecial: true,
                 category: 4,
+                isSpecial: true,
             }),
 
             // Zombie
@@ -290,6 +290,7 @@ class DbElements {
                 id: 'planet-apes',
                 color: '#867257',
                 category: 4,
+                isSpecial: true,
             }),
 
             // ============================

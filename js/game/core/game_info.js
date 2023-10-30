@@ -32,15 +32,17 @@ class GameInfo {
       "changelog": {
         "es": [
           "NEW: Se agregaron 4 nuevos logros.",
-          "NEW: Se agregaron 4 nuevos elementos.",
+          "NEW: Se agregaron 3 nuevos elementos.",
+          "NEW: Se agregó 1 nuevo elemento especial.",
           "NEW: Ahora puedes hacer clic medio sobre un elemento para mostrar por consola con qué elementos lo creaste.",
           "NEW: Ahora puedes ver los logros desbloqueados.",
           "NEW: Ahora puedes ver el registro de cambios de versión.",
           "FIX: Corrección menor de localización."
         ],
         "en": [
-          "NEW: Added 4 more achievements.",
-          "NEW: Added 4 more elements.",
+          "NEW: Added 4 new achievements.",
+          "NEW: Added 4 new elements.",
+          "NEW: Added 1 new special element.",
           "NEW: Now you can do a middle click on an element to show in console which elements you used to created it.",
           "NEW: Now you can see the unlocked achievements.",
           "NEW: Now you can see the version changelog.",
