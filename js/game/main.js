@@ -49,9 +49,10 @@ let gameConfig;
 function welcome(langData) {
     const gameName = `<span style='color: var(--color-green-light);'><b>${GameInfo.title}</b></span>`;
     const options = { year: "numeric", month: "long", day: "numeric" };
+    const versionData = GameInfo.getCurrentVersion();
     const version = langData.console.version
-        .replace('{version}', GameInfo.getCurrentVersion())
-        .replace('{date}', GameInfo.lastUpdate.toLocaleString(gameConfig.lang, options))
+        .replace('{version}', versionData.version)
+        .replace('{date}', versionData.date.toLocaleString(gameConfig.lang, options))
 
 
     GameLog.write(langData.console.welcome.replace('{game}', gameName));

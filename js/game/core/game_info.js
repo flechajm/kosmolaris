@@ -13,11 +13,6 @@ class GameInfo {
   static created = new Date(2023, 9, 17);
 
   /**
-   * Fecha de la última actualización del juego.
-   */
-  static lastUpdate = new Date(2023, 9, 27);
-
-  /**
    * Nombre del item del storage.
    */
   static storageName = `${GameInfo.title}Game`;
@@ -33,6 +28,7 @@ class GameInfo {
   static changelog = [
     {
       "version": "1.0.1",
+      "date": new Date(2023, 9, 29),
       "changelog": {
         "es": [
           "NEW: Se agregaron 4 nuevos logros.",
@@ -54,6 +50,7 @@ class GameInfo {
     },
     {
       "version": "1.0.0",
+      "date": new Date(2023, 9, 27),
       "changelog": {
         "es": [
           "Primera versión jugable.",
@@ -70,7 +67,10 @@ class GameInfo {
    * @returns {String} Versión del juego.
    */
   static getCurrentVersion() {
-    return this.changelog[0].version;
+    return {
+      version: this.changelog[0].version,
+      date: this.changelog[0].date,
+    }
   }
 
   static getChangelog(lang) {
@@ -80,6 +80,7 @@ class GameInfo {
       const changelogData = GameInfo.changelog[i];
       const version = changelogData.version;
       const current = i === 0 ? ' current' : '';
+      const date = changelogData.date.toLocaleString(lang, { year: "numeric", month: "long", day: "numeric" });
 
       const changelog = changelogData.changelog[lang].map((value, index, array) => {
         const newValue = `<span>${value}</span>`;
@@ -92,6 +93,7 @@ class GameInfo {
 
       const template = `<div>
                           <div class="version${current}">v${version}:</div>
+                          <div class="date">${date}</div>
                           <ul>
                             ${changelog.join('')}
                           </ul>

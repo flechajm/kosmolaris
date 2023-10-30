@@ -783,6 +783,10 @@ tooltip.item {
 #window-changelog .content .version.current {
   color: var(--color-green-light);
 }
+#window-changelog .content .date {
+  font-size: x-small;
+  color: var(--color-earth);
+}
 
 .button {
   flex: 1;
