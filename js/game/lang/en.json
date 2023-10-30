@@ -45,7 +45,7 @@
         "types": ["Common", "Special"],
         "description": "There are two types of elements: {common} and {special}.",
         "commonElementDesc": "{common} elements are public knowledge and you can achieve all of them without restrictions at all: some chemical rules and common sense, that's all.",
-        "specialElementDesc": "{special} elements are mainly easter <i>eggs and</i> you may need a specific minimum knowledge about some topic. These lements commonly are not real, indeed they are part of a fiction, from iconic moments of our lives and the entire world (maybe).<br /><br />Don't feel bad if you don't find them, they are not the main goal of the game. But, if you are curious..."
+        "specialElementDesc": "{special} elements are mainly <i>easter eggs</i> and you may need a specific minimum knowledge about some topic. These lements commonly are not real, indeed they are part of a fiction, from iconic moments of our lives and the entire world (maybe).<br /><br />Don't feel bad if you don't find them, they are not the main goal of the game. But, if you are curious..."
       },
       "guide": {
         "title": "How the game works 👇:",
