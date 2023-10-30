@@ -21,20 +21,23 @@ class GameAchievements {
             if (audioManager) {
                 audioManager.play('levelup');
             }
+
+            const achievementConsoleDOM = achievement.getDOM();
+
             GameLog.write(`🏆 <span class='achievement-unlocked'>${LanguageManager.getData().console.achievementUnlocked}</span>`);
-            GameLog.write(`<div class='achievement'>
-                                <div class='icon'>
-                                    🏆
-                                    <!-- <img src='img/${achievement.icon}.png' /> -->
-                                </div>
-                                <div>
-                                    <div class='title'>${achievement.title}</div>
-                                    <div class='subtitle'>${achievement.description}</div>
-                                </div>
-                            </div>`);
+            GameLog.write(achievementConsoleDOM);
 
             this.unlockeds.push(achievement.id);
+
+            this.addAchievementToWindow(achievement);
         }
+    }
+
+    addAchievementToWindow(achievement) {
+        const achievementWindowDOM = achievement.getDOM(true);
+
+        const contentDOM = $('#window-achievements .content');
+        contentDOM.append(achievementWindowDOM);
     }
 
     setLocalization() {
@@ -53,8 +56,21 @@ class GameAchievements {
         return this.#achievements.find((a) => a.discoveredElements == value);
     }
 
-    getByElementToUnlock(element) {
-        return this.#achievements.find((a) => a.elementToUnlock == element);
+    getByElementToUnlock({ elementToUnlock, element1, element2 }) {
+        const achievement = this.#achievements.find((a) => a.elementToUnlock == elementToUnlock);
+
+        if ((achievement != null && achievement.elementRequired == null) ||
+            (achievement != null && achievement.elementRequired != null && (achievement.elementRequired == element1 || achievement.elementRequired == element2))) {
+            return achievement;
+        }
+    }
+
+    getById(achievementId) {
+        return this.#achievements.find((a) => a.id == achievementId);
+    }
+
+    getTotalAchievements() {
+        return this.#achievements.filter((a) => a.enabled).length;
     }
 }
 

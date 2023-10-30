@@ -11,6 +11,7 @@ import GameConfig from './core/game_config.js';
 import ImageLoader from '../libs/image_loader.js';
 import LanguageManager from "../libs/language_manager.js";
 import AudioManager from '../libs/audio_manager.js';
+import GameAchievements from './core/game_achievements.js';
 
 var gameManager;
 var audioManager;
@@ -46,15 +47,16 @@ let gameConfig;
 })();
 
 function welcome(langData) {
-    const gameName = `<span style='color: var(--color-tooltip-description);'><b>${GameInfo.title}</b></span>`;
+    const gameName = `<span style='color: var(--color-green-light);'><b>${GameInfo.title}</b></span>`;
     const options = { year: "numeric", month: "long", day: "numeric" };
-    const lastUpdate = `${langData.console.lastUpdate} ${GameInfo.lastUpdate.toLocaleString(gameConfig.lang, options)}`;
+    const version = langData.console.version
+        .replace('{version}', GameInfo.getCurrentVersion())
+        .replace('{date}', GameInfo.lastUpdate.toLocaleString(gameConfig.lang, options))
+
 
     GameLog.write(langData.console.welcome.replace('{game}', gameName));
     GameLog.newLine(1);
-    GameLog.write(
-        `${langData.console.version} ${GameInfo.version} | ${lastUpdate}`, "grey");
-    GameLog.write(GameInfo.getBriefText(gameConfig.lang), "lightslategrey");
+    GameLog.write(`<span id="show-changelog">${version}</span>`, "grey");
     GameLog.newLine(1);
 }
 
@@ -66,11 +68,18 @@ function setBackground() {
 function setTooltips(langData) {
     GameTooltips.bind({ element: $('#btn-clear'), text: langData.tooltips.clear });
     GameTooltips.bind({ element: $('#btn-settings'), text: langData.tooltips.settings });
+    GameTooltips.bind({ element: $('#btn-achievements'), text: langData.tooltips.achievements });
     GameTooltips.bind({ element: $('#btn-help'), text: langData.tooltips.help });
+    GameTooltips.bind({ element: $('#btn-changelog'), text: langData.tooltips.changelog });
     GameTooltips.bind({ element: $('#btn-wipe'), text: langData.tooltips.wipeData });
 }
 
 function setupButtons(langData) {
+    const windowSettingsDOM = $('#window-settings');
+    const windowAchievementsDOM = $('#window-achievements');
+    const windowHelpDOM = $('#window-help');
+    const windowChangelogDOM = $('#window-changelog');
+
     $('#btn-clear').click(function () {
         const boardElements = $('board').children();
 
@@ -85,19 +94,41 @@ function setupButtons(langData) {
     });
 
     $('#btn-settings').click(function () {
-        $('#help').hide();
-        $('#settings').fadeIn();
+        windowAchievementsDOM.hide();
+        windowHelpDOM.hide();
+        windowChangelogDOM.hide();
+
+        windowSettingsDOM.fadeIn();
+    });
+
+    $('#btn-achievements').click(function () {
+        windowSettingsDOM.hide();
+        windowHelpDOM.hide();
+        windowChangelogDOM.hide();
+
+        windowAchievementsDOM.fadeIn();
     });
 
     $('#btn-help').click(function () {
-        $('#settings').hide();
-        $('#help').fadeIn();
-        $('#help').find('.content').scrollTop(0);
+        windowAchievementsDOM.hide();
+        windowSettingsDOM.hide();
+        windowChangelogDOM.hide();
+
+        windowHelpDOM.fadeIn();
+        windowHelpDOM.find('.content').scrollTop(0);
 
     });
 
+    $('#show-changelog, #btn-changelog').click(function () {
+        windowAchievementsDOM.hide();
+        windowSettingsDOM.hide();
+        windowHelpDOM.hide();
+
+        windowChangelogDOM.fadeIn();
+    });
+
     $('#btn-wipe').click(function () {
-        if (confirm(langData.settings.promptWipe) == true) {
+        if (confirm(langData.windows.settings.promptWipe) == true) {
             localStorage.removeItem(GameInfo.storageName);
             location.reload();
         }
@@ -111,11 +142,7 @@ function setupButtons(langData) {
         updateVolumeText('bgm', e.currentTarget.value);
     });
 
-    $('#btn-ok').click(function () {
-        $('#help').fadeOut();
-    });
-
-    $('#btn-apply').click(function () {
+    $('#btn-apply').unbind('click').click(function () {
         const actualLang = gameManager.config.lang;
 
         gameConfig.lang = $('#select-lang').val();
@@ -134,7 +161,11 @@ function setupButtons(langData) {
         if (actualLang != gameConfig.lang) {
             location.reload();
         }
-        $('#settings').fadeOut();
+        windowSettingsDOM.fadeOut();
+    });
+
+    $('.button.ok').click(function () {
+        $(this).parent().parent().parent().fadeOut();
     });
 
     $('.close-x').click(function () {
@@ -155,7 +186,7 @@ function updateVolumeText(type, volume) {
     $(`#option-${type}`).find('.slide-volume-container > span:last').html(volume);
 }
 
-function setupSettings(langData) {
+function setupWindowSettings(langData) {
     $('#search-element').attr('placeholder', langData.common.searchElement);
 
     $('#select-lang').val(gameConfig.lang);
@@ -166,18 +197,25 @@ function setupSettings(langData) {
     updateVolumeText('bgm', gameConfig.bgmVolume);
     updateVolumeText('sfx', gameConfig.sfxVolume);
 
-    $('#settings > .popup > .container > .title').html(langData.settings.title);
-    $('#option-lang > div > .text').html(langData.settings.language);
-    $('#option-sfx > div > .text').html(langData.settings.sfx);
-    $('#option-bgm > div > .text').html(langData.settings.bgm);
-    $('#option-wipe > div > .text').html(langData.settings.resetGame);
-    $('#btn-wipe > span').html(langData.settings.wipeData);
-    $('#btn-apply > span').html(langData.settings.close);
+    $('#window-settings > .popup > .container > .title').html(langData.windows.settings.title);
+    $('#option-lang > div > .text').html(langData.windows.settings.language);
+    $('#option-sfx > div > .text').html(langData.windows.settings.sfx);
+    $('#option-bgm > div > .text').html(langData.windows.settings.bgm);
+    $('#option-wipe > div > .text').html(langData.windows.settings.resetGame);
+    $('#btn-wipe > span').html(langData.windows.settings.wipeData);
+    $('#btn-apply > span').html(langData.windows.settings.apply);
 }
 
-function setupHelp(langData) {
-    $('#btn-ok').html(langData.help.close);
-    $('#help > .popup > .container > .title').html(langData.help.title);
+function setupWindowChangelog(langData) {
+    $('#window-changelog > .popup > .container > .title').html(langData.windows.changelog.title);
+    $('#window-changelog .button').html(langData.windows.changelog.ok);
+
+    $('#window-changelog .content').html(GameInfo.getChangelog(gameConfig.lang));
+}
+
+function setupWindowHelp(langData) {
+    $('#window-help > .popup > .container > .title').html(langData.windows.help.title);
+    $('#window-help .button').html(langData.windows.help.ok);
 
     const helpTemplate = `{welcome}
                             <br /><br />
@@ -198,42 +236,30 @@ function setupHelp(langData) {
                             </ul>                            
                             {footer}`;
 
+    const game = spanTextColor(GameInfo.title, "var(--color-green-light)");
+    const air = spanTextColor(langData.windows.help.elements[0], 'var(--color-air)');
+    const fire = spanTextColor(langData.windows.help.elements[1], 'var(--color-fire)');
+    const earth = spanTextColor(langData.windows.help.elements[2], 'var(--color-earth)');
+    const water = spanTextColor(langData.windows.help.elements[3], 'var(--color-water)');
 
-    const spanColorText = "<span style='color: {color}'>{text}</span>";
-
-    const game = spanColorText.replace('{color}', 'var(--color-tooltip-description)').replace('{text}', GameInfo.title);
-    const air = spanColorText.replace('{color}', 'var(--e-color-air)').replace('{text}', langData.help.elements[0]);
-    const fire = spanColorText.replace('{color}', 'var(--e-color-fire)').replace('{text}', langData.help.elements[1]);
-    const earth = spanColorText.replace('{color}', 'var(--e-color-earth)').replace('{text}', langData.help.elements[2]);
-    const water = spanColorText.replace('{color}', 'var(--e-color-water)').replace('{text}', langData.help.elements[3]);
-
-    const welcomeDescription = langData.help.welcome
+    const welcomeDescription = langData.windows.help.welcome
         .replace("{game}", game)
         .replace('{air}', air)
         .replace('{fire}', fire)
         .replace('{earth}', earth)
         .replace('{water}', water);
 
-    const commonCapital = spanColorText
-        .replace('{color}', 'var(--color-common)')
-        .replace('{text}', langData.help.elementTypes.types[0]);
-    const specialCapital = spanColorText
-        .replace('{color}', 'var(--color-special)')
-        .replace('{text}', langData.help.elementTypes.types[1]);
-    const commonLowerCase = spanColorText
-        .replace('{color}', 'var(--color-common)')
-        .replace('{text}', langData.help.elementTypes.types[0].toLowerCase());
-    const specialLowerCase = spanColorText
-        .replace('{color}', 'var(--color-special)')
-        .replace('{text}', langData.help.elementTypes.types[1].toLowerCase());
+    const commonCapital = spanTextColor(langData.windows.help.elementTypes.types[0], "var(--color-common)");
+    const specialCapital = spanTextColor(langData.windows.help.elementTypes.types[1], "var(--color-special)");
+    const commonLowerCase = spanTextColor(langData.windows.help.elementTypes.types[0].toLowerCase(), "var(--color-common)");
+    const specialLowerCase = spanTextColor(langData.windows.help.elementTypes.types[1].toLowerCase(), "var(--color-special)");
 
-
-    const elementTypesDescription = langData.help.elementTypes.description
+    const elementTypesDescription = langData.windows.help.elementTypes.description
         .replace('{common}', commonLowerCase)
         .replace('{special}', specialLowerCase);
 
-    const commonDescription = langData.help.elementTypes.commonElementDesc.replace('{common}', commonCapital);
-    const specialDescription = langData.help.elementTypes.specialElementDesc.replace('{special}', specialCapital);
+    const commonDescription = langData.windows.help.elementTypes.commonElementDesc.replace('{common}', commonCapital);
+    const specialDescription = langData.windows.help.elementTypes.specialElementDesc.replace('{special}', specialCapital);
 
     const templateLi = `<li>
                             <div>{text}</div>
@@ -245,63 +271,47 @@ function setupHelp(langData) {
                             <br />
                         </li>`;
 
-    const dragAndDropHighlight = spanColorText
-        .replace('{color}', 'var(--color-tooltip-description)')
-        .replace('{text}', langData.help.guide.highlights.dragAndDrop);
+    const dragAndDropHighlight = spanTextColor(langData.windows.help.guide.highlights.dragAndDrop, "var(--color-green-light)");
+    const doubleClickHighlight = spanTextColor(langData.windows.help.guide.highlights.doubleClick, "var(--color-green-light)");
+    const copyHighlight = spanTextColor(langData.windows.help.guide.highlights.copy, "var(--color-common)");
+    const rightClickHighlight = spanTextColor(langData.windows.help.guide.highlights.rightClick, "var(--color-green-light)");
+    const deleteHighlight = spanTextColor(langData.windows.help.guide.highlights.delete, "var(--color-negative)");
+    const twoElementsHighlight = spanTextColor(langData.windows.help.guide.highlights.twoElements, "var(--color-green-light)")
+    const dragHighlight = spanTextColor(langData.windows.help.guide.highlights.drag, "var(--color-common)");
+    const dropHighlight = spanTextColor(langData.windows.help.guide.highlights.drop, "var(--color-common)");
+    const middleClickHighlight = spanTextColor(langData.windows.help.guide.highlights.middleClick, "var(--color-green-light)");
 
-    const doubleClickHighlight = spanColorText
-        .replace('{color}', 'var(--color-tooltip-description)')
-        .replace('{text}', langData.help.guide.highlights.doubleClick);
-
-    const copyHighlight = spanColorText
-        .replace('{color}', 'var(--color-common)')
-        .replace('{text}', langData.help.guide.highlights.copy);
-
-    const rightClickHighlight = spanColorText
-        .replace('{color}', 'var(--color-tooltip-description)')
-        .replace('{text}', langData.help.guide.highlights.rightClick);
-
-    const deleteHighlight = spanColorText
-        .replace('{color}', 'var(--color-negative)')
-        .replace('{text}', langData.help.guide.highlights.delete);
-
-    const twoElementsHighlight = spanColorText
-        .replace('{color}', 'var(--color-tooltip-description)')
-        .replace('{text}', langData.help.guide.highlights.twoElements);
-
-    const dragHighlight = spanColorText
-        .replace('{color}', 'var(--color-common)')
-        .replace('{text}', langData.help.guide.highlights.drag);
-
-    const dropHighlight = spanColorText
-        .replace('{color}', 'var(--color-common)')
-        .replace('{text}', langData.help.guide.highlights.drop);
 
     const tipOne = templateLi
-        .replace('{text}', langData.help.guide.list[0].text.replace('{dragAndDrop}', dragAndDropHighlight))
-        .replace('{image}', langData.help.guide.list[0].gif);
+        .replace('{text}', langData.windows.help.guide.list[0].text.replace('{dragAndDrop}', dragAndDropHighlight))
+        .replace('{image}', langData.windows.help.guide.list[0].gif);
 
     const tipTwo = templateLi
-        .replace('{text}', langData.help.guide.list[1].text
+        .replace('{text}', langData.windows.help.guide.list[1].text
             .replaceAll('{doubleClick}', doubleClickHighlight)
             .replace('{copy}', copyHighlight))
-        .replace('{image}', langData.help.guide.list[1].gif);
+        .replace('{image}', langData.windows.help.guide.list[1].gif);
 
     const tipThree = templateLi
-        .replace('{text}', langData.help.guide.list[2].text
+        .replace('{text}', langData.windows.help.guide.list[2].text
             .replace('{rightClick}', rightClickHighlight)
             .replace('{delete}', deleteHighlight))
-        .replace('{image}', langData.help.guide.list[2].gif);
+        .replace('{image}', langData.windows.help.guide.list[2].gif);
 
     const tipFour = templateLi
-        .replace('{text}', langData.help.guide.list[3].text
+        .replace('{text}', langData.windows.help.guide.list[3].text
             .replace('{twoElements}', twoElementsHighlight)
             .replace('{drag}', dragHighlight)
             .replace('{drop}', dropHighlight))
-        .replace('{image}', langData.help.guide.list[3].gif);
+        .replace('{image}', langData.windows.help.guide.list[3].gif);
 
     const tipFive = templateLiDv
-        .replace('{text}', langData.help.guide.list[4].text);
+        .replace('{text}', langData.windows.help.guide.list[4].text);
+
+    const tipSix = templateLiDv
+        .replace('{text}', langData.windows.help.guide.list[5].text
+            .replace('{middleClick}', middleClickHighlight)
+        );
 
 
     $('#welcome').html(helpTemplate
@@ -309,20 +319,21 @@ function setupHelp(langData) {
         .replace('{description}', elementTypesDescription)
         .replace('{commonDescription}', commonDescription)
         .replace('{specialDescription}', specialDescription)
-        .replace('{guideTitle}', langData.help.guide.title)
-        .replace('{list}', tipOne + tipTwo + tipThree + tipFour + tipFive)
-        .replace('{footer}', langData.help.footer)
+        .replace('{guideTitle}', langData.windows.help.guide.title)
+        .replace('{list}', tipOne + tipTwo + tipThree + tipFour + tipFive + tipSix)
+        .replace('{footer}', langData.windows.help.footer)
     );
 }
 
 function initialConfig(langData) {
     const minutesIntervalBackground = (4 * 60) * 1000;
 
-    setTooltips(langData);
-    setupHelp(langData);
-    setupSettings(langData);
-    setupButtons(langData);
     welcome(langData);
+    setTooltips(langData);
+    setupWindowSettings(langData);
+    setupWindowHelp(langData);
+    setupWindowChangelog(langData);
+    setupButtons(langData);
     setBackground();
     setInterval(() => {
         setBackground();
@@ -341,7 +352,7 @@ function initialConfig(langData) {
         gameConfig.showWelcome = false;
         gameConfig.save();
 
-        $('#help').fadeIn();
+        $('#window-help').fadeIn();
     }
 }
 

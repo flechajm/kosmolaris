@@ -11,73 +11,91 @@
   "tooltips": {
     "clear": "Limpiar elementos del tablero",
     "settings": "Opciones",
+    "achievements": "Logros",
     "help": "Ayuda",
+    "changelog": "Cambios de versión",
     "wipeData": "⚠️ Borra todos los datos del juego y lo reinicia completamente.<br />Esta acción no se puede deshacer."
   },
-  "settings": {
-    "title": "OPCIONES",
-    "language": "Idioma",
-    "sfx": "Volumen de Efectos",
-    "bgm": "Volumen de Música",
-    "resetGame": "Reiniciar juego",
-    "wipeData": "Borrar datos",
-    "close": "Aplicar",
-    "promptWipe": "¿Estás seguro que quieres borrar todos los datos guardados?"
-  },
-  "help": {
-    "title": "BIENVENIDO",
-    "close": "Entendido",
-    "elements": ["Aire", "Fuego", "Tierra", "Agua"],
-    "welcome": "Bienvenido a {game}!<br /><br />En este juego tendrás que combinar una gran variedad de elementos entre sí para crear otros nuevos, comenzando con los 4 elementos básicos: {air}, {fire}, {earth} y {water}.<br /><br />Algunos elementos se basan en principios de reglas químicas básicas, mientras que otros no tanto, más bien se aplca el sentido común.",
-    "elementTypes": {
-      "types": ["comunes", "especiales"],
-      "description": "Hay dos tipos de elementos distintos: {common} y {special}.",
-      "commonElementDesc": "Los elementos {common} son de público conocimiento y podrás desbloquearlos sin ninguna restricción: algunas reglas de química y sentido común, eso es todo.",
-      "specialElementDesc": "Los elementos {special} son principalmente <i>easter eggs</i> y puede que necesites un conocimiento específico mínimo sobre algún tema. Estos elementos comunmente no son reales, de hecho son parte de la ficción, de momentos icónicos de nuestras vidas y del mundo entero (quizá).<br /><br />No te sientas mal si no los encuentras, no son el objetivo principal del juego. Pero, si ere curioso..."
+  "windows": {
+    "settings": {
+      "title": "OPCIONES",
+      "language": "Idioma",
+      "sfx": "Volumen de Efectos",
+      "bgm": "Volumen de Música",
+      "resetGame": "Reiniciar juego",
+      "wipeData": "Borrar datos",
+      "apply": "Aplicar",
+      "promptWipe": "¿Estás seguro que quieres borrar todos los datos guardados?"
     },
-    "guide": {
-      "title": "Cómo funciona el juego 👇:",
-      "highlights": {
-        "dragAndDrop": "Arrastra y suelta",
-        "doubleClick": "doble clic",
-        "copy": "copia",
-        "rightClick": "clic derecho",
-        "delete": "eliminarlo",
-        "twoElements": "dos elementos",
-        "drag": "arrastra",
-        "drop": "suéltalo"
+    "changelog": {
+      "title": "REGISTRO DE CAMBIOS DE VERSIÓN",
+      "ok": "Aceptar"
+    },
+    "achievements": {
+      "title": "LOGROS ( {current} / {total} )",
+      "empty": "Aún no has desbloqueado ningún logro.",
+      "ok": "Aceptar"
+    },
+    "help": {
+      "title": "BIENVENIDO",
+      "ok": "Entendido",
+      "elements": ["Aire", "Fuego", "Tierra", "Agua"],
+      "welcome": "Bienvenido a {game}!<br /><br />En este juego tendrás que combinar una gran variedad de elementos entre sí para crear otros nuevos, comenzando con los 4 elementos básicos: {air}, {fire}, {earth} y {water}.<br /><br />Algunos elementos se basan en principios de reglas químicas básicas, mientras que otros no tanto, más bien se aplca el sentido común.",
+      "elementTypes": {
+        "types": ["comunes", "especiales"],
+        "description": "Hay dos tipos de elementos distintos: {common} y {special}.",
+        "commonElementDesc": "Los elementos {common} son de público conocimiento y podrás desbloquearlos sin ninguna restricción: algunas reglas de química y sentido común, eso es todo.",
+        "specialElementDesc": "Los elementos {special} son principalmente <i>easter eggs</i> y puede que necesites un conocimiento específico mínimo sobre algún tema. Estos elementos comunmente no son reales, de hecho son parte de la ficción, de momentos icónicos de nuestras vidas y del mundo entero (quizá).<br /><br />No te sientas mal si no los encuentras, no son el objetivo principal del juego. Pero, si ere curioso..."
       },
-      "list": [
-        {
-          "text": "{dragAndDrop} elementos desde la barra lateral hacia el tablero.",
-          "gif": "drag"
+      "guide": {
+        "title": "Cómo funciona el juego 👇:",
+        "highlights": {
+          "dragAndDrop": "Arrastra y suelta",
+          "doubleClick": "doble clic",
+          "copy": "copia",
+          "rightClick": "clic derecho",
+          "delete": "eliminarlo",
+          "twoElements": "dos elementos",
+          "drag": "arrastra",
+          "drop": "suéltalo",
+          "middleClick": "clic medio"
         },
-        {
-          "text": "Haz {doubleClick} sobre un elemento del tablero para crear una {copy} de él mismo. También puedes hacer {doubleClick} en un elemento de la barra lateral para apilarlo directamente en la esquina superior izquierda del tablero.",
-          "gif": "dblclick"
-        },
-        {
-          "text": "Haz {rightClick} sobre un elemento del tablero para {delete}.",
-          "gif": "rightclick"
-        },
-        {
-          "text": "Solamente puedes combinar {twoElements} para crear uno nuevo.<br /><br />Para hacerlo, {drag} un elemento desde la barra lateral (o del tablero) y {drop} sobre cualquier otro. Si tienes éxito, ¡felicitaciones! has descubierto un nuevo elemento.",
-          "gif": "combine"
-        },
-        {
-          "text": "El juego guarda su progreso cada vez que realizas una acción con algún elemento, incluído moverlo."
-        }
-      ]
-    },
-    "footer": "Recuerda que también puedes cambiar tu idioma preferido y el volumen de audio en las ⚙️, así como también puedes borrar los datos del juego completamente para comenzar desde cero.<br /><br />Eso es todo. Fácil, ¿verdad?<br />¡Buena suerte, y disfruta del juego! 😊"
+        "list": [
+          {
+            "text": "{dragAndDrop} elementos desde la barra lateral hacia el tablero.",
+            "gif": "drag"
+          },
+          {
+            "text": "Haz {doubleClick} sobre un elemento del tablero para crear una {copy} de él mismo. También puedes hacer {doubleClick} en un elemento de la barra lateral para apilarlo directamente en la esquina superior izquierda del tablero.",
+            "gif": "dblclick"
+          },
+          {
+            "text": "Haz {rightClick} sobre un elemento del tablero para {delete}.",
+            "gif": "rightclick"
+          },
+          {
+            "text": "Solamente puedes combinar {twoElements} para crear uno nuevo.<br /><br />Para hacerlo, {drag} un elemento desde la barra lateral (o del tablero) y {drop} sobre cualquier otro. Si tienes éxito, ¡felicitaciones! has descubierto un nuevo elemento.",
+            "gif": "combine"
+          },
+          {
+            "text": "💾 El juego guarda su progreso cada vez que realizas una acción con algún elemento, incluído moverlo."
+          },
+          {
+            "text": "🧪 Puedes hacer {middleClick} sobre un elemento para mostrar por consola con qué elementos lo creaste."
+          }
+        ]
+      },
+      "footer": "Recuerda que también puedes cambiar tu idioma preferido y el volumen de audio en las ⚙️, así como también puedes borrar los datos del juego completamente para comenzar desde cero.<br /><br />Eso es todo. Fácil, ¿verdad?<br />¡Buena suerte, y disfruta del juego! 😊"
+    }
   },
   "console": {
     "welcome": "¡Bienvenido a {game}!",
-    "version": "Versión:",
-    "lastUpdate": "Actualizado:",
+    "version": "Versión: {version} ({date})",
+    "lastUpdate": "Actualizado: {date}",
     "saveProgress": "Progreso guardado",
     "specialElement": "especial",
     "newElement": "{emoji} ¡Has descubierto un nuevo elemento{special} combinando {element1} y {element2} ➜ {result}!",
+    "combinationInfo": "🧪 {result} ➜ {element1} + {element2}.",
     "achievementUnlocked": "¡Logro desbloqueado!"
   },
   "achievements": [
@@ -88,38 +106,98 @@
     },
     {
       "id": 2,
+      "title": "Nada mal...",
+      "description": "Descubre 50 elementos."
+    },
+    {
+      "id": 3,
+      "title": "¡Alguien está en racha!",
+      "description": "Descubre 100 elementos."
+    },
+    {
+      "id": 4,
+      "title": "Mmm, ¿van 150?",
+      "description": "Descubre 150 elementos."
+    },
+    {
+      "id": 5,
+      "title": "Wow, 200!",
+      "description": "Descubre 200 elementos."
+    },
+    {
+      "id": 6,
+      "title": "Supongo que van 250...",
+      "description": "Descubre 250 elementos."
+    },
+    {
+      "id": 7,
+      "title": "¿Y ahora cuántos van?",
+      "description": "Descubre 300 elementos."
+    },
+    {
+      "id": 8,
+      "title": "Creo que perdí la cuenta...",
+      "description": "Descubre 350 elementos."
+    },
+    {
+      "id": 9,
+      "title": "Supongo que es una racha larga",
+      "description": "Descubre 400 elementos."
+    },
+    {
+      "id": 10,
+      "title": "No tengo idea de cuántos van",
+      "description": "Descubre 450 elementos."
+    },
+    {
+      "id": 11,
+      "title": "¡Y todos caen!",
+      "description": "Descubre 500 elementos."
+    },
+    {
+      "id": 12,
       "title": "A veces envidio a los muertos",
       "description": "Descubre a Michonne, de The Walking Dead."
     },
     {
-      "id": 3,
+      "id": 13,
       "title": "¿Después de todo este tiempo?",
       "description": "Descubre a Harry Potter."
     },
     {
-      "id": 4,
+      "id": 14,
       "title": "No sabes nada...",
       "description": "Descubre a Jon Snow, de Game of Thrones."
     },
     {
-      "id": 5,
+      "id": 15,
       "title": "Es un bate vampiro",
       "description": "Descubre a Negan y Lucille, de The Walking Dead."
     },
     {
-      "id": 6,
+      "id": 16,
       "title": "COVID-19",
       "description": "Descubre el COVID-19, pero no lo propagues, por favor."
     },
     {
-      "id": 7,
+      "id": 17,
       "title": "Lucille está sedienta...",
       "description": "Descubre a Lucille, el bate de Negan de The Walking Dead."
     },
     {
-      "id": 8,
+      "id": 18,
       "title": "A tu imagen y semejanza",
       "description": "Descubre el Mundo donde vivimos."
+    },
+    {
+      "id": 19,
+      "title": "Simio no mata simio",
+      "description": "Descubre el planeta de los simios."
+    },
+    {
+      "id": 20,
+      "title": "No seas tan cruel...",
+      "description": "Descubre Ciencia usando un Mono."
     }
   ],
   "elements": [
@@ -196,6 +274,11 @@
     {
       "id": "time",
       "name": "Tiempo",
+      "description": ""
+    },
+    {
+      "id": "cience",
+      "name": "Ciencia",
       "description": ""
     },
     {
@@ -296,6 +379,11 @@
     {
       "id": "zombie",
       "name": "Zombie",
+      "description": ""
+    },
+    {
+      "id": "planet-apes",
+      "name": "Planeta de<br />los Simios",
       "description": ""
     },
     {
@@ -579,7 +667,7 @@
       "description": ""
     },
     {
-      "id": "tool",
+      "id": "workbench",
       "name": "Banco de Trabajo",
       "description": ""
     },
@@ -624,6 +712,11 @@
       "description": ""
     },
     {
+      "id": "jungle",
+      "name": "Jungla",
+      "description": ""
+    },
+    {
       "id": "family",
       "name": "Familia",
       "description": ""
@@ -641,6 +734,11 @@
     {
       "id": "monkey",
       "name": "Mono",
+      "description": ""
+    },
+    {
+      "id": "wild-animal",
+      "name": "Animal<br />Salvaje",
       "description": ""
     },
     {

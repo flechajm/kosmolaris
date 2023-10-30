@@ -52,6 +52,15 @@ class GameElements {
         return this.#elements.filter((e) => e.isSpecial).length;
     }
 
+    static getCombinationText(result, element1, element2) {
+        const langData = LanguageManager.getData();
+
+        return langData.console.combinationInfo
+            .replace('{result}', result.getFormattedColor())
+            .replace('{element1}', element1.getFormattedColor())
+            .replace('{element2}', element2.getFormattedColor());
+    }
+
     static getDOM(uuid) {
         return $(`#${uuid}`);
     }

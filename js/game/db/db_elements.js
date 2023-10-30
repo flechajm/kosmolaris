@@ -117,6 +117,13 @@ class DbElements {
                 category: 2,
             }),
 
+            // Cience
+            new Element({
+                id: 'cience',
+                color: '#8fa2ff',
+                category: 2,
+            }),
+
             // ============================
             // SPACE
             // ============================
@@ -275,6 +282,13 @@ class DbElements {
             new Element({
                 id: 'zombie',
                 color: '#545c3f',
+                category: 4,
+            }),
+
+            // Planet of the Apes
+            new Element({
+                id: 'planet-apes',
+                color: '#867257',
                 category: 4,
             }),
 
@@ -682,7 +696,7 @@ class DbElements {
 
             // Tool
             new Element({
-                id: 'tool',
+                id: 'workbench',
                 color: '#c27957',
                 category: 10,
             }),
@@ -754,6 +768,13 @@ class DbElements {
                 category: 11,
             }),
 
+            // Jungle
+            new Element({
+                id: 'jungle',
+                color: '#262e26',
+                category: 11,
+            }),
+
             // Family
             new Element({
                 id: 'family',
@@ -772,6 +793,13 @@ class DbElements {
             new Element({
                 id: 'wizard',
                 color: '#0d41b1',
+                category: 11,
+            }),
+
+            // Wild Animal
+            new Element({
+                id: 'wild-animal',
+                color: '#ceab8b',
                 category: 11,
             }),
 

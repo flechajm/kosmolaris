@@ -11,73 +11,92 @@
   "tooltips": {
     "clear": "Clear board items",
     "settings": "Options",
+    "achievements": "Achievements",
     "help": "Help",
+    "changelog": "Version changelog",
     "wipeData": "⚠️ Wipe all game data and restarts the game completely.<br />This action cannot be undone."
   },
-  "settings": {
-    "title": "OPTIONS",
-    "language": "Language",
-    "sfx": "Sound Effects Volume",
-    "bgm": "Music Volume",
-    "resetGame": "Reset game",
-    "wipeData": "Wipe data",
-    "close": "Apply",
-    "promptWipe": "Are you sure you want to erase all saved data?"
-  },
-  "help": {
-    "title": "WELCOME",
-    "close": "Got it",
-    "elements": ["Air", "Fire", "Earth", "Water"],
-    "welcome": "Welcome to {game}!<br /><br />In this game you'll have to combine a large kind of elements each other to create a new ones, starting with the 4 basic elements: {air}, {fire}, {earth} and {water}.<br /><br />Some elements are based on principles chemical rules, while some others are not so much, rather in common sense.",
-    "elementTypes": {
-      "types": ["Common", "Special"],
-      "description": "There are two types of elements: {common} and {special}.",
-      "commonElementDesc": "{common} elements are public knowledge and you can achieve all of them without restrictions at all: some chemical rules and common sense, that's all.",
-      "specialElementDesc": "{special} elements are mainly easter <i>eggs and</i> you may need a specific minimum knowledge about some topic. These lements commonly are not real, indeed they are part of a fiction, from iconic moments of our lives and the entire world (maybe).<br /><br />Don't feel bad if you don't find them, they are not the main goal of the game. But, if you are curious..."
+  "windows": {
+    "settings": {
+      "title": "OPTIONS",
+      "language": "Language",
+      "sfx": "Sound Effects Volume",
+      "bgm": "Music Volume",
+      "resetGame": "Reset game",
+      "wipeData": "Wipe data",
+      "apply": "Apply",
+      "promptWipe": "Are you sure you want to erase all saved data?"
     },
-    "guide": {
-      "title": "How the game works 👇:",
-      "highlights": {
-        "dragAndDrop": "Drag and drop",
-        "doubleClick": "double click",
-        "copy": "copy",
-        "rightClick": "right click",
-        "delete": "delete",
-        "twoElements": "two elements",
-        "drag": "drag",
-        "drop": "drop"
+    "changelog": {
+      "title": "VERSION CHANGELOG",
+      "ok": "Ok"
+    },
+    "achievements": {
+      "title": "ACHIEVEMENTS ( {current} / {total} )",
+      "empty": "You haven't unlocked any achievements yet.",
+      "ok": "Ok"
+    },
+    "help": {
+      "title": "WELCOME",
+      "ok": "Got it",
+      "elements": ["Air", "Fire", "Earth", "Water"],
+      "welcome": "Welcome to {game}!<br /><br />In this game you'll have to combine a large kind of elements each other to create a new ones, starting with the 4 basic elements: {air}, {fire}, {earth} and {water}.<br /><br />Some elements are based on principles chemical rules, while some others are not so much, rather in common sense.",
+      "elementTypes": {
+        "types": ["Common", "Special"],
+        "description": "There are two types of elements: {common} and {special}.",
+        "commonElementDesc": "{common} elements are public knowledge and you can achieve all of them without restrictions at all: some chemical rules and common sense, that's all.",
+        "specialElementDesc": "{special} elements are mainly easter <i>eggs and</i> you may need a specific minimum knowledge about some topic. These lements commonly are not real, indeed they are part of a fiction, from iconic moments of our lives and the entire world (maybe).<br /><br />Don't feel bad if you don't find them, they are not the main goal of the game. But, if you are curious..."
       },
-      "list": [
-        {
-          "text": "{dragAndDrop} elements from the sidebar to the board.",
-          "gif": "drag"
+      "guide": {
+        "title": "How the game works 👇:",
+        "highlights": {
+          "dragAndDrop": "Drag and drop",
+          "doubleClick": "double click",
+          "copy": "copy",
+          "rightClick": "right click",
+          "delete": "delete",
+          "twoElements": "two elements",
+          "drag": "drag",
+          "drop": "drop",
+          "middleClick": "middle click"
         },
-        {
-          "text": "Do {doubleClick} on an element from the board to create a {copy} of it. Also, you can perform {doubleClick} on a sidebar element to directly stack it to the top left corner on the board.",
-          "gif": "dblclick"
-        },
-        {
-          "text": "Do {rightClick} on an element from the board to {delete} it.",
-          "gif": "rightclick"
-        },
-        {
-          "text": "You can only combine {twoElements} to create a new one.<br /><br />To do it just {drag} an element from the sidebar (or board) and {drop} it onto other one else. If you have success, congrats! you have discovered a new element.",
-          "gif": "combine"
-        },
-        {
-          "text": "The game save its state everytime you make an action with any element, including moving it."
-        }
-      ]
-    },
-    "footer": "Remember that you can change your preferred language and audio volume anytime in options ⚙️, as well as you can wipe the game data to start over from scratch.<br /></br />That's all, easy right?<br />Good luck, and enjoy the game! 😊"
+        "list": [
+          {
+            "text": "{dragAndDrop} elements from the sidebar to the board.",
+            "gif": "drag"
+          },
+          {
+            "text": "Do {doubleClick} on an element from the board to create a {copy} of it. Also, you can perform {doubleClick} on a sidebar element to directly stack it to the top left corner on the board.",
+            "gif": "dblclick"
+          },
+          {
+            "text": "Do {rightClick} on an element from the board to {delete} it.",
+            "gif": "rightclick"
+          },
+          {
+            "text": "You can only combine {twoElements} to create a new one.<br /><br />To do it just {drag} an element from the sidebar (or board) and {drop} it onto other one else. If you have success, congrats! you have discovered a new element.",
+            "gif": "combine"
+          },
+          {
+            "text": "💾 The game save its state everytime you make an action with any element, including moving it."
+          },
+          {
+            "text": "🧪 You can do a {middleClick} on an element to show in console which elements you used to created it."
+          }
+        ]
+      },
+      "footer": "Remember that you can change your preferred language and audio volume anytime in options ⚙️, as well as you can wipe the game data to start over from scratch.<br /></br />That's all, easy right?<br />Good luck, and enjoy the game! 😊"
+    }
   },
+
   "console": {
     "welcome": "Welcome to {game}!",
-    "version": "Version:",
-    "lastUpdate": "Updated:",
+    "version": "Version: {version} ({date})",
+    "lastUpdate": "Updated: {date}",
     "saveProgress": "Progress saved",
     "specialElement": "especial",
     "newElement": "{emoji} You have discovered a new{special} element combining {element1} and {element2} ➜ {result}!",
+    "combinationInfo": "🧪 {result} ➜ {element1} + {element2}.",
     "achievementUnlocked": "Achievement unlocked!"
   },
   "achievements": [
@@ -88,38 +107,98 @@
     },
     {
       "id": 2,
+      "title": "Not bad...",
+      "description": "Discover 50 elements."
+    },
+    {
+      "id": 3,
+      "title": "Somebody's on a roll!",
+      "description": "Discover 100 elements."
+    },
+    {
+      "id": 4,
+      "title": "Mmm, is that 150?",
+      "description": "Discover 150 elements."
+    },
+    {
+      "id": 5,
+      "title": "Wow, 200!",
+      "description": "Discover 200 elements."
+    },
+    {
+      "id": 6,
+      "title": "Guess that's 250 in a row",
+      "description": "Discover 250 elements."
+    },
+    {
+      "id": 7,
+      "title": "Wait how many is that now?",
+      "description": "Discover 300 elements."
+    },
+    {
+      "id": 8,
+      "title": "Think I lost count...",
+      "description": "Discover 350 elements."
+    },
+    {
+      "id": 9,
+      "title": "It's a winning streak",
+      "description": "Discover 400 elements."
+    },
+    {
+      "id": 10,
+      "title": "No idea how many that was",
+      "description": "Discover 450 elements."
+    },
+    {
+      "id": 11,
+      "title": "And down they all go!",
+      "description": "Discover 500 elements."
+    },
+    {
+      "id": 12,
       "title": "Sometimes I envy the dead",
       "description": "Discover Michonne, from The Walking Dead."
     },
     {
-      "id": 3,
+      "id": 13,
       "title": "After all this time?",
       "description": "Discover Harry Potter."
     },
     {
-      "id": 4,
+      "id": 14,
       "title": "You know nothing...",
       "description": "Discover Jon Snow, from Game of Thrones."
     },
     {
-      "id": 5,
+      "id": 15,
       "title": "She's a vampire bat",
       "description": "Discover Negan and Lucille, from The Walking Dead."
     },
     {
-      "id": 6,
+      "id": 16,
       "title": "COVID-19",
       "description": "Discover COVID-19, but doesn't spread it, please."
     },
     {
-      "id": 7,
+      "id": 17,
       "title": "Lucille is thirsty...",
       "description": "Discover Lucille, Negan's bat from The Walking Dead."
     },
     {
-      "id": 8,
+      "id": 18,
       "title": "In your image and likeness",
       "description": "Discover the World where we live."
+    },
+    {
+      "id": 19,
+      "title": "Ape shall not kill ape",
+      "description": "Discover the planet of the apes."
+    },
+    {
+      "id": 20,
+      "title": "Don't be so cruel...",
+      "description": "Discover Cience using a Monkey."
     }
   ],
   "elements": [
@@ -196,6 +275,11 @@
     {
       "id": "time",
       "name": "Time",
+      "description": ""
+    },
+    {
+      "id": "cience",
+      "name": "Ciencia",
       "description": ""
     },
     {
@@ -296,6 +380,11 @@
     {
       "id": "zombie",
       "name": "Zombie",
+      "description": ""
+    },
+    {
+      "id": "planet-apes",
+      "name": "Planet of<br />the Apes",
       "description": ""
     },
     {
@@ -579,7 +668,7 @@
       "description": ""
     },
     {
-      "id": "tool",
+      "id": "workbench",
       "name": "Workbench",
       "description": ""
     },
@@ -624,6 +713,11 @@
       "description": ""
     },
     {
+      "id": "jungle",
+      "name": "Jungle",
+      "description": ""
+    },
+    {
       "id": "family",
       "name": "Family",
       "description": ""
@@ -641,6 +735,11 @@
     {
       "id": "monkey",
       "name": "Monkey",
+      "description": ""
+    },
+    {
+      "id": "wild-animal",
+      "name": "Wild<br />Animal",
       "description": ""
     },
     {

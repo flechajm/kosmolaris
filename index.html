@@ -27,6 +27,23 @@
     <div id="game">
       <div class="board-container">
         <div class="background"></div>
+        <div class="option-buttons">
+          <div id="btn-clear" class="button green clear">
+            <tooltip></tooltip>
+          </div>
+          <div id="btn-achievements" class="button achievements">
+            <tooltip></tooltip>
+          </div>
+          <div id="btn-changelog" class="button changelog">
+            <tooltip></tooltip>
+          </div>
+          <div id="btn-help" class="button help">
+            <tooltip></tooltip>
+          </div>
+          <div id="btn-settings" class="button settings">
+            <tooltip></tooltip>
+          </div>
+        </div>
         <board> </board>
         <div id="log">
           <div class="text"></div>
@@ -35,15 +52,6 @@
       <sidebar>
         <img src="img/logo/logo_s.png" class="logo" alt="" />
         <div id="input-container">
-          <div id="btn-clear" class="button clear">
-            <tooltip></tooltip>
-          </div>
-          <div id="btn-settings" class="button settings">
-            <tooltip></tooltip>
-          </div>
-          <div id="btn-help" class="button help">
-            <tooltip></tooltip>
-          </div>
           <input
             type="search"
             name="search-element"
@@ -60,7 +68,7 @@
           <div id="unlocked-elements"></div>
         </div>
       </sidebar>
-      <div id="settings">
+      <div id="window-settings">
         <div class="popup settings">
           <div class="close-x"></div>
           <div class="container">
@@ -139,7 +147,23 @@
           </div>
         </div>
       </div>
-      <div id="help">
+      <div id="window-achievements">
+        <div class="popup achievements">
+          <div class="close-x"></div>
+          <div class="container">
+            <div class="title"></div>
+            <div class="horizontal-band"></div>
+          </div>
+          <div class="content"></div>
+          <div class="container footer">
+            <div class="horizontal-band"></div>
+            <div class="button ok">
+              <span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="window-help">
         <div class="popup help">
           <div class="close-x"></div>
           <div class="container">
@@ -152,7 +176,23 @@
           </div>
           <div class="container footer">
             <div class="horizontal-band"></div>
-            <div id="btn-ok" class="button ok">
+            <div class="button ok">
+              <span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="window-changelog">
+        <div class="popup changelog">
+          <div class="close-x"></div>
+          <div class="container">
+            <div class="title"></div>
+            <div class="horizontal-band"></div>
+          </div>
+          <div class="content"></div>
+          <div class="container footer">
+            <div class="horizontal-band"></div>
+            <div class="button ok">
               <span></span>
             </div>
           </div>

@@ -33,6 +33,11 @@ class GameConfig {
      * Indica si se debe mostrar el cartel de bienvenida o no.
      */
     this.showWelcome = config?.showWelcome ?? true;
+
+    /**
+     * Indica si el juego debe jugarse en modo debug. Habilita un selector de elementos.
+     */
+    this.debugMode = false;
   }
 
   save() {

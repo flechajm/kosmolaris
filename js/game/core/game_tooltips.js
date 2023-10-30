@@ -19,7 +19,7 @@ class GameTooltips {
         }
 
         element.mouseenter(function () {
-            element.css('z-index', '11');
+            element.css('z-index', '5');
             const screenPadding = 16;
             const rect = tooltipDOM[0].getBoundingClientRect();
             const offsetRight = rect.right < 0 ? rect.right : viewportWidth - rect.right;
@@ -63,7 +63,7 @@ class GameTooltips {
                         'left': '50%'
                     });
                 }
-                element.css('z-index', '10');
+                element.css('z-index', '1');
             });
         });
     }

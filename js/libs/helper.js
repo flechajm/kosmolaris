@@ -1,4 +1,15 @@
 /**
+ * Obtiene un elemento SPAN formateado con texto a color.
+ * @param {String} text   Texto.
+ * @param {String} color  Color del texto. 
+ * @returns {HTMLElement} Span
+ */
+
+function spanTextColor(text, color) {
+  return `<span style='color: ${color}'>${text}</span>`;
+}
+
+/**
  * Obtiene un número aleatorio entre dos.
  * @param {Number} num1 Número mínimo.
  * @param {Number} num2 Número máximo.

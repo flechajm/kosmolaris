@@ -22,12 +22,13 @@ class GameCombinationManager {
             this.addCombination({ element1: 'rain', element2: 'air', result: 'weather' });
             this.addCombination({ element1: 'air', element2: 'fire', result: 'energy' });
             this.addCombination({ element1: 'fire', element2: 'gas', result: 'explosion' });
-            this.addCombination({ element1: 'air', element2: 'wind', result: 'cold' });
+            this.addCombination({ element1: 'air', element2: 'strong-wind', result: 'cold' });
             this.addCombination({ element1: 'electricity', element2: 'air', result: 'light' });
             this.addCombination({ element1: 'magic-wand', element2: 'human', result: 'magic' });
             this.addCombination({ element1: 'tree', element2: 'sun', result: 'oxygen' });
             this.addCombination({ element1: 'air', element2: 'earth', result: 'pressure' });
             this.addCombination({ element1: 'sand', element2: 'glass', result: 'time' });
+            this.addCombination({ element1: 'monkey', element2: 'workbench', result: 'cience' });
 
             // Space
             this.addCombination({ element1: 'gas', element2: 'pressure', result: 'star' });
@@ -53,15 +54,18 @@ class GameCombinationManager {
             this.addCombination({ element1: 'zombie', element2: 'katana', result: 'michonne' });
             this.addCombination({ element1: 'lucille', element2: 'human', result: 'negan' });
             this.addCombination({ element1: 'human', element2: 'death', result: 'zombie' });
+            this.addCombination({ element1: 'monkey', element2: 'planet', result: 'planet-apes' });
 
             // Lifeforms
             this.addCombination({ element1: 'plant', element2: 'time', result: 'tree' });
             this.addCombination({ element1: 'life', element2: 'microscope', result: 'bacterium' });
             this.addCombination({ element1: 'tree', element2: 'tree', result: 'forest' });
             this.addCombination({ element1: 'human', element2: 'love', result: 'family' });
-            this.addCombination({ element1: 'monkey', element2: 'time', result: 'human' });
             this.addCombination({ element1: 'human', element2: 'magic', result: 'wizard' });
-            this.addCombination({ element1: 'forest', element2: 'life', result: 'monkey' });
+            this.addCombination({ element1: 'monkey', element2: 'time', result: 'human' });
+            this.addCombination({ element1: 'jungle', element2: 'life', result: 'wild-animal' });
+            this.addCombination({ element1: 'wild-animal', element2: 'tree', result: 'monkey' });
+            this.addCombination({ element1: 'forest', element2: 'forest', result: 'jungle' });
             this.addCombination({ element1: 'planet-earth', element2: 'population', result: 'world' });
             this.addCombination({ element1: 'family', element2: 'family', result: 'population' });
             this.addCombination({ element1: 'energy', element2: 'water', result: 'life' });
@@ -91,8 +95,8 @@ class GameCombinationManager {
             this.addCombination({ element1: 'light', element2: 'glass', result: 'lens' });
             this.addCombination({ element1: 'human', element2: 'forest', result: 'wood' });
             this.addCombination({ element1: 'fire', element2: 'stone', result: 'metal' });
-            this.addCombination({ element1: 'wood', element2: 'tool', result: 'stick' });
-            this.addCombination({ element1: 'tree', element2: 'tool', result: 'paper' });
+            this.addCombination({ element1: 'wood', element2: 'workbench', result: 'stick' });
+            this.addCombination({ element1: 'tree', element2: 'workbench', result: 'paper' });
             this.addCombination({ element1: 'mineral-rock', element2: 'water', result: 'stone' });
 
             // Minerals
@@ -134,13 +138,13 @@ class GameCombinationManager {
             // Objects
             this.addCombination({ element1: 'baseball-bat', element2: 'barbed-wire', result: 'lucille' });
             this.addCombination({ element1: 'stick', element2: 'stick', result: 'baseball-bat' });
-            this.addCombination({ element1: 'metal', element2: 'tool', result: 'blade' });
-            this.addCombination({ element1: 'wood', element2: 'metal', result: 'tool' });
+            this.addCombination({ element1: 'metal', element2: 'workbench', result: 'blade' });
+            this.addCombination({ element1: 'wood', element2: 'metal', result: 'workbench' });
             this.addCombination({ element1: 'blade', element2: 'stick', result: 'sword' });
-            this.addCombination({ element1: 'sword', element2: 'tool', result: 'katana' });
+            this.addCombination({ element1: 'sword', element2: 'workbench', result: 'katana' });
             this.addCombination({ element1: 'lens', element2: 'glass', result: 'microscope' });
-            this.addCombination({ element1: 'earth', element2: 'tool', result: 'shovel' });
-            this.addCombination({ element1: 'stone', element2: 'tool', result: 'pickaxe' });
+            this.addCombination({ element1: 'earth', element2: 'workbench', result: 'shovel' });
+            this.addCombination({ element1: 'stone', element2: 'workbench', result: 'pickaxe' });
             this.addCombination({ element1: 'stick', element2: 'star', result: 'magic-wand' });
 
 
@@ -159,30 +163,28 @@ class GameCombinationManager {
     }
 
     static checkExists(elementId) {
-        return (this.#elementsUnlocked.includes(elementId) || this.#specialElementsUnlocked.includes(elementId));
+        return (this.#elementsUnlocked.some((e) => e.result == elementId) || this.#specialElementsUnlocked.includes((e) => e.result == elementId));
     }
 
     static unlockElement(elementUnlocked, element1, element2) {
         if (!this.checkExists(elementUnlocked.id)) {
 
             if (elementUnlocked.isSpecial) {
-                this.#specialElementsUnlocked.push(elementUnlocked.id);
+                this.#specialElementsUnlocked.push({ element1: element1.id, element2: element2.id, result: elementUnlocked.id });
             } else {
-                this.#elementsUnlocked.push(elementUnlocked.id);
+                this.#elementsUnlocked.push({ element1: element1.id, element2: element2.id, result: elementUnlocked.id });
             }
-
-            const spanColorText = "<span style='color: {color}'>{text}</span>";
 
             const langData = LanguageManager.getData();
             const emoji = elementUnlocked.isSpecial ? '🍭' : '✨';
-            const special = elementUnlocked.isSpecial ? spanColorText.replace('{color}', 'var(--color-special)').replace('{text}', ` ${langData.console.specialElement}`) : '';
+            const special = elementUnlocked.isSpecial ? spanTextColor(langData.console.specialElement, "var(--color-special)") : '';
 
             GameLog.write(langData.console.newElement
                 .replace('{emoji}', emoji)
                 .replace('{special}', special)
-                .replace('{element1}', spanColorText.replace('{color}', element1.color).replace('{text}', element1.getFixedName()))
-                .replace('{element2}', spanColorText.replace('{color}', element2.color).replace('{text}', element2.getFixedName()))
-                .replace('{result}', spanColorText.replace('{color}', elementUnlocked.color).replace('{text}', elementUnlocked.getFixedName()))
+                .replace('{element1}', element1.getFormattedColor())
+                .replace('{element2}', element2.getFormattedColor())
+                .replace('{result}', elementUnlocked.getFormattedColor())
             );
         }
     }

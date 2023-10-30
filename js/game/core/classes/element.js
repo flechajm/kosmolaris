@@ -40,13 +40,18 @@ class Element {
         return this.name.replaceAll('<br />', ' ').replaceAll('<br>', ' ');
     }
 
-    createElementDOM({ onBoard, posX, posY, ghost, shortcut }) {
-        let uuid = this.uuid ? `id="${this.uuid}"` : '';
-        let classOnBoard = `${onBoard ? ' on-board' : ''}`;
-        let classGhost = `${ghost ? ' ghost' : ''}`;
-        let position = `${onBoard ? `style="left:${posX}px; top:${posY};"` : ""}`;
-        let classShortcut = `${shortcut ? ' shortcut' : ''}`;
-        let styleColor = `style="background-color: ${this.color}; border-color: ${this.color};"`;
+    getFormattedColor() {
+        return `<span style='color: ${this.color}'>${this.getFixedName()}</span>`;
+    }
+
+    createElementDOM({ onBoard, posX, posY, ghost, shortcut, combination }) {
+        const uuid = this.uuid ? `id="${this.uuid}"` : '';
+        const classOnBoard = `${onBoard ? ' on-board' : ''}`;
+        const classGhost = `${ghost ? ' ghost' : ''}`;
+        const position = `${onBoard ? `style="left:${posX}px; top:${posY};"` : ""}`;
+        const classShortcut = `${shortcut ? ' shortcut' : ''}`;
+        const styleColor = `style="background-color: ${this.color}; border-color: ${this.color};"`;
+        const attrCombination = combination ? `combination="${combination.element1};${combination.element2}"` : '';
 
         return `<element
                     ${uuid} 
@@ -54,7 +59,7 @@ class Element {
                     class="element-wrapper${classOnBoard}${classGhost}${classShortcut}"
                     ${position}
                 >
-                    <div class="element-button color shadow" ${styleColor} draggable="true">
+                    <div class="element-button color shadow" ${styleColor} ${attrCombination} draggable="true" >
                         <!-- <div class="element-image"></div>-->
                         <span>${this.name}</span>
                     </div>

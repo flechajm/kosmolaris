@@ -37,17 +37,81 @@ class GameManager {
     }
 
     init() {
+        this.achievements.setLocalization();
+
         this.#loadBoard();
         this.#loadCategories();
+        this.#loadAchievements();
         this.bindInputSearch();
         this.initialBind();
         this.updateCurrentDiscoveredElements();
-        this.achievements.setLocalization();
+
+        if (this.config.debugMode)
+            this.#debugElementSelector();
+    }
+
+
+    #debugElementSelector() {
+        const gameManager = this;
+        const elements = GameElements.getAll();
+        const debugTemplate = `<div id="debug">
+                                    <select id="element-selector"></select>
+                                </div>`;
+        $('.option-buttons').prepend(debugTemplate);
+
+        elements.sort((a, b) => a.name.localeCompare(b.name));
+
+        for (let i = 0; i < elements.length; i++) {
+            const element = elements[i];
+
+            $('#element-selector').append(`<option value="${element.id}">${element.getFixedName()} (${element.id})</option>`);
+        }
+
+        $('#element-selector').on('change', function (e) {
+            const id = e.target.options[e.target.selectedIndex].value;
+            const element = Element.fromId(id);
+
+            gameManager.bindBoardElementFromDragAndDrop(element, { onBoard: false, shortcut: true });
+            gameManager.saveGame();
+            e.target.selectedIndex = -1;
+        });
+    }
+
+    #loadAchievements() {
+        const windowAchievementsDOM = $('#window-achievements');
+        const contentDOM = windowAchievementsDOM.find('.content');
+        const langData = LanguageManager.getData();
+
+        const currentTextColor = spanTextColor(this.achievements.unlockeds.length, "var(--color-green-light)");
+        const totalTextColor = spanTextColor(this.achievements.getTotalAchievements(), "var(--color-gold)");
+
+        const title = langData.windows.achievements.title
+            .replace('{current}', currentTextColor)
+            .replace('{total}', totalTextColor);
+
+        windowAchievementsDOM.find('.popup > .container > .title').html(title);
+        windowAchievementsDOM.find('.button').html(langData.windows.achievements.ok);
+
+        if (this.achievements.unlockeds.length === 0) {
+            contentDOM.addClass('empty');
+            contentDOM.append(langData.windows.achievements.empty);
+        } else {
+            contentDOM.removeClass('empty');
+            contentDOM.html('');
+
+            for (let i = 0; i < this.achievements.unlockeds.length; i++) {
+                const achievementId = this.achievements.unlockeds[i];
+                const achievement = this.achievements.getById(achievementId);
+
+                contentDOM.append(achievement.getDOM(true));
+            }
+        }
     }
 
     #saveBoardData() {
         const auxBoard = $('board').clone(true);
         auxBoard.find('.ghost').remove();
+
         this.board = auxBoard.html();
     }
 
@@ -75,23 +139,21 @@ class GameManager {
     updateCurrentDiscoveredElements() {
         const langData = LanguageManager.getData();
 
-        const commonTemplate = "<span style='color: var(--color-common)'>{common}</span>: <span style='color: var(--color-tooltip-description)'>{current}</span> / <span style='color: var(--color-common)'>{total}</span>"
+        const commonTextColor = spanTextColor(langData.common.discoveredElements.common, "var(--color-common)");
+        const commonCurrentColor = spanTextColor(this.elementsUnlocked.length, "var(--color-green-light)");
+        const commonTotalColor = spanTextColor(GameElements.getTotalElements(), "var(--color-common)");
 
-        const specialTemplate = "<span style='color: var(--color-special)'>{special}</span>: <span style='color: var(--color-tooltip-description)'>{current}</span> / <span style='color: var(--color-special)'>{total}</span>"
+        const specailTextColor = spanTextColor(langData.common.discoveredElements.special, "var(--color-special)");
+        const specialCurrentColor = spanTextColor(this.specialElementsUnlocked.length, "var(--color-green-light)");
+        const specialTotalColor = spanTextColor(GameElements.getTotalSpecialElements(), "var(--color-special)");
+
+        const commonTemplate = `${commonTextColor}: ${commonCurrentColor} / ${commonTotalColor}`;
+        const specialTemplate = `${specailTextColor}: ${specialCurrentColor} / ${specialTotalColor}`;
 
         const title = langData.common.discoveredElements.title;
-        const common = commonTemplate
-            .replace('{common}', langData.common.discoveredElements.common)
-            .replace('{current}', this.elementsUnlocked.length)
-            .replace('{total}', GameElements.getTotalElements());
-
-        const special = specialTemplate
-            .replace('{special}', langData.common.discoveredElements.special)
-            .replace('{current}', this.specialElementsUnlocked.length)
-            .replace('{total}', GameElements.getTotalSpecialElements());
 
         $('#unlocked-container > span').html(title);
-        $('#unlocked-elements').html(`${common}<br />${special}`);
+        $('#unlocked-elements').html(`${commonTemplate}<br />${specialTemplate}`);
     }
 
 
@@ -109,8 +171,15 @@ class GameManager {
 
     #loadCategories() {
         for (let i = 0; i < this.elementsUnlocked.length; i++) {
-            const elementId = this.elementsUnlocked[i];
-            GameCategories.addElementToCategory(elementId);
+            const elementUnlocked = this.elementsUnlocked[i];
+
+            const elementId = elementUnlocked.result;
+            const combination = {
+                element1: elementUnlocked.element1,
+                element2: elementUnlocked.element2,
+            }
+
+            GameCategories.addElementToCategory(elementId, { combination });
         }
     }
 
@@ -156,10 +225,18 @@ class GameManager {
                         this.unlockElement(newElement, element1, element2);
                         elementDOM.remove();
 
-                        GameCategories.addElementToCategory(newElement.id);
+                        const combination = {
+                            element1: element1.id,
+                            element2: element2.id
+                        }
+                        GameCategories.addElementToCategory(newElement.id, { combination: combination });
 
                         this.bindSidebarElementFromDragAndDrop(newElement);
-                        this.bindBoardElementFromDragAndDrop(newElement, { posX: position.posX, posY: position.posY });
+                        this.bindBoardElementFromDragAndDrop(newElement, {
+                            posX: position.posX,
+                            posY: position.posY,
+                            combination: combination
+                        });
 
                         this.saveGame();
                     } else {
@@ -193,10 +270,14 @@ class GameManager {
                     elementFromDOM.remove();
                     elementToDOM.remove();
 
-                    GameCategories.addElementToCategory(newElement.id);
+                    const combination = {
+                        element1: element1.id,
+                        element2: element2.id
+                    }
+                    GameCategories.addElementToCategory(newElement.id, { combination: combination });
 
                     this.bindSidebarElementFromDragAndDrop(newElement);
-                    this.bindBoardElementFromDragAndDrop(newElement, { posX: position.posX, posY: position.posY });
+                    this.bindBoardElementFromDragAndDrop(newElement, { posX: position.posX, posY: position.posY, combination: combination });
 
                     this.saveGame();
                 } else {
@@ -246,14 +327,17 @@ class GameManager {
         GameCombinationManager.unlockElement(newElement, element1, element2);
 
         const achievementByCount = this.achievements.getByReachDiscoveredElements(this.elementsUnlocked.length);
-        const achievementByElement = this.achievements.getByElementToUnlock(newElement.id);
+        const achievementByElement = this.achievements.getByElementToUnlock({ elementToUnlock: newElement.id, element1: element1.id, element2: element2.id });
 
         if (achievementByCount)
             this.achievements.unlock(achievementByCount.id);
 
-        if (achievementByElement)
+        if (achievementByElement) {
             this.achievements.unlock(achievementByElement.id);
 
+        }
+
+        this.#loadAchievements();
         this.updateCurrentDiscoveredElements();
     }
 
@@ -327,6 +411,9 @@ class GameManager {
         }).on('mousedown', function (e) {
             if (e.which === 1) {
                 audioManager.playClick();
+            } else if (e.which === 2) {
+                e.preventDefault();
+                gameManager.bindMiddleClick(elementDOM.parent());
             }
         }).on('contextmenu', function (e) {
             e.preventDefault();
@@ -372,6 +459,9 @@ class GameManager {
         }).on('mousedown', function (e) {
             if (e.which === 1) {
                 audioManager.playClick();
+            } else if (e.which === 2) {
+                e.preventDefault();
+                gameManager.bindMiddleClick(elementDOM);
             }
         }).on('contextmenu', function (e) {
             audioManager.playMiss();
@@ -382,13 +472,32 @@ class GameManager {
         });
     }
 
-    bindBoardElementFromDragAndDrop(element, { onBoard = true, posX = null, posY = null, shortcut = false } = {}) {
+    bindMiddleClick(elementDOM) {
+        const elementButtonDOM = elementDOM.find('.element-button');
+        const elementId = elementDOM.attr('data');
+        const attrCombination = elementButtonDOM.attr('combination');
+
+        if (attrCombination) {
+            const combination = String(attrCombination).split(";");
+
+            if (combination) {
+                const result = GameElements.getById(elementId);
+                const element1 = GameElements.getById(combination[0]);
+                const element2 = GameElements.getById(combination[1]);
+
+                GameLog.write(GameElements.getCombinationText(result, element1, element2));
+            }
+        }
+    }
+
+    bindBoardElementFromDragAndDrop(element, { onBoard = true, posX = null, posY = null, shortcut = false, combination } = {}) {
         const board = $('board');
         const elementTemplate = element.createElementDOM({
             onBoard: onBoard,
             posX: posX,
             posY: posY,
             shortcut: shortcut,
+            combination: combination,
         });
         board.append(elementTemplate);
         const elementDOM = GameElements.getDOM(element.uuid);

@@ -72,13 +72,13 @@ class GameCategories {
                         </div>`);
     }
 
-    static addElementToCategory(elementId) {
+    static addElementToCategory(elementId, { combination } = {}) {
         const element = GameElements.getById(elementId);
         const sidebar = $('#sidebar-elements');
         const categoryDOM = $(`#category-${element.category}`);
 
         if (categoryDOM.length > 0) {
-            categoryDOM.find('.category-content').append(element.createElementDOM({}));
+            categoryDOM.find('.category-content').append(element.createElementDOM({ combination }));
         } else {
             const category = this.getById(element.category);
 
@@ -90,7 +90,7 @@ class GameCategories {
                                     </div>
                                 </div>
                                 <div class="category-content">
-                                    ${element.createElementDOM({})}
+                                    ${element.createElementDOM({ combination: combination })}
                                 </div>
                             </div>`);
 
