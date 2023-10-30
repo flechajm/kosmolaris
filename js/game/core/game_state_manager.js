@@ -11,9 +11,9 @@ class GameStateManager {
     localStorage.setItem(GameInfo.storageName, JSON.stringify(gameManager).encrypt());
   }
 
-  static load() {
-    let gameManager = localStorage.getItem(GameInfo.storageName);
-    return gameManager ? new GameManager(JSON.parse(gameManager.decrypt())) : null;
+  static load(gameConfig) {
+    let jsonData = localStorage.getItem(GameInfo.storageName);
+    return jsonData ? new GameManager(JSON.parse(jsonData.decrypt())) : new GameManager({ config: gameConfig });
   }
 }
 

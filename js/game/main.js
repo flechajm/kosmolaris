@@ -11,7 +11,6 @@ import GameConfig from './core/game_config.js';
 import ImageLoader from '../libs/image_loader.js';
 import LanguageManager from "../libs/language_manager.js";
 import AudioManager from '../libs/audio_manager.js';
-import GameAchievements from './core/game_achievements.js';
 
 var gameManager;
 var audioManager;
@@ -20,11 +19,11 @@ let gameConfig;
 (async () => {
     gameConfig = GameConfig.load();
 
-    gameManager = GameStateManager.load() ?? new GameManager({ config: gameConfig });
+    gameManager = GameStateManager.load(gameConfig);
     audioManager = new AudioManager();
 
     await LanguageManager.setLanguage(gameConfig.lang);
-    const langData = await LanguageManager.getData();
+    const langData = LanguageManager.getData();
     const imageLoader = new ImageLoader();
     const loader = $('#loader');
 
