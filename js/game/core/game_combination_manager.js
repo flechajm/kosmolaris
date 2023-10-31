@@ -167,11 +167,11 @@ class GameCombinationManager {
 
     static fixDuplicatedElements() {
         this.#elementsUnlocked = this.#elementsUnlocked.filter((element, index) => {
-            return index === this.#elementsUnlocked.findIndex(e => element.id === e.id);
+            return index === this.#elementsUnlocked.findIndex(e => element.result === e.result);
         });
 
         this.#specialElementsUnlocked = this.#specialElementsUnlocked.filter((element, index) => {
-            return index === this.#specialElementsUnlocked.findIndex(e => element.id === e.id);
+            return index === this.#specialElementsUnlocked.findIndex(e => element.result === e.result);
         });
     }
 
