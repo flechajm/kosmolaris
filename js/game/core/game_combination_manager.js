@@ -180,13 +180,17 @@ class GameCombinationManager {
             return allElements.find((e) => e.id == element.result && e.isSpecial);
         });
 
-        this.#elementsUnlocked = this.#elementsUnlocked.filter((element) => {
-            return specialElementsInCommonList.find((e) => e.result != element.result);
-        });
+        if (specialElementsInCommonList.length > 0) {
+            this.#elementsUnlocked = this.#elementsUnlocked.filter((element) => {
+                return specialElementsInCommonList.find((e) => e.result != element.result);
+            });
 
-        for (let i = 0; i < specialElementsInCommonList.length; i++) {
-            const element = specialElementsInCommonList[i];
-            this.#specialElementsUnlocked.push(element);
+            for (let i = 0; i < specialElementsInCommonList.length; i++) {
+                const element = specialElementsInCommonList[i];
+                this.#specialElementsUnlocked.push(element);
+            }
+
+            console.log(this.#elementsUnlocked);
         }
     }
 
