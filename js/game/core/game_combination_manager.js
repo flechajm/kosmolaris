@@ -189,8 +189,6 @@ class GameCombinationManager {
                 const element = specialElementsInCommonList[i];
                 this.#specialElementsUnlocked.push(element);
             }
-
-            console.log(this.#elementsUnlocked);
         }
     }
 
