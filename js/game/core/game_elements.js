@@ -45,7 +45,7 @@ class GameElements {
     }
 
     static getTotalElements() {
-        return this.#elements.filter((e) => !e.isSpecial).length;
+        return this.#elements.filter((e) => !e.isSpecial).length - 4;
     }
 
     static getTotalSpecialElements() {

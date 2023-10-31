@@ -613,11 +613,6 @@
       "description": ""
     },
     {
-      "id": "plant",
-      "name": "Plant",
-      "description": ""
-    },
-    {
       "id": "soil",
       "name": "Organic<br />Soil",
       "description": ""
@@ -775,6 +770,11 @@
     {
       "id": "virus",
       "name": "Virus",
+      "description": ""
+    },
+    {
+      "id": "plant",
+      "name": "Plant",
       "description": ""
     }
   ],

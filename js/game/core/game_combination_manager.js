@@ -51,6 +51,7 @@ class GameCombinationManager {
             this.addCombination({ element1: 'energy', element2: 'heat', result: 'sun' });
 
             // Fiction
+            this.addCombination({ element1: 'baseball-bat', element2: 'barbed-wire', result: 'lucille' });
             this.addCombination({ element1: 'steel', element2: 'magic', result: 'valyrian-steel' });
             this.addCombination({ element1: 'wizard', element2: 'ray', result: 'harry-potter' });
             this.addCombination({ element1: 'zombie', element2: 'zombie', result: 'hord' });
@@ -74,6 +75,7 @@ class GameCombinationManager {
             this.addCombination({ element1: 'family', element2: 'family', result: 'population' });
             this.addCombination({ element1: 'energy', element2: 'water', result: 'life' });
             this.addCombination({ element1: 'bacterium', element2: 'death', result: 'virus' });
+            this.addCombination({ element1: 'water', element2: 'soil', result: 'plant' });
 
             // Gaseous
             this.addCombination({ element1: 'fire', element2: 'steam', result: 'gas' });
@@ -129,7 +131,6 @@ class GameCombinationManager {
             this.addCombination({ element1: 'rain', element2: 'cold', result: 'snow' });
             this.addCombination({ element1: 'disease', element2: 'population', result: 'pandemic' });
             this.addCombination({ element1: 'earth', element2: 'water', result: 'soil' });
-            this.addCombination({ element1: 'water', element2: 'soil', result: 'plant' });
             this.addCombination({ element1: 'sand', element2: 'sea', result: 'beach' });
             this.addCombination({ element1: 'rain', element2: 'electricity', result: 'ray' });
             this.addCombination({ element1: 'earth', element2: 'energy', result: 'earthquake' });
@@ -140,7 +141,6 @@ class GameCombinationManager {
             this.addCombination({ element1: 'magma', element2: 'mountain', result: 'volcano' });
 
             // Objects
-            this.addCombination({ element1: 'baseball-bat', element2: 'barbed-wire', result: 'lucille' });
             this.addCombination({ element1: 'stick', element2: 'stick', result: 'baseball-bat' });
             this.addCombination({ element1: 'metal', element2: 'workbench', result: 'blade' });
             this.addCombination({ element1: 'wood', element2: 'metal', result: 'workbench' });
@@ -166,7 +166,23 @@ class GameCombinationManager {
         this.#combinations.push(combination);
     }
 
+    static #fixScienceElement() {
+        const scienceToFix = this.#elementsUnlocked.find((element) => element.result === 'cience');
+
+        if (scienceToFix) {
+            const scienceFixed = this.#combinations.find((element) => element.result === 'science');
+            this.#elementsUnlocked.pop(scienceToFix);
+            this.#elementsUnlocked.push({
+                element1: scienceFixed.element1,
+                element2: scienceFixed.element2,
+                result: scienceFixed.result,
+            });
+        }
+    }
+
     static fixDuplicatedElements() {
+        this.#fixScienceElement();
+
         this.#elementsUnlocked = this.#elementsUnlocked.filter((element, index) => {
             return index === this.#elementsUnlocked.findIndex(e => element.result === e.result);
         });

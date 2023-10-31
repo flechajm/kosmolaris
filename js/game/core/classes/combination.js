@@ -9,8 +9,6 @@ class Combination {
         this.element1 = element1;
         this.element2 = element2;
         this.result = result;
-        this.isSpecial = isSpecial ?? false;
-        this.ignoreForCount = ignoreForCount ?? false;
     }
 }
 
