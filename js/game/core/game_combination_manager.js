@@ -3,6 +3,7 @@ import Combination from "./classes/combination.js";
 import GameLog from "./game_log.js";
 
 import LanguageManager from "../../libs/language_manager.js";
+import GameElements from "./game_elements.js";
 
 class GameCombinationManager {
     static #combinations = [];
@@ -173,6 +174,16 @@ class GameCombinationManager {
         this.#specialElementsUnlocked = this.#specialElementsUnlocked.filter((element, index) => {
             return index === this.#specialElementsUnlocked.findIndex(e => element.result === e.result);
         });
+
+        const allElements = GameElements.getAll();
+        const specialElementsInCommonList = this.#elementsUnlocked.filter((element) => {
+            return allElements.find((e) => e.id == element.result && e.isSpecial);
+        });
+
+        for (let i = 0; i < specialElementsInCommonList.length; i++) {
+            const element = specialElementsInCommonList[i];
+            this.#specialElementsUnlocked.push(element);
+        }
     }
 
     static checkExists(elementId) {
