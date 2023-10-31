@@ -59,7 +59,7 @@ class Element {
                     class="element-wrapper${classOnBoard}${classGhost}${classShortcut}"
                     ${position}
                 >
-                    <div class="element-button color shadow" ${styleColor} ${attrCombination} draggable="true" >
+                    <div class="element-button color shadow" ${styleColor} ${attrCombination}>
                         <!-- <div class="element-image"></div>-->
                         <span>${this.name}</span>
                     </div>

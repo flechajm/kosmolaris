@@ -416,6 +416,7 @@ tooltip {
 
   .board-container {
     display: flex;
+    flex-direction: column;
     position: relative;
     flex: 4;
 
@@ -435,12 +436,13 @@ tooltip {
       display: flex;
       padding: 1em;
       position: relative;
+      height: 100%;
     }
 
     #log {
       user-select: text;
       display: flex;
-      position: absolute;
+      position: relative;
       bottom: 0;
       left: 0;
       right: 0;
@@ -451,8 +453,8 @@ tooltip {
 
       .text {
         width: 100%;
-        margin: 10px;
         padding: 10px;
+        margin: 10px 10px 0 10px;
         overflow-y: scroll;
         overflow-x: hidden;
 
@@ -621,7 +623,6 @@ tooltip {
         gap: 3px;
         margin: 0.3em;
         padding: 0.8em 0.3em 0.7em 0.3em;
-        max-height: 320px;
 
         &::-webkit-scrollbar {
           -webkit-appearance: none;
@@ -648,6 +649,11 @@ tooltip {
     font-family: var(--font-primary);
     font-size: 0.9rem;
     font-weight: bold;
+    border-radius: 50%;
+
+    &.glow {
+      animation: glowing 1.3s infinite ease-in-out;
+    }
 
     &.hidden {
       display: none;
@@ -656,6 +662,7 @@ tooltip {
     &.ghost {
       pointer-events: none;
       opacity: 0.6;
+      z-index: 1 !important;
     }
 
     &.on-board {
@@ -669,6 +676,15 @@ tooltip {
     span {
       font-size: 0.8em;
       // margin-top: 0.3em; //TODO: Agregar cuando tenga las imágenes.
+    }
+
+    &:hover {
+      transform: scale(1.08);
+      transition: transform 50ms ease-in;
+    }
+
+    &:active {
+      cursor: grabbing;
     }
 
     .element-button {
@@ -688,17 +704,8 @@ tooltip {
       background-blend-mode: luminosity;
       border-style: solid;
 
-      &:hover {
-        transition: transform 50ms ease-in;
-        transform: scale(1.08);
-      }
-
       &.shadow {
         box-shadow: 0px 0px 10px var(--dark);
-      }
-
-      &:active {
-        cursor: grabbing;
       }
 
       .element-image {
@@ -1097,7 +1104,7 @@ tooltip {
 
 .achievement {
   display: flex;
-  cursor: default;
+  cursor: pointer;
   user-select: none;
   flex-direction: row;
   justify-content: start;

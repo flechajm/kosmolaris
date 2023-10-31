@@ -28,6 +28,9 @@ class GameAchievements {
             GameLog.write(achievementConsoleDOM);
 
             this.unlockeds.push(achievement.id);
+            $('#log').find('.achievement').click(function () {
+                $('#btn-achievements').click();
+            });
 
             this.addAchievementToWindow(achievement);
         }

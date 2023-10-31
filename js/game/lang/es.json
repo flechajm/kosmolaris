@@ -277,8 +277,23 @@
       "description": ""
     },
     {
-      "id": "cience",
+      "id": "science",
       "name": "Ciencia",
+      "description": ""
+    },
+    {
+      "id": "space",
+      "name": "Espacio",
+      "description": ""
+    },
+    {
+      "id": "jupiter",
+      "name": "Júpiter",
+      "description": ""
+    },
+    {
+      "id": "neptune",
+      "name": "Neptuno",
       "description": ""
     },
     {

@@ -27,6 +27,22 @@ class GameInfo {
    */
   static changelog = [
     {
+      "version": "1.0.2",
+      "date": new Date(2023, 9, 30),
+      "changelog": {
+        "es": [
+          "NEW: Se rediseñó el sistema de drag and drop.",
+          "NEW: Se agregaron 3 nuevos elementos (de 105 a 108).",
+          "FIX: Se corrigió un error al validar la existencia de elementos especiales.",
+        ],
+        "en": [
+          "NEW: Drag and drop system was reworked for better QoL.",
+          "NEW: Added 3 new elements (from 105 a 108).",
+          "FIX: Fixed a bug when validating the existence of special items.",
+        ],
+      }
+    },
+    {
       "version": "1.0.1",
       "date": new Date(2023, 9, 29),
       "changelog": {

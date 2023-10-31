@@ -327,6 +327,9 @@ function setupWindowHelp(langData) {
 
 function initialConfig(langData) {
     const minutesIntervalBackground = (4 * 60) * 1000;
+    $('html').on('contextmenu', function (e) {
+        e.preventDefault();
+    });
 
     welcome(langData);
     setTooltips(langData);

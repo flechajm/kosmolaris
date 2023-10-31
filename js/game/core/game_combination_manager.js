@@ -28,23 +28,26 @@ class GameCombinationManager {
             this.addCombination({ element1: 'tree', element2: 'sun', result: 'oxygen' });
             this.addCombination({ element1: 'air', element2: 'earth', result: 'pressure' });
             this.addCombination({ element1: 'sand', element2: 'glass', result: 'time' });
-            this.addCombination({ element1: 'monkey', element2: 'workbench', result: 'cience' });
+            this.addCombination({ element1: 'monkey', element2: 'workbench', result: 'science' });
 
             // Space
             this.addCombination({ element1: 'gas', element2: 'pressure', result: 'star' });
-            this.addCombination({ element1: 'planet', element2: 'planet', result: 'solar-system' });
             this.addCombination({ element1: 'solar-system', element2: 'nebula', result: 'milky-way' });
             this.addCombination({ element1: 'milky-way', element2: 'milky-way', result: 'galaxy' });
             this.addCombination({ element1: 'galaxy', element2: 'explosion', result: 'universe' });
-            this.addCombination({ element1: 'planet', element2: 'fire', result: 'mercury' });
             this.addCombination({ element1: 'star', element2: 'explosion', result: 'nebula' });
-            this.addCombination({ element1: 'continent', element2: 'continent', result: 'planet' });
+            this.addCombination({ element1: 'space', element2: 'stone', result: 'planet' });
+            this.addCombination({ element1: 'sky', element2: 'sky', result: 'space' });
+            this.addCombination({ element1: 'planet', element2: 'sun', result: 'solar-system' });
+            this.addCombination({ element1: 'planet', element2: 'gas', result: 'jupiter' });
+            this.addCombination({ element1: 'planet', element2: 'cold', result: 'neptune' });
+            this.addCombination({ element1: 'planet', element2: 'explosion', result: 'moon' });
+            this.addCombination({ element1: 'planet', element2: 'fire', result: 'mercury' });
             this.addCombination({ element1: 'planet', element2: 'oxygen', result: 'planet-earth' });
             this.addCombination({ element1: 'planet', element2: 'love', result: 'venus' });
+            this.addCombination({ element1: 'planet', element2: 'ice', result: 'uranus' });
             this.addCombination({ element1: 'star', element2: 'heat', result: 'sun' });
             this.addCombination({ element1: 'energy', element2: 'heat', result: 'sun' });
-            this.addCombination({ element1: 'planet', element2: 'ice', result: 'uranus' });
-            this.addCombination({ element1: 'solar-system', element2: 'stone', result: 'moon' });
 
             // Fiction
             this.addCombination({ element1: 'steel', element2: 'magic', result: 'valyrian-steel' });
@@ -112,7 +115,7 @@ class GameCombinationManager {
             // Natural
             this.addCombination({ element1: 'star', element2: 'sky', result: 'night' });
             this.addCombination({ element1: 'air', element2: 'air', result: 'sky' });
-            this.addCombination({ element1: 'land', element2: 'land', result: 'continent' });
+            this.addCombination({ element1: 'land', element2: 'ocean', result: 'continent' });
             this.addCombination({ element1: 'pandemic', element2: 'world', result: 'covid' });
             this.addCombination({ element1: 'energy', element2: 'energy', result: 'electricity' });
             this.addCombination({ element1: 'virus', element2: 'human', result: 'disease' });
@@ -162,8 +165,19 @@ class GameCombinationManager {
         this.#combinations.push(combination);
     }
 
+    static fixDuplicatedElements() {
+        this.#elementsUnlocked = this.#elementsUnlocked.filter((element, index) => {
+            return index === this.#elementsUnlocked.findIndex(e => element.id === e.id);
+        });
+
+        this.#specialElementsUnlocked = this.#specialElementsUnlocked.filter((element, index) => {
+            return index === this.#specialElementsUnlocked.findIndex(e => element.id === e.id);
+        });
+    }
+
     static checkExists(elementId) {
-        return (this.#elementsUnlocked.some((e) => e.result == elementId) || this.#specialElementsUnlocked.includes((e) => e.result == elementId));
+        return (this.#elementsUnlocked.some((e) => e.result == elementId) ||
+            this.#specialElementsUnlocked.some((e) => e.result == elementId));
     }
 
     static unlockElement(elementUnlocked, element1, element2) {
@@ -177,7 +191,7 @@ class GameCombinationManager {
 
             const langData = LanguageManager.getData();
             const emoji = elementUnlocked.isSpecial ? '🍭' : '✨';
-            const special = elementUnlocked.isSpecial ? spanTextColor(langData.console.specialElement, "var(--color-special)") : '';
+            const special = elementUnlocked.isSpecial ? ` ${spanTextColor(langData.console.specialElement, "var(--color-special)")}` : '';
 
             GameLog.write(langData.console.newElement
                 .replace('{emoji}', emoji)

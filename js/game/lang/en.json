@@ -94,7 +94,7 @@
     "version": "Version: {version} ({date})",
     "lastUpdate": "Updated: {date}",
     "saveProgress": "Progress saved",
-    "specialElement": "especial",
+    "specialElement": "special",
     "newElement": "{emoji} You have discovered a new{special} element combining {element1} and {element2} ➜ {result}!",
     "combinationInfo": "🧪 {result} ➜ {element1} + {element2}.",
     "achievementUnlocked": "Achievement unlocked!"
@@ -198,7 +198,7 @@
     {
       "id": 20,
       "title": "Don't be so cruel...",
-      "description": "Discover Cience using a Monkey."
+      "description": "Discover Science using a Monkey."
     }
   ],
   "elements": [
@@ -278,8 +278,23 @@
       "description": ""
     },
     {
-      "id": "cience",
-      "name": "Ciencia",
+      "id": "science",
+      "name": "Science",
+      "description": ""
+    },
+    {
+      "id": "space",
+      "name": "Space",
+      "description": ""
+    },
+    {
+      "id": "jupiter",
+      "name": "Jupiter",
+      "description": ""
+    },
+    {
+      "id": "neptune",
+      "name": "Neptune",
       "description": ""
     },
     {

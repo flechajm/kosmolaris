@@ -130,7 +130,7 @@ class DbAchievements {
             // Don't be cruel
             new Achievement({
                 id: 20,
-                elementToUnlock: 'cience',
+                elementToUnlock: 'science',
                 elementRequired: 'monkey',
             }),
         ];

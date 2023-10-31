@@ -340,6 +340,7 @@ tooltip.item {
 }
 #game .board-container {
   display: flex;
+  flex-direction: column;
   position: relative;
   flex: 4;
 }
@@ -358,13 +359,14 @@ tooltip.item {
   display: flex;
   padding: 1em;
   position: relative;
+  height: 100%;
 }
 #game .board-container #log {
   -webkit-user-select: text;
      -moz-user-select: text;
           user-select: text;
   display: flex;
-  position: absolute;
+  position: relative;
   bottom: 0;
   left: 0;
   right: 0;
@@ -375,8 +377,8 @@ tooltip.item {
 }
 #game .board-container #log .text {
   width: 100%;
-  margin: 10px;
   padding: 10px;
+  margin: 10px 10px 0 10px;
   overflow-y: scroll;
   overflow-x: hidden;
   font-family: var(--font-primary);
@@ -521,7 +523,6 @@ tooltip.item {
   gap: 3px;
   margin: 0.3em;
   padding: 0.8em 0.3em 0.7em 0.3em;
-  max-height: 320px;
 }
 #game sidebar div.category div.category-content::-webkit-scrollbar {
   -webkit-appearance: none;
@@ -542,6 +543,10 @@ tooltip.item {
   font-family: var(--font-primary);
   font-size: 0.9rem;
   font-weight: bold;
+  border-radius: 50%;
+}
+#game .element-wrapper.glow {
+  animation: glowing 1.3s infinite ease-in-out;
 }
 #game .element-wrapper.hidden {
   display: none;
@@ -549,6 +554,7 @@ tooltip.item {
 #game .element-wrapper.ghost {
   pointer-events: none;
   opacity: 0.6;
+  z-index: 1 !important;
 }
 #game .element-wrapper.on-board {
   position: absolute;
@@ -558,6 +564,13 @@ tooltip.item {
 }
 #game .element-wrapper span {
   font-size: 0.8em;
+}
+#game .element-wrapper:hover {
+  transform: scale(1.08);
+  transition: transform 50ms ease-in;
+}
+#game .element-wrapper:active {
+  cursor: grabbing;
 }
 #game .element-wrapper .element-button {
   cursor: grab;
@@ -575,15 +588,8 @@ tooltip.item {
   background-blend-mode: luminosity;
   border-style: solid;
 }
-#game .element-wrapper .element-button:hover {
-  transition: transform 50ms ease-in;
-  transform: scale(1.08);
-}
 #game .element-wrapper .element-button.shadow {
   box-shadow: 0px 0px 10px var(--dark);
-}
-#game .element-wrapper .element-button:active {
-  cursor: grabbing;
 }
 #game .element-wrapper .element-button .element-image {
   background-position: center;
@@ -897,7 +903,7 @@ tooltip.item {
 
 .achievement {
   display: flex;
-  cursor: default;
+  cursor: pointer;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;

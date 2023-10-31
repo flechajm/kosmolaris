@@ -117,9 +117,9 @@ class DbElements {
                 category: 2,
             }),
 
-            // Cience
+            // Science
             new Element({
-                id: 'cience',
+                id: 'science',
                 color: '#8fa2ff',
                 category: 2,
             }),
@@ -127,6 +127,27 @@ class DbElements {
             // ============================
             // SPACE
             // ============================
+
+            // Space
+            new Element({
+                id: 'space',
+                color: '#2a375a',
+                category: 3,
+            }),
+
+            // Jupiter
+            new Element({
+                id: 'jupiter',
+                color: '#212a58',
+                category: 3,
+            }),
+
+            // Neptune
+            new Element({
+                id: 'neptune',
+                color: '#daa88b',
+                category: 3,
+            }),
 
             // Moon
             new Element({
