@@ -15,6 +15,7 @@ import AudioManager from '../libs/audio_manager.js';
 var gameManager;
 var audioManager;
 let gameConfig;
+let imageLoader;
 
 (async () => {
     gameConfig = GameConfig.load();
@@ -24,7 +25,8 @@ let gameConfig;
 
     await LanguageManager.setLanguage(gameConfig.lang);
     const langData = LanguageManager.getData();
-    const imageLoader = new ImageLoader();
+
+    imageLoader = new ImageLoader();
     const loader = $('#loader');
 
     loader.find('span').html(langData.common.loading.replace('{percent}', 0));
@@ -62,7 +64,9 @@ function welcome(langData) {
 
 function setBackground() {
     let number = randomBetween(1, 17);
-    $(".background").css("background-image", "url('img/bg/bg" + number + ".jpg')");
+    let src = imageLoader.getPreloadedBackgrounds()[number].src;
+
+    $(".background").css("background-image", `url(${src})`);
 }
 
 function setTooltips(langData) {
@@ -79,6 +83,12 @@ function setupButtons(langData) {
     const windowAchievementsDOM = $('#window-achievements');
     const windowHelpDOM = $('#window-help');
     const windowChangelogDOM = $('#window-changelog');
+
+    $('.button').on('mouseenter', function () {
+        audioManager.playMouseHover();
+    }).on('mouseup', function () {
+        audioManager.playClick();
+    });
 
     $('#btn-clear').click(function () {
         const boardElements = $('board').children();
@@ -170,7 +180,9 @@ function setupButtons(langData) {
 
     $('.close-x').click(function () {
         $(this).parent().parent().fadeOut();
-    });
+    }).on('mouseup', function () {
+        audioManager.playClick();
+    });;
 
     $("#volume-control").bind("input", function (e) {
         gameConfig.bgmVolume = e.currentTarget.value;
@@ -350,6 +362,8 @@ function initialConfig(langData) {
     GameCategories.create();
 
     gameManager.init();
+
+    $('#game').css('display', 'flex');
 
     if (gameConfig.showWelcome) {
         gameConfig.showWelcome = false;

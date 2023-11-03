@@ -4,6 +4,7 @@ class ImageLoader {
     #totalImages = 0;
     #loadedImages = 0;
     #loaderDOM;
+    #preloadedBackgrounds = [];
 
     #backgroundImages = {
         path: "img/bg/",
@@ -77,6 +78,7 @@ class ImageLoader {
                 this.#loadedImages += 1;
                 const percent = ((100 * this.#loadedImages) / this.#totalImages).toFixed(0);
                 this.#loaderDOM.html(langData.common.loading.replace('{percent}', percent));
+
                 resolve(img);
             };
             img.onerror = e => reject(e);
@@ -91,13 +93,18 @@ class ImageLoader {
             if (arrayImages.count !== undefined) {
                 for (let index = 1; index <= arrayImages.count; index++) {
                     fileName = `${path}${image.replace('{index}', index)}`;
-                    await this.#loadImage(fileName);
+                    const bgImage = await this.#loadImage(fileName);
+                    this.#preloadedBackgrounds.push(bgImage);
                 }
             } else {
                 fileName = `${path}${image}`;
                 await this.#loadImage(fileName);
             }
         };
+    }
+
+    getPreloadedBackgrounds() {
+        return this.#preloadedBackgrounds;
     }
 }
 

@@ -27,6 +27,24 @@ class GameInfo {
    */
   static changelog = [
     {
+      "version": "1.0.3",
+      "date": new Date(2023, 10, 3),
+      "changelog": {
+        "es": [
+          "¡Nuevo dominio: <a href='https://kosmolaris.com' target='_blank'>https://kosmolaris.com</a> 🤩!",
+          "NEW: Se añadieron efectos de sonido a los botones de la UI.",
+          "FIX: Se mejoró la animación de <i>glowing</i> cuando se superponen los elementos.",
+          "FIX: Se corrigió un error en el cuál los fondos no se precargaban correctamente.",
+        ],
+        "en": [
+          "¡New domain: <a href='https://kosmolaris.com' target='_blank'>https://kosmolaris.com</a> 🤩!",
+          "NEW: Added SFX to the UI's buttons.",
+          "FIX: Improved the <i>glowing</i> animation when elements overlap.",
+          "FIX: Fixed a bug where background images were not preload correctly."
+        ],
+      }
+    },
+    {
       "version": "1.0.2",
       "date": new Date(2023, 9, 30),
       "changelog": {
@@ -132,7 +150,7 @@ class GameInfo {
         break;
 
       case "FIX":
-        color = "var(--color-negative)";
+        color = "var(--color-fix)";
         break;
 
       default:

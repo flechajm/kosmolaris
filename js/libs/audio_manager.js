@@ -60,10 +60,12 @@ class AudioManager {
      */
     play(sound, volume) {
         const audioManager = this;
+        volume = volume < 0 ? 0 : audioManager.getSFXVolume();
+
         this.#sfx = new Howl({
             src: [`audio/sfx/${sound}.ogg`],
             preload: true,
-            volume: volume ?? audioManager.getSFXVolume(),
+            volume: volume,
         });
 
         this.#sfx.play();

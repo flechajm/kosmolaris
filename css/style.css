@@ -14,6 +14,7 @@
   --color-secondary: #6e583c;
   --color-gold: #ffcc33;
   --color-negative: #ff4949;
+  --color-fix: #32cd32;
   --color-bg-category: #160f16;
   --color-air: #b8a4c4;
   --color-fire: crimson;
@@ -55,6 +56,13 @@ ul {
 
 li {
   margin-bottom: 1.3em;
+}
+
+a {
+  color: white;
+}
+a:hover {
+  color: wheat;
 }
 
 select {
@@ -115,10 +123,6 @@ footer {
 }
 footer a {
   padding-left: 3px;
-  color: white;
-}
-footer a:hover {
-  color: wheat;
 }
 footer div {
   display: flex;
@@ -332,7 +336,7 @@ tooltip.item {
 }
 
 #game {
-  display: flex;
+  display: none;
   height: calc(100% - 25px);
 }
 #game.invisible {
@@ -534,6 +538,7 @@ tooltip.item {
   border-radius: 16px;
 }
 #game .element-wrapper {
+  cursor: grab;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -545,8 +550,12 @@ tooltip.item {
   font-weight: bold;
   border-radius: 50%;
 }
+#game .element-wrapper.ui-draggable-dragging {
+  cursor: grabbing;
+}
 #game .element-wrapper.glow {
   animation: glowing 1.3s infinite ease-in-out;
+  animation-delay: -500ms;
 }
 #game .element-wrapper.hidden {
   display: none;
@@ -569,11 +578,7 @@ tooltip.item {
   transform: scale(1.08);
   transition: transform 50ms ease-in;
 }
-#game .element-wrapper:active {
-  cursor: grabbing;
-}
 #game .element-wrapper .element-button {
-  cursor: grab;
   width: 80px;
   height: 80px;
   display: flex;

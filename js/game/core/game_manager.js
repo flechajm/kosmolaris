@@ -449,6 +449,9 @@ class GameManager {
                 elementClone.css('transform', 'scale(1)');
                 gameManager.#dragData = { from: 'sidebar' };
             },
+            stop: function () {
+                $(this).removeClass('ui-draggable-dragging');
+            }
         });
 
         this.bindDefault({
@@ -483,13 +486,18 @@ class GameManager {
             gameManager.saveGame();
         }).on('mousedown', function (e) {
             if (e.which === 1) {
+                $(this).addClass('ui-draggable-dragging');
                 audioManager.playClick();
-            } else if (e.which === 2) {
+            }
+        }).on('mouseup', function (e) {
+            if (e.which === 2) {
                 e.preventDefault();
                 gameManager.bindMiddleClick({
                     elementId: elementId,
                     combination: combination,
                 });
+            } else if (e.which === 1) {
+                $(this).removeClass('ui-draggable-dragging');
             }
         }).on('contextmenu', function (e) {
             if (!isSidebarElement) {
