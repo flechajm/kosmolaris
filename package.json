@@ -1,0 +1,5 @@
+{
+  "devDependencies": {
+    "netlify-plugin-js-obfuscator": "^1.0.21"
+  }
+}
