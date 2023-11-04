@@ -18,6 +18,7 @@ let gameConfig;
 let imageLoader;
 
 (async () => {
+    console.log("test splt");
     gameConfig = GameConfig.load();
 
     gameManager = GameStateManager.load(gameConfig);
