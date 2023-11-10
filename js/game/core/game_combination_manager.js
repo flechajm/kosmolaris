@@ -275,13 +275,11 @@ class GameCombinationManager {
             this.addCombination({ element1: 'engine', element2: 'space', result: 'spaceship' });
             this.addCombination({ element1: 'engine', element2: 'oceanic-trench', result: 'submarine' });
 
-            this.debugTable();
-
             resolve();
         });
     }
 
-    static debugTable() {
+    static debugTableElements() {
         this.#combinations = this.#combinations.sort((a, b) => a.result.category - b.result.category);
         const table = [];
 

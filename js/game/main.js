@@ -361,6 +361,10 @@ async function initialConfig(langData) {
         specialElementsUnlocked: gameManager.specialElementsUnlocked
     });
 
+    if (gameConfig.debugMode) {
+        GameCombinationManager.debugTableElements();
+    }
+
     gameManager.init();
 
     $('#game').css('display', 'flex');

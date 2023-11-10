@@ -24,7 +24,6 @@ class GameElements {
 
         for (let i = 0; i < this.#elements.length; i++) {
             const element = this.#elements[i];
-            console.log(element);
             const elementInfo = langData.elements.find((b) => b.id == element.id);
 
             element.name = elementInfo.name;
