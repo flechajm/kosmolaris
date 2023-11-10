@@ -199,6 +199,36 @@
       "id": 20,
       "title": "Don't be so cruel...",
       "description": "Discover Science using a Monkey."
+    },
+    {
+      "id": 21,
+      "title": "Immortal Dragon",
+      "description": "Discover Bruce Lee."
+    },
+    {
+      "id": 22,
+      "title": "I am fearless, and therefore powerful",
+      "description": "Discover Frankenstein."
+    },
+    {
+      "id": 23,
+      "title": "Bubba Sawyer",
+      "description": "Discover Leatherface."
+    },
+    {
+      "id": 24,
+      "title": "The Kosmolaris Chainsaw Massacre",
+      "description": "Discover Beef and Pork using Leatherface."
+    },
+    {
+      "id": 25,
+      "title": "One giant leap for mankind",
+      "description": "Discover the spaceshift Apollo 11."
+    },
+    {
+      "id": 26,
+      "title": "After 73 seconds...",
+      "description": "Discover the spaceshift Challenger."
     }
   ],
   "elements": [
@@ -753,6 +783,11 @@
       "description": ""
     },
     {
+      "id": "domestic-animal",
+      "name": "Domestic<br />Animal",
+      "description": ""
+    },
+    {
       "id": "world",
       "name": "World",
       "description": ""
@@ -775,6 +810,506 @@
     {
       "id": "plant",
       "name": "Plant",
+      "description": ""
+    },
+    {
+      "id": "wool",
+      "name": "Wool",
+      "description": ""
+    },
+    {
+      "id": "thread",
+      "name": "Thread",
+      "description": ""
+    },
+    {
+      "id": "rope",
+      "name": "Rope",
+      "description": ""
+    },
+    {
+      "id": "scissors",
+      "name": "Scissors",
+      "description": ""
+    },
+    {
+      "id": "chain",
+      "name": "Chain",
+      "description": ""
+    },
+    {
+      "id": "nunchaku",
+      "name": "Nunchaku",
+      "description": ""
+    },
+    {
+      "id": "sheep",
+      "name": "Sheep",
+      "description": ""
+    },
+    {
+      "id": "swordsman",
+      "name": "Swordsman",
+      "description": ""
+    },
+    {
+      "id": "samurai",
+      "name": "Samurai",
+      "description": ""
+    },
+    {
+      "id": "bruce-lee",
+      "name": "Bruce Lee",
+      "description": ""
+    },
+    {
+      "id": "skeleton",
+      "name": "Skeleton",
+      "description": ""
+    },
+    {
+      "id": "bone",
+      "name": "Bone",
+      "description": ""
+    },
+    {
+      "id": "dog",
+      "name": "Dog",
+      "description": ""
+    },
+    {
+      "id": "wolf",
+      "name": "Wolf",
+      "description": ""
+    },
+    {
+      "id": "werewolf",
+      "name": "Werewolf",
+      "description": ""
+    },
+    {
+      "id": "monster",
+      "name": "Monster",
+      "description": ""
+    },
+    {
+      "id": "frankenstein",
+      "name": "Frankenstein",
+      "description": ""
+    },
+    {
+      "id": "direwolf",
+      "name": "Direwolf",
+      "description": ""
+    },
+    {
+      "id": "egg",
+      "name": "Egg",
+      "description": ""
+    },
+    {
+      "id": "bird",
+      "name": "Bird",
+      "description": ""
+    },
+    {
+      "id": "phoenix",
+      "name": "Phoenix",
+      "description": ""
+    },
+    {
+      "id": "dinosaur",
+      "name": "Dinosaur",
+      "description": ""
+    },
+    {
+      "id": "turtle",
+      "name": "Turtle",
+      "description": ""
+    },
+    {
+      "id": "nest",
+      "name": "Nest",
+      "description": ""
+    },
+    {
+      "id": "larva",
+      "name": "Larva",
+      "description": ""
+    },
+    {
+      "id": "fly",
+      "name": "Fly",
+      "description": ""
+    },
+    {
+      "id": "fish",
+      "name": "Fish",
+      "description": ""
+    },
+    {
+      "id": "big-fish",
+      "name": "Big Fish",
+      "description": ""
+    },
+    {
+      "id": "shark",
+      "name": "Shark",
+      "description": ""
+    },
+    {
+      "id": "fountain",
+      "name": "Fountain",
+      "description": ""
+    },
+    {
+      "id": "whale",
+      "name": "Whale",
+      "description": ""
+    },
+    {
+      "id": "orca",
+      "name": "Orca",
+      "description": ""
+    },
+    {
+      "id": "swordfish",
+      "name": "Swordfish",
+      "description": ""
+    },
+    {
+      "id": "hammer",
+      "name": "Hammer",
+      "description": ""
+    },
+    {
+      "id": "hammerhead-shark",
+      "name": "Hammer-<br />head Shark",
+      "description": ""
+    },
+    {
+      "id": "hydrogen",
+      "name": "Hydrogen",
+      "description": ""
+    },
+    {
+      "id": "sulphur",
+      "name": "Sulphur",
+      "description": ""
+    },
+    {
+      "id": "acid",
+      "name": "Acid",
+      "description": ""
+    },
+    {
+      "id": "sulphuric-acid",
+      "name": "Sulphuric<br />Acid",
+      "description": ""
+    },
+    {
+      "id": "acid-rain",
+      "name": "Acid Rain",
+      "description": ""
+    },
+    {
+      "id": "field",
+      "name": "Field",
+      "description": ""
+    },
+    {
+      "id": "farm",
+      "name": "Farm",
+      "description": ""
+    },
+    {
+      "id": "farmer",
+      "name": "Farmer",
+      "description": ""
+    },
+    {
+      "id": "livestock",
+      "name": "Livestock",
+      "description": ""
+    },
+    {
+      "id": "grass",
+      "name": "Grass",
+      "description": ""
+    },
+    {
+      "id": "cow",
+      "name": "Cow",
+      "description": ""
+    },
+    {
+      "id": "milk",
+      "name": "Milk",
+      "description": ""
+    },
+    {
+      "id": "poultry",
+      "name": "Poultry",
+      "description": ""
+    },
+    {
+      "id": "chicken",
+      "name": "Chicken",
+      "description": ""
+    },
+    {
+      "id": "wheat",
+      "name": "Wheat",
+      "description": ""
+    },
+    {
+      "id": "carpenter",
+      "name": "Carpenter",
+      "description": ""
+    },
+    {
+      "id": "wheel",
+      "name": "Wheel",
+      "description": ""
+    },
+    {
+      "id": "windmill",
+      "name": "Windmill",
+      "description": ""
+    },
+    {
+      "id": "flour",
+      "name": "Flour",
+      "description": ""
+    },
+    {
+      "id": "dough",
+      "name": "Dough",
+      "description": ""
+    },
+    {
+      "id": "baker",
+      "name": "Baker",
+      "description": ""
+    },
+    {
+      "id": "bread",
+      "name": "Bread",
+      "description": ""
+    },
+    {
+      "id": "batter",
+      "name": "Batter",
+      "description": ""
+    },
+    {
+      "id": "cheese",
+      "name": "Cheese",
+      "description": ""
+    },
+    {
+      "id": "blue-cheese",
+      "name": "Blue<br />Cheese",
+      "description": ""
+    },
+    {
+      "id": "dust",
+      "name": "Dust",
+      "description": ""
+    },
+    {
+      "id": "dirt",
+      "name": "Dirt",
+      "description": ""
+    },
+    {
+      "id": "mud",
+      "name": "Mud",
+      "description": ""
+    },
+    {
+      "id": "pig",
+      "name": "Pig",
+      "description": ""
+    },
+    {
+      "id": "beef",
+      "name": "Beef",
+      "description": ""
+    },
+    {
+      "id": "pork",
+      "name": "Pork",
+      "description": ""
+    },
+    {
+      "id": "butcher",
+      "name": "Butcher",
+      "description": ""
+    },
+    {
+      "id": "scientist",
+      "name": "Scientist",
+      "description": ""
+    },
+    {
+      "id": "saw",
+      "name": "Saw",
+      "description": ""
+    },
+    {
+      "id": "asteroid",
+      "name": "Asteroid",
+      "description": ""
+    },
+    {
+      "id": "fossil",
+      "name": "Fossil",
+      "description": ""
+    },
+    {
+      "id": "petroleum",
+      "name": "Petroleum",
+      "description": ""
+    },
+    {
+      "id": "gasoline",
+      "name": "Gasoline",
+      "description": ""
+    },
+    {
+      "id": "combustion",
+      "name": "Combustion",
+      "description": ""
+    },
+    {
+      "id": "engine",
+      "name": "Engine",
+      "description": ""
+    },
+    {
+      "id": "chainsaw",
+      "name": "Chainsaw",
+      "description": ""
+    },
+    {
+      "id": "leatherface",
+      "name": "Leatherface",
+      "description": ""
+    },
+    {
+      "id": "oceanic-trench",
+      "name": "Oceanic<br />Trench",
+      "description": ""
+    },
+    {
+      "id": "ghost",
+      "name": "Ghost",
+      "description": ""
+    },
+    {
+      "id": "bicycle",
+      "name": "Bicycle",
+      "description": ""
+    },
+    {
+      "id": "motorcycle",
+      "name": "Motorcycle",
+      "description": ""
+    },
+    {
+      "id": "car",
+      "name": "Car",
+      "description": ""
+    },
+    {
+      "id": "truck",
+      "name": "Truck",
+      "description": ""
+    },
+    {
+      "id": "boat",
+      "name": "Boat",
+      "description": ""
+    },
+    {
+      "id": "ship",
+      "name": "Ship",
+      "description": ""
+    },
+    {
+      "id": "ghost-ship",
+      "name": "Ghost<br />Ship",
+      "description": ""
+    },
+    {
+      "id": "helicopter",
+      "name": "Helicopter",
+      "description": ""
+    },
+    {
+      "id": "airplane",
+      "name": "Airplane",
+      "description": ""
+    },
+    {
+      "id": "spaceship",
+      "name": "Spaceship",
+      "description": ""
+    },
+    {
+      "id": "submarine",
+      "name": "Submarine",
+      "description": ""
+    },
+    {
+      "id": "astronaut",
+      "name": "Astronaut",
+      "description": ""
+    },
+    {
+      "id": "apollo-11",
+      "name": "Apollo 11",
+      "description": ""
+    },
+    {
+      "id": "challenger",
+      "name": "Challenger",
+      "description": ""
+    },
+    {
+      "id": "oven",
+      "name": "Oven",
+      "description": ""
+    },
+    {
+      "id": "pizza",
+      "name": "Pizza",
+      "description": ""
+    },
+    {
+      "id": "pasta",
+      "name": "Pasta",
+      "description": ""
+    },
+    {
+      "id": "burger",
+      "name": "Burger",
+      "description": ""
+    },
+    {
+      "id": "ham",
+      "name": "Ham",
+      "description": ""
+    },
+    {
+      "id": "smoked-ham",
+      "name": "Smoked<br />Ham",
+      "description": ""
+    },
+    {
+      "id": "chef",
+      "name": "Chef",
       "description": ""
     }
   ],
@@ -822,6 +1357,26 @@
     {
       "id": 11,
       "name": "Lifeforms"
+    },
+    {
+      "id": 12,
+      "name": "Animals"
+    },
+    {
+      "id": 13,
+      "name": "Professions"
+    },
+    {
+      "id": 14,
+      "name": "Special"
+    },
+    {
+      "id": 15,
+      "name": "Food"
+    },
+    {
+      "id": 16,
+      "name": "Vehicles"
     }
   ]
 }

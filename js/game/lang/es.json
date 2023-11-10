@@ -198,6 +198,36 @@
       "id": 20,
       "title": "No seas tan cruel...",
       "description": "Descubre Ciencia usando un Mono."
+    },
+    {
+      "id": 21,
+      "title": "Dragón Inmortal",
+      "description": "Descubre a Bruce Lee."
+    },
+    {
+      "id": 22,
+      "title": "Soy intrépido, y por lo tanto poderoso.",
+      "description": "Descubre a Frankenstein."
+    },
+    {
+      "id": 23,
+      "title": "Bubba Sawyer",
+      "description": "Descubre a Leatherface."
+    },
+    {
+      "id": 24,
+      "title": "La Masacre de Kosmolaris",
+      "description": "Descubre la Carne Vacuna y la Carne Porcina usando a Leatherface."
+    },
+    {
+      "id": 25,
+      "title": "Un gran salto para la humanidad",
+      "description": "Descubre la nave espacial Apolo 11."
+    },
+    {
+      "id": 26,
+      "title": "Después de 73 segundos...",
+      "description": "Descubre la nave espacial Challenger."
     }
   ],
   "elements": [
@@ -752,6 +782,11 @@
       "description": ""
     },
     {
+      "id": "domestic-animal",
+      "name": "Animal<br />Doméstico",
+      "description": ""
+    },
+    {
       "id": "world",
       "name": "Mundo",
       "description": ""
@@ -774,6 +809,506 @@
     {
       "id": "plant",
       "name": "Planta",
+      "description": ""
+    },
+    {
+      "id": "wool",
+      "name": "Lana",
+      "description": ""
+    },
+    {
+      "id": "thread",
+      "name": "Hilo",
+      "description": ""
+    },
+    {
+      "id": "rope",
+      "name": "Cuerda",
+      "description": ""
+    },
+    {
+      "id": "scissors",
+      "name": "Tijera",
+      "description": ""
+    },
+    {
+      "id": "chain",
+      "name": "Cadena",
+      "description": ""
+    },
+    {
+      "id": "nunchaku",
+      "name": "Nunchaku",
+      "description": ""
+    },
+    {
+      "id": "sheep",
+      "name": "Oveja",
+      "description": ""
+    },
+    {
+      "id": "swordsman",
+      "name": "Espadachín",
+      "description": ""
+    },
+    {
+      "id": "samurai",
+      "name": "Samurai",
+      "description": ""
+    },
+    {
+      "id": "bruce-lee",
+      "name": "Bruce Lee",
+      "description": ""
+    },
+    {
+      "id": "skeleton",
+      "name": "Esqueleto",
+      "description": ""
+    },
+    {
+      "id": "bone",
+      "name": "Hueso",
+      "description": ""
+    },
+    {
+      "id": "dog",
+      "name": "Perro",
+      "description": ""
+    },
+    {
+      "id": "wolf",
+      "name": "Lobo",
+      "description": ""
+    },
+    {
+      "id": "werewolf",
+      "name": "Hombre<br />Lobo",
+      "description": ""
+    },
+    {
+      "id": "monster",
+      "name": "Monstruo",
+      "description": ""
+    },
+    {
+      "id": "frankenstein",
+      "name": "Frankenstein",
+      "description": ""
+    },
+    {
+      "id": "direwolf",
+      "name": "Lobo<br />Huargo",
+      "description": ""
+    },
+    {
+      "id": "egg",
+      "name": "Huevo",
+      "description": ""
+    },
+    {
+      "id": "bird",
+      "name": "Ave",
+      "description": ""
+    },
+    {
+      "id": "phoenix",
+      "name": "Ave<br />Fénix",
+      "description": ""
+    },
+    {
+      "id": "dinosaur",
+      "name": "Dinosaurio",
+      "description": ""
+    },
+    {
+      "id": "turtle",
+      "name": "Tortuga",
+      "description": ""
+    },
+    {
+      "id": "nest",
+      "name": "Nido",
+      "description": ""
+    },
+    {
+      "id": "larva",
+      "name": "Larva",
+      "description": ""
+    },
+    {
+      "id": "fly",
+      "name": "Mosca",
+      "description": ""
+    },
+    {
+      "id": "fish",
+      "name": "Pez",
+      "description": ""
+    },
+    {
+      "id": "big-fish",
+      "name": "Pez<br />Grande",
+      "description": ""
+    },
+    {
+      "id": "shark",
+      "name": "Tiburón",
+      "description": ""
+    },
+    {
+      "id": "fountain",
+      "name": "Fuente",
+      "description": ""
+    },
+    {
+      "id": "whale",
+      "name": "Ballena",
+      "description": ""
+    },
+    {
+      "id": "orca",
+      "name": "Orca",
+      "description": ""
+    },
+    {
+      "id": "swordfish",
+      "name": "Pez<br />Espada",
+      "description": ""
+    },
+    {
+      "id": "hammer",
+      "name": "Martillo",
+      "description": ""
+    },
+    {
+      "id": "hammerhead-shark",
+      "name": "Tiburón<br />Martillo",
+      "description": ""
+    },
+    {
+      "id": "hydrogen",
+      "name": "Hidrógeno",
+      "description": ""
+    },
+    {
+      "id": "sulphur",
+      "name": "Azufre",
+      "description": ""
+    },
+    {
+      "id": "acid",
+      "name": "Ácido",
+      "description": ""
+    },
+    {
+      "id": "sulphuric-acid",
+      "name": "Ácido<br />Sulfúrico",
+      "description": ""
+    },
+    {
+      "id": "acid-rain",
+      "name": "Lluvia<br />Ácida",
+      "description": ""
+    },
+    {
+      "id": "field",
+      "name": "Campo",
+      "description": ""
+    },
+    {
+      "id": "farm",
+      "name": "Granja",
+      "description": ""
+    },
+    {
+      "id": "farmer",
+      "name": "Granjero",
+      "description": ""
+    },
+    {
+      "id": "livestock",
+      "name": "Ganado",
+      "description": ""
+    },
+    {
+      "id": "grass",
+      "name": "Pasto",
+      "description": ""
+    },
+    {
+      "id": "cow",
+      "name": "Vaca",
+      "description": ""
+    },
+    {
+      "id": "milk",
+      "name": "Leche",
+      "description": ""
+    },
+    {
+      "id": "poultry",
+      "name": "Aves de<br />Corral",
+      "description": ""
+    },
+    {
+      "id": "chicken",
+      "name": "Gallina",
+      "description": ""
+    },
+    {
+      "id": "wheat",
+      "name": "Trigo",
+      "description": ""
+    },
+    {
+      "id": "carpenter",
+      "name": "Carpintero",
+      "description": ""
+    },
+    {
+      "id": "wheel",
+      "name": "Rueda",
+      "description": ""
+    },
+    {
+      "id": "windmill",
+      "name": "Molino",
+      "description": ""
+    },
+    {
+      "id": "flour",
+      "name": "Harina",
+      "description": ""
+    },
+    {
+      "id": "dough",
+      "name": "Masa",
+      "description": ""
+    },
+    {
+      "id": "baker",
+      "name": "Panadero",
+      "description": ""
+    },
+    {
+      "id": "bread",
+      "name": "Pan",
+      "description": ""
+    },
+    {
+      "id": "batter",
+      "name": "Batido",
+      "description": ""
+    },
+    {
+      "id": "cheese",
+      "name": "Queso",
+      "description": ""
+    },
+    {
+      "id": "blue-cheese",
+      "name": "Queso<br />Azul",
+      "description": ""
+    },
+    {
+      "id": "dust",
+      "name": "Polvo",
+      "description": ""
+    },
+    {
+      "id": "dirt",
+      "name": "Suciedad",
+      "description": ""
+    },
+    {
+      "id": "mud",
+      "name": "Lodo",
+      "description": ""
+    },
+    {
+      "id": "pig",
+      "name": "Cerdo",
+      "description": ""
+    },
+    {
+      "id": "beef",
+      "name": "Carne<br />Vacuna",
+      "description": ""
+    },
+    {
+      "id": "pork",
+      "name": "Carne<br />Porcina",
+      "description": ""
+    },
+    {
+      "id": "butcher",
+      "name": "Carnciero",
+      "description": ""
+    },
+    {
+      "id": "scientist",
+      "name": "Científico",
+      "description": ""
+    },
+    {
+      "id": "saw",
+      "name": "Sierra",
+      "description": ""
+    },
+    {
+      "id": "asteroid",
+      "name": "Asteroide",
+      "description": ""
+    },
+    {
+      "id": "fossil",
+      "name": "Fósil",
+      "description": ""
+    },
+    {
+      "id": "petroleum",
+      "name": "Petróleo",
+      "description": ""
+    },
+    {
+      "id": "gasoline",
+      "name": "Gasolina",
+      "description": ""
+    },
+    {
+      "id": "combustion",
+      "name": "Combustión",
+      "description": ""
+    },
+    {
+      "id": "engine",
+      "name": "Motor",
+      "description": ""
+    },
+    {
+      "id": "chainsaw",
+      "name": "Motosierra",
+      "description": ""
+    },
+    {
+      "id": "leatherface",
+      "name": "Leatherface",
+      "description": ""
+    },
+    {
+      "id": "oceanic-trench",
+      "name": "Fosa<br />Oceánica",
+      "description": ""
+    },
+    {
+      "id": "ghost",
+      "name": "Fantasma",
+      "description": ""
+    },
+    {
+      "id": "bicycle",
+      "name": "Bicicleta",
+      "description": ""
+    },
+    {
+      "id": "motorcycle",
+      "name": "Motocicleta",
+      "description": ""
+    },
+    {
+      "id": "car",
+      "name": "Automóvil",
+      "description": ""
+    },
+    {
+      "id": "truck",
+      "name": "Camión",
+      "description": ""
+    },
+    {
+      "id": "boat",
+      "name": "Bote",
+      "description": ""
+    },
+    {
+      "id": "ship",
+      "name": "Barco",
+      "description": ""
+    },
+    {
+      "id": "ghost-ship",
+      "name": "Barco<br />Fantasma",
+      "description": ""
+    },
+    {
+      "id": "helicopter",
+      "name": "Helicóptero",
+      "description": ""
+    },
+    {
+      "id": "airplane",
+      "name": "Avión",
+      "description": ""
+    },
+    {
+      "id": "spaceship",
+      "name": "Nave<br />Espacial",
+      "description": ""
+    },
+    {
+      "id": "submarine",
+      "name": "Submarino",
+      "description": ""
+    },
+    {
+      "id": "astronaut",
+      "name": "Astronauta",
+      "description": ""
+    },
+    {
+      "id": "apollo-11",
+      "name": "Apolo 11",
+      "description": ""
+    },
+    {
+      "id": "challenger",
+      "name": "Challenger",
+      "description": ""
+    },
+    {
+      "id": "oven",
+      "name": "Horno",
+      "description": ""
+    },
+    {
+      "id": "pizza",
+      "name": "Pizza",
+      "description": ""
+    },
+    {
+      "id": "pasta",
+      "name": "Pasta",
+      "description": ""
+    },
+    {
+      "id": "burger",
+      "name": "Burger",
+      "description": ""
+    },
+    {
+      "id": "ham",
+      "name": "Jamón",
+      "description": ""
+    },
+    {
+      "id": "smoked-ham",
+      "name": "Jamón<br />Ahumado",
+      "description": ""
+    },
+    {
+      "id": "chef",
+      "name": "Cocinero",
       "description": ""
     }
   ],
@@ -821,6 +1356,26 @@
     {
       "id": 11,
       "name": "Formas de vida"
+    },
+    {
+      "id": 12,
+      "name": "Animales"
+    },
+    {
+      "id": 13,
+      "name": "Profesiones"
+    },
+    {
+      "id": 14,
+      "name": "Especiales"
+    },
+    {
+      "id": 15,
+      "name": "Alimentos"
+    },
+    {
+      "id": 16,
+      "name": "Vehículos"
     }
   ]
 }

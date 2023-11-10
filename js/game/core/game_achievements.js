@@ -59,12 +59,38 @@ class GameAchievements {
         return this.#achievements.find((a) => a.discoveredElements == value);
     }
 
-    getByElementToUnlock({ elementToUnlock, element1, element2 }) {
-        const achievement = this.#achievements.find((a) => a.elementToUnlock == elementToUnlock);
+    tryUnlockAchievement(allElementsUnlocked) {
+        let matches = 0;
 
-        if ((achievement != null && achievement.elementRequired == null) ||
-            (achievement != null && achievement.elementRequired != null && (achievement.elementRequired == element1 || achievement.elementRequired == element2))) {
-            return achievement;
+        const availableAchievements = this.#achievements.filter((a) => !this.unlockeds.includes(a.id));
+
+        for (let i = 0; i < availableAchievements.length; i++) {
+            const achievement = availableAchievements[i];
+
+            if (achievement.rules) {
+                for (let j = 0; j < achievement.rules.length; j++) {
+                    const rule = achievement.rules[j];
+                    let hasMatch = false;
+
+                    if (rule.elementRequired) {
+                        hasMatch = allElementsUnlocked.some((e) => e.result === rule.elementToUnlock &&
+                            (e.element1 === rule.elementRequired || e.element2 === rule.elementRequired))
+                    } else {
+                        hasMatch = allElementsUnlocked.some((e) => e.result === rule.elementToUnlock);
+                    }
+
+                    if (hasMatch) {
+                        matches++;
+
+                        if (matches === achievement.rules.length) {
+                            this.unlock(achievement.id);
+                            return;
+                        }
+                    } else {
+                        break;
+                    }
+                }
+            }
         }
     }
 

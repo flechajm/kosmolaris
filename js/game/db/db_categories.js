@@ -65,9 +65,39 @@ class DbCategories {
                 color: '#c9a965',
             }),
 
-            // Life
+            // Lifeforms
             new Category({
                 id: 11,
+                color: '#c9a965',
+            }),
+
+            // Animals
+            new Category({
+                id: 12,
+                color: '#c9a965',
+            }),
+
+            // Professions
+            new Category({
+                id: 13,
+                color: '#c9a965',
+            }),
+
+            // Special
+            new Category({
+                id: 14,
+                color: '#c9a965',
+            }),
+
+            // Food
+            new Category({
+                id: 15,
+                color: '#c9a965',
+            }),
+
+            // Vehicles
+            new Category({
+                id: 16,
                 color: '#c9a965',
             }),
         ];

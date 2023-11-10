@@ -15,7 +15,9 @@
   --color-secondary: #6e583c;
   --color-gold: #ffcc33;
   --color-negative: #ff4949;
+  --color-new: #6baee7;
   --color-fix: #32cd32;
+  --color-change: #e94979;
   --color-bg-category: #160f16;
   --color-air: #b8a4c4;
   --color-fire: crimson;
@@ -774,7 +776,7 @@ tooltip.item {
   width: 90%;
   gap: 0.6em;
   overflow: overlay;
-  margin-block: 0.5em;
+  margin-top: 0.5em;
   padding-inline: 2.5em;
   padding-block: 1em 1.5em;
   line-height: 1.5em;
@@ -931,6 +933,7 @@ tooltip.item {
   padding: 11px 15px 10px 10px;
   width: -moz-fit-content;
   width: fit-content;
+  min-width: 230px;
   height: 60px;
   line-height: 1.5em;
   letter-spacing: 0.2px;
@@ -983,8 +986,8 @@ tooltip.item {
   align-items: center;
 }
 .popup.achievements {
-  width: 500px;
-  height: 450px;
+  width: 650px;
+  height: 500px;
   align-items: center;
 }
 .popup.changelog {

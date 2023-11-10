@@ -27,6 +27,26 @@ class GameInfo {
    */
   static changelog = [
     {
+      "version": "1.0.4",
+      "date": new Date(2023, 10, 10),
+      "changelog": {
+        "es": [
+          "NEW: Se agregaron 96 nuevos elementos comunes (de 104 a 200).",
+          "NEW: Se agregaron 5 nuevos elementos especiales (de 7 a 12).",
+          "NEW: Se agregaron 6 nuevos logros (de 12 a 18).",
+          "NEW: Se agregaron 4 nuevas categorías (de 11 a 16).",
+          "CHANGE: Se rehizo el sistema de logros para tener un mejor control de los mismos dentro del juego.",
+        ],
+        "en": [
+          "NEW: Added 96 new common elements (from 104 to 200).",
+          "NEW: Added 5 new special elements (from 7 to 12).",
+          "NEW: Added 4 new categories (from 11 to 16).",
+          "NEW: Added 6 new achievements (from 12 to 18).",
+          "CHANGE: Achievement system was reworked for better tracking ingame.",
+        ],
+      }
+    },
+    {
       "version": "1.0.3",
       "date": new Date(2023, 10, 3),
       "changelog": {
@@ -124,6 +144,7 @@ class GameInfo {
         return `<li>${newValue
           .replaceAll('NEW', this.#getColor('NEW'))
           .replaceAll('FIX', this.#getColor('FIX'))
+          .replaceAll('CHANGE', this.#getColor('CHANGE'))
           }</li>`;
       });
 
@@ -146,11 +167,15 @@ class GameInfo {
 
     switch (text) {
       case "NEW":
-        color = "var(--color-common)";
+        color = "var(--color-new)";
         break;
 
       case "FIX":
         color = "var(--color-fix)";
+        break;
+
+      case "CHANGE":
+        color = "var(--color-change)";
         break;
 
       default:

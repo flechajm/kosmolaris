@@ -1,4 +1,5 @@
 import Achievement from "../core/classes/achievement.js";
+import Rule from "../core/classes/rule.js";
 
 class DbAchievements {
     #db;
@@ -82,56 +83,131 @@ class DbAchievements {
             // Michonne
             new Achievement({
                 id: 12,
-                elementToUnlock: 'michonne',
+                rules: [
+                    new Rule({ elementToUnlock: 'michonne' })
+                ]
             }),
 
             // Harry Potter
             new Achievement({
                 id: 13,
-                elementToUnlock: 'harry-potter',
+                rules: [
+                    new Rule({ elementToUnlock: 'harry-potter' })
+                ]
             }),
 
             // Jon Snow
             new Achievement({
                 id: 14,
-                elementToUnlock: 'jon-snow',
+                rules: [
+                    new Rule({ elementToUnlock: 'jon-snow' })
+                ]
             }),
 
             // Negan & Lucille
             new Achievement({
                 id: 15,
-                elementToUnlock: 'negan',
+                rules: [
+                    new Rule({ elementToUnlock: 'negan' })
+                ]
             }),
 
             // COVID-19
             new Achievement({
                 id: 16,
-                elementToUnlock: 'covid',
+                rules: [
+                    new Rule({ elementToUnlock: 'covid' })
+                ]
             }),
 
             // Lucille
             new Achievement({
                 id: 17,
-                elementToUnlock: 'lucille',
+                rules: [
+                    new Rule({ elementToUnlock: 'lucille' })
+                ]
             }),
 
             // World
             new Achievement({
                 id: 18,
-                elementToUnlock: 'world',
+                rules: [
+                    new Rule({ elementToUnlock: 'world' })
+                ]
             }),
 
             // Planet of Apes
             new Achievement({
                 id: 19,
-                elementToUnlock: 'planet-apes',
+                rules: [
+                    new Rule({ elementToUnlock: 'planet-apes' })
+                ]
             }),
 
             // Don't be cruel
             new Achievement({
                 id: 20,
-                elementToUnlock: 'science',
-                elementRequired: 'monkey',
+                rules: [
+                    new Rule({
+                        elementToUnlock: 'science',
+                        elementRequired: 'monkey',
+                    })
+                ]
+            }),
+
+            // Bruce Lee
+            new Achievement({
+                id: 21,
+                rules: [
+                    new Rule({ elementToUnlock: 'bruce-lee' })
+                ]
+            }),
+
+            // Frankenstein
+            new Achievement({
+                id: 22,
+                rules: [
+                    new Rule({ elementToUnlock: 'frankenstein' })
+                ]
+            }),
+
+            // Leatherface
+            new Achievement({
+                id: 23,
+                rules: [
+                    new Rule({ elementToUnlock: 'leatherface' })
+                ]
+            }),
+
+            // The Kosmolaris Chainsaw Massacre
+            new Achievement({
+                id: 24,
+                rules: [
+                    new Rule({
+                        elementToUnlock: 'beef',
+                        elementRequired: 'leatherface'
+                    }),
+                    new Rule({
+                        elementToUnlock: 'pork',
+                        elementRequired: 'leatherface'
+                    })
+                ],
+            }),
+
+            // Apollo 11
+            new Achievement({
+                id: 25,
+                rules: [
+                    new Rule({ elementToUnlock: 'apollo-11' })
+                ]
+            }),
+
+            // Challenger
+            new Achievement({
+                id: 26,
+                rules: [
+                    new Rule({ elementToUnlock: 'challenger' })
+                ]
             }),
         ];
     }

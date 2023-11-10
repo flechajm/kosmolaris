@@ -37,7 +37,7 @@ class GameConfig {
     /**
      * Indica si el juego debe jugarse en modo debug. Habilita un selector de elementos.
      */
-    this.debugMode = false;
+    this.debugMode = true;
   }
 
   save() {

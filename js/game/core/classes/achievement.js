@@ -1,12 +1,11 @@
 class Achievement {
-    constructor({ id, title, description, icon, discoveredElements, elementToUnlock, elementRequired, enabled = true }) {
+    constructor({ id, title, description, icon, discoveredElements, rules, enabled = true }) {
         this.id = id;
         this.title = title;
         this.description = description;
         this.icon = icon;
         this.discoveredElements = discoveredElements ?? null;
-        this.elementToUnlock = elementToUnlock ?? null;
-        this.elementRequired = elementRequired ?? null;
+        this.rules = rules ?? null;
         this.enabled = enabled;
     }
 

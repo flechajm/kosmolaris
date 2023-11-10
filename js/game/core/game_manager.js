@@ -4,10 +4,10 @@ import GameElements from "./game_elements.js";
 import GameCategories from "./game_categories.js";
 import GameAchievements from "./game_achievements.js";
 import GameConfig from "./game_config.js";
-
+import GameStateManager from "./game_state_manager.js";
 import GameCombinationManager from "./game_combination_manager.js";
 
-import { GameStateManager, audioManager, gameManager } from "../main.js";
+import { audioManager, gameManager } from "../main.js";
 import GameLog from "./game_log.js";
 import LanguageManager from "../../libs/language_manager.js";
 
@@ -273,21 +273,22 @@ class GameManager {
         const element1 = GameElements.getById(elementFromDOM[0].getAttribute('data'));
         const element2 = GameElements.getById(elementToDOM[0].getAttribute('data'));
 
-        const result = GameCombinationManager.findCombination({
-            element1: element1.id,
-            element2: element2.id,
+        const elementResult = GameCombinationManager.findCombination({
+            element1: element1,
+            element2: element2,
         });
 
-        if (result != null) {
-            const exists = GameCombinationManager.checkExists(result);
-            const newElement = Element.fromId(result);
+        if (elementResult != null) {
+            const exists = GameCombinationManager.checkExists(elementResult);
+
+            elementResult.uuid = Element.generateUUID();
             const position = {
                 posX: elementToDOM.position().left,
                 posY: elementToDOM.position().top,
             }
 
             if (!exists) {
-                this.unlockElement(newElement, element1, element2);
+                this.unlockElement(elementResult, element1, element2);
                 if (this.#dragData.from === 'element') {
                     elementToDOM.remove();
                     elementFromDOM.remove();
@@ -299,10 +300,10 @@ class GameManager {
                     element1: element1.id,
                     element2: element2.id
                 }
-                GameCategories.addElementToCategory(newElement.id, { combination: combination });
+                GameCategories.addElementToCategory(elementResult.id, { combination: combination });
 
-                this.appendElementToSidebar(newElement);
-                this.appendElementToBoard(newElement, {
+                this.appendElementToSidebar(elementResult);
+                this.appendElementToBoard(elementResult, {
                     posX: position.posX,
                     posY: position.posY,
                     combination: combination
@@ -310,7 +311,7 @@ class GameManager {
 
                 this.saveGame();
             } else {
-                this.showGhostElement(result, position);
+                this.showGhostElement(elementResult, position);
                 this.revertElementPosition(elementFromDOM);
             }
         } else {
@@ -335,24 +336,20 @@ class GameManager {
         GameCombinationManager.unlockElement(newElement, element1, element2);
 
         const achievementByCount = this.achievements.getByReachDiscoveredElements(this.elementsUnlocked.length);
-        const achievementByElement = this.achievements.getByElementToUnlock({ elementToUnlock: newElement.id, element1: element1.id, element2: element2.id });
 
         if (achievementByCount)
             this.achievements.unlock(achievementByCount.id);
 
-        if (achievementByElement) {
-            this.achievements.unlock(achievementByElement.id);
-
-        }
+        this.achievements.tryUnlockAchievement([...this.elementsUnlocked, ...this.specialElementsUnlocked]);
 
         this.#loadAchievements();
         this.#updateCurrentDiscoveredElements();
     }
 
-    showGhostElement(elementId, position) {
+    showGhostElement(element, position) {
         audioManager.playError();
 
-        const auxElement = Element.fromId(elementId);
+        const auxElement = Element.fromId(element.id);
         const auxElementTemplate = auxElement.createElementDOM({
             onBoard: true,
             posX: position.posX,

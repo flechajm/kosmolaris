@@ -1,4 +1,3 @@
-import GameManager from './core/game_manager.js';
 import GameInfo from "./core/game_info.js";
 import GameElements from "./core/game_elements.js";
 import GameLog from './core/game_log.js';
@@ -34,12 +33,8 @@ let imageLoader;
         loader.find('span').fadeToggle(1500);
     }, 1500);
 
-    await GameCombinationManager.init({
-        elementsUnlocked: gameManager.elementsUnlocked,
-        specialElementsUnlocked: gameManager.specialElementsUnlocked
-    });
-    await imageLoader.loadAll().then(() => {
-        initialConfig(langData);
+    await imageLoader.loadAll().then(async () => {
+        await initialConfig(langData);
 
         loader.fadeOut(300, function () {
             loader.remove();
@@ -337,7 +332,7 @@ function setupWindowHelp(langData) {
     );
 }
 
-function initialConfig(langData) {
+async function initialConfig(langData) {
     const minutesIntervalBackground = (4 * 60) * 1000;
     $('html').on('contextmenu', function (e) {
         e.preventDefault();
@@ -361,6 +356,11 @@ function initialConfig(langData) {
     GameElements.create();
     GameCategories.create();
 
+    await GameCombinationManager.init({
+        elementsUnlocked: gameManager.elementsUnlocked,
+        specialElementsUnlocked: gameManager.specialElementsUnlocked
+    });
+
     gameManager.init();
 
     $('#game').css('display', 'flex');
@@ -373,4 +373,4 @@ function initialConfig(langData) {
     }
 }
 
-export { gameManager, audioManager, GameStateManager };
+export { gameManager, audioManager };
