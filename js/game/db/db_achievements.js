@@ -28,14 +28,12 @@ class DbAchievements {
             new Achievement({
                 id: 4,
                 discoveredElements: 150,
-                enabled: false,
             }),
 
             // 200 Elements
             new Achievement({
                 id: 5,
                 discoveredElements: 200,
-                enabled: false,
             }),
 
             // 250 Elements
