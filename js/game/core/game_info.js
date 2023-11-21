@@ -28,13 +28,15 @@ class GameInfo {
   static changelog = [
     {
       "version": "1.0.4",
-      "date": new Date(2023, 10, 10),
+      "date": new Date(2023, 10, 20),
       "changelog": {
         "es": [
           "NEW: Se agregaron 96 nuevos elementos comunes (de 104 a 200).",
           "NEW: Se agregaron 5 nuevos elementos especiales (de 7 a 12).",
           "NEW: Se agregaron 5 nuevas categorías (de 11 a 16).",
           "NEW: Se agregaron 8 nuevos logros (de 12 a 20).",
+          "NEW: Ahora el campo de búsqueda de elementos ignora las tildes.",
+          "FIX: Corrección menor en la localización en Español.",
           "CHANGE: Se rehizo el sistema de logros para tener un mejor control de los mismos dentro del juego.",
         ],
         "en": [
@@ -42,6 +44,8 @@ class GameInfo {
           "NEW: Added 5 new special elements (from 7 to 12).",
           "NEW: Added 5 new categories (from 11 to 16).",
           "NEW: Added 8 new achievements (from 12 to 20).",
+          "NEW: Elements search box now ignores accent marks in Spanish.",
+          "FIX: Minor fix in Spanish localization.",
           "CHANGE: Achievement system was reworked for better tracking ingame.",
         ],
       }

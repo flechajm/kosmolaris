@@ -163,9 +163,11 @@ class GameManager {
     }
 
     #bindInputSearch() {
+        const gameManager = this;
+
         $('#search-element').bind('input', function () {
             const inputText = $(this).val().toLowerCase();
-            const newLineInputText = inputText.replace(' ', "<br>").toLowerCase();
+            const newLineInputText = gameManager.#replaceSpecialCharacters(inputText.replace(' ', "<br>").toLowerCase());
 
             $('.category-content').each(function () {
                 const categoryContent = $(this);
@@ -173,7 +175,7 @@ class GameManager {
                 categoryContent.find('.element-button').each(function () {
                     const parent = $(this).parent();
                     const category = parent.parent().parent();
-                    const elementName = $(this).find('span').html().toLowerCase();
+                    const elementName = gameManager.#replaceSpecialCharacters($(this).find('span').html().toLowerCase());
 
                     if (!elementName.includes(inputText) && !elementName.includes(newLineInputText)) {
                         parent.addClass('hidden');
@@ -194,6 +196,12 @@ class GameManager {
             });
         });
 
+    }
+
+    #replaceSpecialCharacters(text) {
+        return text.normalize('NFD')
+            .replace(/([^n\u0300-\u036f]|n(?!\u0303(?![\u0300-\u036f])))[\u0300-\u036f]+/gi, "$1")
+            .normalize();
     }
 
     #bindBoard() {
