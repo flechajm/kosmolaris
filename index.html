@@ -29,10 +29,25 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="preload" href="fonts/CenturyGothic.ttf" as="font" crossorigin />
 
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-85GZGVT6GT"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-85GZGVT6GT");
+    </script>
     <script src="js/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     <script src="js/libs/helper.js"></script>
   </head>
+
   <body>
     <div id="loader">
       <img src="img/logo/logo_s.png" class="logo" alt="" />
