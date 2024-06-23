@@ -50,7 +50,8 @@ class Element {
         const classGhost = `${ghost ? ' ghost' : ''}`;
         const position = `${onBoard ? `style="left:${posX}px; top:${posY};"` : ""}`;
         const classShortcut = `${shortcut ? ' shortcut' : ''}`;
-        const styleColor = `style="background-color: ${this.color}; border-color: ${this.color};"`;
+        //const styleColor = `style="background-color: ${this.color}; border-color: ${this.color};"`;
+        const elementIcon = `style="background-image: url('../img/elements/${this.id}.png')"`;
         const attrCombination = combination ? `combination="${combination.element1};${combination.element2}"` : '';
 
         return `<element
@@ -59,8 +60,8 @@ class Element {
                     class="element-wrapper${classOnBoard}${classGhost}${classShortcut}"
                     ${position}
                 >
-                    <div class="element-button color shadow" ${styleColor} ${attrCombination}>
-                        <!-- <div class="element-image"></div>-->
+                    <div class="element-button color shadow" ${attrCombination}>
+                        <div class="element-image" ${elementIcon}></div>
                         <span>${this.name}</span>
                     </div>
                     <!-- <span>${this.name}</span> -->

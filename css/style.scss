@@ -1,8 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab&display=block");
-@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=block');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
 
 @font-face {
-  font-family: "Century Gothic";
+  font-family: 'Century Gothic';
   src: url(../fonts/CenturyGothic.ttf);
 }
 
@@ -11,8 +11,8 @@
 // =======================
 
 :root {
-  --font-primary: "Century Gothic";
-  --font-tooltip: "Roboto Slab";
+  --font-primary: 'Century Gothic';
+  --font-tooltip: 'Roboto Slab';
   --font-primary-color: #ccc;
 
   --dark: #0e0e0e;
@@ -107,7 +107,7 @@ select {
   }
 }
 
-input[type="search"] {
+input[type='search'] {
   flex: 4;
   width: 100%;
   padding: 12px 10px;
@@ -203,9 +203,9 @@ footer {
       transform: rotateX(180deg);
 
       #music-controls {
-        font-family: "Material Symbols Rounded";
+        font-family: 'Material Symbols Rounded';
         font-size: 16;
-        font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24;
+        font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         margin-left: 10px;
         gap: 3px;
 
@@ -223,7 +223,7 @@ footer {
 
           &.previous {
             &::before {
-              content: "\e045";
+              content: '\e045';
             }
           }
 
@@ -233,19 +233,19 @@ footer {
 
             &::before {
               font-size: 24;
-              content: "\e037";
+              content: '\e037';
             }
           }
 
           &.pause {
             &::before {
-              content: "\e034";
+              content: '\e034';
             }
           }
 
           &.next {
             &::before {
-              content: "\e044";
+              content: '\e044';
             }
           }
         }
@@ -257,9 +257,9 @@ footer {
         align-items: center;
 
         ::before {
-          font-family: "Material Symbols Rounded";
+          font-family: 'Material Symbols Rounded';
           font-size: 14;
-          content: "music_note";
+          content: 'music_note';
         }
       }
 
@@ -267,24 +267,24 @@ footer {
         transform: scale(0.7);
         padding-right: 0;
 
-        input[type="range"] {
+        input[type='range'] {
           display: block;
           width: 70px;
           margin-top: 5px;
           margin-right: -15px;
         }
 
-        input[type="range"]:focus {
+        input[type='range']:focus {
           outline: none;
         }
 
-        input[type="range"],
-        input[type="range"]::-webkit-slider-runnable-track,
-        input[type="range"]::-webkit-slider-thumb {
+        input[type='range'],
+        input[type='range']::-webkit-slider-runnable-track,
+        input[type='range']::-webkit-slider-thumb {
           -webkit-appearance: none;
         }
 
-        input[type="range"]::-webkit-slider-thumb {
+        input[type='range']::-webkit-slider-thumb {
           background-color: #777;
           width: 20px;
           height: 20px;
@@ -293,7 +293,7 @@ footer {
           margin-top: -9px;
         }
 
-        input[type="range"]::-moz-range-thumb {
+        input[type='range']::-moz-range-thumb {
           background-color: #777;
           width: 15px;
           height: 15px;
@@ -301,7 +301,7 @@ footer {
           border-radius: 50%;
         }
 
-        input[type="range"]::-ms-thumb {
+        input[type='range']::-ms-thumb {
           background-color: #777;
           width: 20px;
           height: 20px;
@@ -309,30 +309,30 @@ footer {
           border-radius: 50%;
         }
 
-        input[type="range"]::-webkit-slider-runnable-track {
+        input[type='range']::-webkit-slider-runnable-track {
           background-color: #777;
           height: 3px;
         }
 
-        input[type="range"]:focus::-webkit-slider-runnable-track {
+        input[type='range']:focus::-webkit-slider-runnable-track {
           outline: none;
         }
 
-        input[type="range"]::-moz-range-track {
+        input[type='range']::-moz-range-track {
           background-color: #777;
           height: 3px;
         }
 
-        input[type="range"]::-ms-track {
+        input[type='range']::-ms-track {
           background-color: #777;
           height: 3px;
         }
 
-        input[type="range"]::-ms-fill-lower {
+        input[type='range']::-ms-fill-lower {
           background-color: HotPink;
         }
 
-        input[type="range"]::-ms-fill-upper {
+        input[type='range']::-ms-fill-upper {
           background-color: black;
         }
       }
@@ -654,7 +654,7 @@ tooltip {
     text-align: center;
     max-width: 80px;
     max-height: 80px;
-    // max-height: 104px; //TODO: Descomentar cuando estén las imágenes.
+    //max-height: 104px; //TODO: Descomentar cuando estén las imágenes.
     font-family: var(--font-primary);
     font-size: 0.9rem;
     font-weight: bold;
@@ -662,11 +662,6 @@ tooltip {
 
     &.ui-draggable-dragging {
       cursor: grabbing;
-    }
-
-    &.glow {
-      animation: glowing 1.3s infinite ease-in-out;
-      animation-delay: -500ms;
     }
 
     &.hidden {
@@ -701,29 +696,35 @@ tooltip {
       width: 80px;
       height: 80px;
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       border-radius: 50%;
       text-shadow: 2px 2px 4px #000, 0px 0px 7px var(--dark),
         0px 0px 10px var(--dark);
-      background: url(../img/misc/popup_bg.png);
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-blend-mode: luminosity;
-      border-style: solid;
+      // background: url(../img/misc/popup_bg.png);
+      // background-size: cover;
+      // background-repeat: no-repeat;
+      // background-blend-mode: luminosity;
+      // border-style: solid;
 
       &.shadow {
-        box-shadow: 0px 0px 10px var(--dark);
+        // box-shadow: 0px 0px 10px var(--dark);
       }
 
       .element-image {
         background-position: center;
-        background-size: cover;
-        height: 40px;
-        width: 40px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        height: 80px;
+        width: 80px;
         -webkit-filter: drop-shadow(0px 0px 3px black) contrast(1.2);
         filter: drop-shadow(0px 0px 3px black) contrast(1.2);
+
+        &.glow {
+          animation: glowing 1.3s infinite ease-in-out;
+          animation-delay: -500ms;
+        }
       }
     }
   }
@@ -801,25 +802,25 @@ tooltip {
         span.icon {
           color: var(--color-primary-bright);
           margin-right: 0.5em;
-          font-family: "Material Symbols Rounded";
+          font-family: 'Material Symbols Rounded';
           font-size: 16;
-          font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24;
+          font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
 
           &.lang {
             &::before {
-              content: "\e8e2";
+              content: '\e8e2';
             }
           }
 
           &.sound {
             &::before {
-              content: "\e050";
+              content: '\e050';
             }
           }
 
           &.reset {
             &::before {
-              content: "\e28e";
+              content: '\e28e';
             }
           }
         }
@@ -830,22 +831,22 @@ tooltip {
         }
       }
 
-      input[type="range"] {
+      input[type='range'] {
         display: block;
       }
 
-      input[type="range"]:focus {
+      input[type='range']:focus {
         outline: none;
       }
 
-      input[type="range"],
-      input[type="range"]::-webkit-slider-runnable-track,
-      input[type="range"]::-webkit-slider-thumb {
+      input[type='range'],
+      input[type='range']::-webkit-slider-runnable-track,
+      input[type='range']::-webkit-slider-thumb {
         -webkit-appearance: none;
         width: 120px;
       }
 
-      input[type="range"]::-webkit-slider-thumb {
+      input[type='range']::-webkit-slider-thumb {
         background-color: var(--color-primary-light);
         width: 20px;
         height: 20px;
@@ -854,7 +855,7 @@ tooltip {
         margin-top: -9px;
       }
 
-      input[type="range"]::-moz-range-thumb {
+      input[type='range']::-moz-range-thumb {
         background-color: #777;
         width: 15px;
         height: 15px;
@@ -862,7 +863,7 @@ tooltip {
         border-radius: 50%;
       }
 
-      input[type="range"]::-ms-thumb {
+      input[type='range']::-ms-thumb {
         background-color: #777;
         width: 20px;
         height: 20px;
@@ -870,21 +871,21 @@ tooltip {
         border-radius: 50%;
       }
 
-      input[type="range"]::-webkit-slider-runnable-track {
+      input[type='range']::-webkit-slider-runnable-track {
         background-color: var(--color-primary-light);
         height: 3px;
       }
 
-      input[type="range"]:focus::-webkit-slider-runnable-track {
+      input[type='range']:focus::-webkit-slider-runnable-track {
         outline: none;
       }
 
-      input[type="range"]::-moz-range-track {
+      input[type='range']::-moz-range-track {
         background-color: var(--color-primary-light);
         height: 3px;
       }
 
-      input[type="range"]::-ms-track {
+      input[type='range']::-ms-track {
         background-color: var(--color-primary-light);
         height: 3px;
       }
@@ -987,7 +988,7 @@ tooltip {
   border-radius: 6px;
   cursor: pointer;
   text-shadow: 2px 2px 1px #00000081;
-  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24;
+  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
   z-index: 1;
 
   &.disabled {
@@ -998,9 +999,9 @@ tooltip {
     width: 42px;
 
     &::after {
-      font-family: "Material Symbols Rounded";
+      font-family: 'Material Symbols Rounded';
       font-size: 24;
-      content: "\f0ff";
+      content: '\f0ff';
     }
   }
 
@@ -1008,9 +1009,9 @@ tooltip {
     width: 42px;
 
     &::after {
-      font-family: "Material Symbols Rounded";
+      font-family: 'Material Symbols Rounded';
       font-size: 24;
-      content: "\e8b8";
+      content: '\e8b8';
     }
   }
 
@@ -1018,9 +1019,9 @@ tooltip {
     width: 42px;
 
     &::after {
-      font-family: "Material Symbols Rounded";
+      font-family: 'Material Symbols Rounded';
       font-size: 24;
-      content: "\eb8b";
+      content: '\eb8b';
     }
   }
 
@@ -1028,9 +1029,9 @@ tooltip {
     width: 42px;
 
     &::after {
-      font-family: "Material Symbols Rounded";
+      font-family: 'Material Symbols Rounded';
       font-size: 24;
-      content: "\e71a";
+      content: '\e71a';
     }
   }
 
@@ -1038,9 +1039,9 @@ tooltip {
     width: 42px;
 
     &::after {
-      font-family: "Material Symbols Rounded";
+      font-family: 'Material Symbols Rounded';
       font-size: 24;
-      content: "\e873";
+      content: '\e873';
     }
   }
 
@@ -1221,10 +1222,10 @@ tooltip {
     right: 8px;
 
     &::after {
-      font-family: "Material Symbols Rounded";
+      font-family: 'Material Symbols Rounded';
       font-size: 24;
-      font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24;
-      content: "\e5cd";
+      font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      content: '\e5cd';
     }
 
     &:hover {

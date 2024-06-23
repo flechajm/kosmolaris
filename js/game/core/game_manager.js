@@ -1,15 +1,15 @@
 import Element from "./classes/element.js";
 
-import GameElements from "./game_elements.js";
-import GameCategories from "./game_categories.js";
 import GameAchievements from "./game_achievements.js";
-import GameConfig from "./game_config.js";
-import GameStateManager from "./game_state_manager.js";
+import GameCategories from "./game_categories.js";
 import GameCombinationManager from "./game_combination_manager.js";
+import GameConfig from "./game_config.js";
+import GameElements from "./game_elements.js";
+import GameStateManager from "./game_state_manager.js";
 
+import LanguageManager from "../../libs/language_manager.js";
 import { audioManager, gameManager } from "../main.js";
 import GameLog from "./game_log.js";
-import LanguageManager from "../../libs/language_manager.js";
 
 class GameManager {
     #dragData;
@@ -402,7 +402,7 @@ class GameManager {
                 const elementDroppable = $(this);
                 const elementDraggable = $(ui.draggable);
 
-                elementDroppable.removeClass('glow');
+                elementDroppable.find('div.element-image').removeClass('glow');
                 elementDraggable.css('opacity', 1);
 
                 gameManager.dropElement({
@@ -414,7 +414,7 @@ class GameManager {
             out: gameManager.alternateGlow,
         }).draggable({
             zIndex: 2,
-            opacity: 0.9,
+            opacity: 0.8,
             revert: 'invalid',
             refreshPositions: true,
             revertDuration: 200,
@@ -443,7 +443,7 @@ class GameManager {
 
         elementDOM.draggable({
             zIndex: 1,
-            opacity: 0.9,
+            opacity: 0.8,
             helper: 'clone',
             appendTo: '#game',
             refreshPositions: true,
@@ -516,7 +516,7 @@ class GameManager {
     }
 
     alternateGlow() {
-        const elementDOM = $(this);
+        const elementDOM = $(this).find('div.element-image');
         const classGlow = 'glow';
 
         if (elementDOM.hasClass(classGlow)) {
