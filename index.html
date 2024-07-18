@@ -39,9 +39,9 @@
       function gtag() {
         dataLayer.push(arguments);
       }
-      gtag("js", new Date());
+      gtag('js', new Date());
 
-      gtag("config", "G-85GZGVT6GT");
+      gtag('config', 'G-85GZGVT6GT');
     </script>
     <script src="js/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
@@ -55,31 +55,47 @@
     </div>
     <div id="game">
       <div class="board-container">
-        <div class="background"></div>
-        <div class="option-buttons">
-          <div id="btn-clear" class="button green clear">
-            <tooltip></tooltip>
+        <div id="popup-discovered-element">
+          <div class="discovered-element">
+            <img title="" alt="" />
+            <div></div>
           </div>
-          <div id="btn-achievements" class="button achievements">
-            <tooltip></tooltip>
-          </div>
-          <div id="btn-changelog" class="button changelog">
-            <tooltip></tooltip>
-          </div>
-          <div id="btn-help" class="button help">
-            <tooltip></tooltip>
-          </div>
-          <div id="btn-settings" class="button settings">
-            <tooltip></tooltip>
-          </div>
+          <div class="light"></div>
         </div>
+        <div class="background"></div>
         <board> </board>
         <div id="log">
           <div class="text"></div>
         </div>
       </div>
       <sidebar>
+        <div id="quit" class="close-x">
+          <tooltip></tooltip>
+        </div>
         <img src="img/logo/logo_s.png" class="logo" alt="" />
+        <div class="horizontal-band"></div>
+        <div class="option-buttons">
+          <div id="btn-clear" class="button green clear">
+            <tooltip></tooltip>
+          </div>
+          <div class="secondary">
+            <div id="btn-achievements" class="button achievements">
+              <tooltip></tooltip>
+            </div>
+            <div id="btn-changelog" class="button changelog">
+              <tooltip></tooltip>
+            </div>
+            <div id="btn-help" class="button help">
+              <tooltip></tooltip>
+            </div>
+            <div id="btn-settings" class="button settings">
+              <tooltip></tooltip>
+            </div>
+          </div>
+          <div id="btn-credits" class="button blue credits">
+            <tooltip></tooltip>
+          </div>
+        </div>
         <div id="input-container">
           <input
             type="search"
@@ -227,28 +243,30 @@
           </div>
         </div>
       </div>
+      <div id="window-credits">
+        <div class="popup credits">
+          <div class="close-x"></div>
+          <div class="container">
+            <div class="title"></div>
+            <div class="horizontal-band"></div>
+          </div>
+          <div class="content"></div>
+          <div class="container footer">
+            <div class="horizontal-band"></div>
+            <div class="made-with-love"></div>
+            <div class="button ok">
+              <span></span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <footer>
       <div class="content">
         <div class="by">
-          Kosmolaris © 2023 by
+          Kosmolaris © 2024 by
           <a href="https://flechajm.github.io" target="_blank"
             >John Arrow Games</a
-          >
-        </div>
-        <div class="social twitter">
-          <a href="https://twitter.com/JohnArrowGames" target="_blank"
-            >Twitter</a
-          >
-        </div>
-        <div class="social youtube">
-          <a href="https://youtube.com/JohnArrowGames" target="_blank"
-            >YouTube</a
-          >
-        </div>
-        <div class="social github">
-          <a href="https://github.com/flechajm/kosmolaris" target="_blank"
-            >GitHub</a
           >
         </div>
       </div>
@@ -257,7 +275,6 @@
         <span>
           <input
             id="volume-control"
-            title="🎵"
             placeholder=""
             type="range"
             min="0"

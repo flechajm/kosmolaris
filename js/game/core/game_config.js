@@ -12,7 +12,7 @@ class GameConfig {
     /**
      * Volumen de la música del juego. Valor por defecto: 8.
      */
-    this.bgmVolume = config?.bgmVolume ?? 20;
+    this.bgmVolume = config?.bgmVolume ?? 50;
 
     /**
      * Volumen del juego. Valor por defecto: 8.

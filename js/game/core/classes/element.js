@@ -36,22 +36,21 @@ class Element {
         return Math.random().toString(36).slice(-8);
     }
 
-    getFixedName() {
-        return this.name.replaceAll('<br />', ' ').replaceAll('<br>', ' ');
-    }
-
     getFormattedColor() {
-        return `<span style='color: ${this.color}'>${this.getFixedName()}</span>`;
+        return `<span style='color: ${this.color}'>${this.name}</span>`;
     }
 
     createElementDOM({ onBoard, posX, posY, ghost, shortcut, combination }) {
+        const randomIcon = ['fire', 'water', 'earth', 'air', 'bruce-lee', 'pressure', 'sulphuric-acid'];
+
+
         const uuid = this.uuid ? `id="${this.uuid}"` : '';
         const classOnBoard = `${onBoard ? ' on-board' : ''}`;
         const classGhost = `${ghost ? ' ghost' : ''}`;
         const position = `${onBoard ? `style="left:${posX}px; top:${posY};"` : ""}`;
         const classShortcut = `${shortcut ? ' shortcut' : ''}`;
         //const styleColor = `style="background-color: ${this.color}; border-color: ${this.color};"`;
-        const elementIcon = `style="background-image: url('../img/elements/${this.id}.png')"`;
+        const elementIcon = `style="background-image: url('img/elements/${this.id}.png')"`;
         const attrCombination = combination ? `combination="${combination.element1};${combination.element2}"` : '';
 
         return `<element

@@ -26,6 +26,11 @@
   --color-common: #6baee7;
   --color-special: #f764e3;
   --color-green-light: #00fa9a;
+  --cursor-default: url(../img/misc/cursor_default.png) 2 0, auto;
+  --cursor-pointer-default: url(../img/misc/pointer_default.png), auto;
+  --cursor-pointer-point: url(../img/misc/pointer_point.png), auto;
+  --cursor-pointer-open: url(../img/misc/pointer_open.png), auto;
+  --cursor-pointer-close: url(../img/misc/pointer_close.png), auto;
 }
 
 * {
@@ -50,6 +55,7 @@ html {
   height: 100%;
   width: 100%;
   overflow: hidden;
+  cursor: var(--cursor-default);
 }
 
 ul {
@@ -62,13 +68,19 @@ li {
 }
 
 a {
+  cursor: var(--cursor-pointer-default);
   color: white;
+  text-underline-offset: 0.2em;
 }
 a:hover {
   color: wheat;
 }
+a:active {
+  cursor: var(--cursor-pointer-point);
+}
 
 select {
+  cursor: var(--cursor-pointer-default);
   background: var(--color-primary);
   color: white;
   border: none;
@@ -78,6 +90,9 @@ select {
   padding: 5px;
   width: 100px;
   outline: 1px solid var(--color-primary-light);
+}
+select:active {
+  cursor: var(--cursor-pointer-point);
 }
 select:focus {
   outline: 1px solid var(--color-primary-bright);
@@ -103,8 +118,11 @@ input[type=search]:focus {
 }
 input[type=search]::-webkit-search-cancel-button {
   position: relative;
-  cursor: pointer;
+  cursor: var(--cursor-pointer-default);
   padding: 5px;
+}
+input[type=search]::-webkit-search-cancel-button:active {
+  cursor: var(--cursor-pointer-point);
 }
 
 footer {
@@ -131,14 +149,11 @@ footer div {
   display: flex;
   align-items: center;
   height: 20px;
-  padding: 0 5px 0 10px;
+  padding: 0 10px 0 10px;
   font-size: x-small;
   font-weight: normal;
   font-family: Arial, Helvetica, sans-serif;
   border-left: 1px dotted rgba(128, 128, 128, 0.404);
-}
-footer div .by {
-  margin-right: 8px;
 }
 footer div.content {
   display: flex;
@@ -177,13 +192,14 @@ footer div.music #music-controls {
 }
 footer div.music #music-controls span {
   width: 16px;
-  cursor: pointer;
+  cursor: var(--cursor-pointer-default);
 }
 footer div.music #music-controls span:hover {
   color: wheat;
 }
 footer div.music #music-controls span:active {
   color: beige;
+  cursor: var(--cursor-pointer-point);
 }
 footer div.music #music-controls span.previous::before {
   content: "\e045";
@@ -203,7 +219,6 @@ footer div.music #music-controls span.next::before {
   content: "\e044";
 }
 footer div.music span:nth-of-type(1) {
-  cursor: pointer;
   display: flex;
   align-items: center;
 }
@@ -217,10 +232,14 @@ footer div.music span:nth-of-type(2) {
   padding-right: 0;
 }
 footer div.music span:nth-of-type(2) input[type=range] {
+  cursor: var(--cursor-pointer-default);
   display: block;
   width: 70px;
   margin-top: 5px;
   margin-right: -15px;
+}
+footer div.music span:nth-of-type(2) input[type=range]:active {
+  cursor: var(--cursor-pointer-point);
 }
 footer div.music span:nth-of-type(2) input[type=range]:focus {
   outline: none;
@@ -276,6 +295,7 @@ footer div.music span:nth-of-type(2) input[type=range]::-ms-fill-upper {
 
 tooltip {
   position: absolute;
+  color: white;
   background-color: black;
   width: -moz-max-content;
   width: max-content;
@@ -315,6 +335,15 @@ tooltip.item {
   z-index: 3;
 }
 
+#debug {
+  z-index: 10;
+  padding: 10px;
+  width: 380px;
+  display: flex;
+  position: absolute;
+  right: 0;
+  gap: 0.5em;
+}
 #debug select {
   width: 100%;
 }
@@ -351,16 +380,6 @@ tooltip.item {
   position: relative;
   flex: 4;
 }
-#game .board-container .option-buttons {
-  display: flex;
-  align-items: center;
-  position: absolute;
-  top: 0;
-  right: 0;
-  margin: 1em;
-  gap: 0.5em;
-  z-index: 1;
-}
 #game .board-container board {
   flex: 4 0 5%;
   display: flex;
@@ -368,10 +387,89 @@ tooltip.item {
   position: relative;
   height: 100%;
 }
+#game .board-container #popup-discovered-element {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-bg-category);
+  opacity: 0.97;
+  z-index: 10;
+}
+#game .board-container #popup-discovered-element .discovered-element {
+  cursor: var(--cursor-pointer-default);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  position: absolute;
+  width: 200px;
+  height: 300px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  background-position: center;
+  background-size: 200px;
+  background-repeat: no-repeat;
+  filter: drop-shadow(0px 0px 10px black);
+  transition: transform 0.3s cubic-bezier(0.72, -0.6, 0.32, 2.2);
+  z-index: 11;
+}
+#game .board-container #popup-discovered-element .discovered-element img {
+  width: 0;
+  height: 0;
+}
+#game .board-container #popup-discovered-element .discovered-element:hover {
+  cursor: var(--cursor-pointer-default);
+  transform: scale(1.3);
+  transition: transform 150ms ease-in;
+}
+#game .board-container #popup-discovered-element .discovered-element:active {
+  cursor: var(--cursor-pointer-point);
+}
+#game .board-container #popup-discovered-element .discovered-element div:nth-child(2) {
+  font-family: "Roboto Slab";
+  font-size: 3em;
+  text-wrap: nowrap;
+}
+#game .board-container #popup-discovered-element .discovered-element div:nth-child(2).common {
+  text-shadow: 2px 2px 4px var(--dark), 0 0px 6px var(--color-common);
+}
+#game .board-container #popup-discovered-element .discovered-element div:nth-child(2).special {
+  text-shadow: 2px 2px 4px var(--dark), 0 0px 6px var(--color-special);
+}
+#game .board-container #popup-discovered-element .light {
+  position: absolute;
+  width: 835px;
+  height: 641px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  background-image: url("../img/misc/flare.png");
+  background-position: center;
+  background-size: cover;
+  transition: opacity 0.6s ease-in-out;
+  animation: rotating 10s linear infinite;
+  opacity: 0.3;
+}
+#game .board-container #popup-discovered-element .light.common {
+  filter: brightness(0.8) contrast(2) hue-rotate(165deg);
+}
+#game .board-container #popup-discovered-element .light.special {
+  filter: brightness(0.8) contrast(2) hue-rotate(260deg);
+}
+#game .board-container #popup-discovered-element .light.lightHard {
+  opacity: 1;
+}
 #game .board-container #log {
-  -webkit-user-select: text;
-     -moz-user-select: text;
-          user-select: text;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   display: flex;
   position: relative;
   bottom: 0;
@@ -400,13 +498,14 @@ tooltip.item {
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
-  cursor: pointer;
+  cursor: var(--cursor-pointer-default);
 }
 #game .board-container #log #show-changelog:hover {
   color: wheat;
 }
 #game .board-container #log #show-changelog:active {
   color: beige;
+  cursor: var(--cursor-pointer-point);
 }
 #game .board-container .background {
   position: absolute;
@@ -448,6 +547,17 @@ tooltip.item {
   margin: auto;
   padding-block: 0.5em 1.5em;
   pointer-events: none;
+}
+#game sidebar .option-buttons {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 0.5em;
+  margin-block: 1em;
+  z-index: 1;
+}
+#game sidebar .option-buttons div.secondary {
+  display: flex;
+  gap: 0.5em;
 }
 #game sidebar div#unlocked-container {
   display: flex;
@@ -500,7 +610,7 @@ tooltip.item {
 }
 #game sidebar div.category div.category-header {
   display: flex;
-  cursor: pointer;
+  cursor: var(--cursor-pointer-default);
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
@@ -512,6 +622,9 @@ tooltip.item {
 }
 #game sidebar div.category div.category-header:hover {
   filter: brightness(150%);
+}
+#game sidebar div.category div.category-header:active {
+  cursor: var(--cursor-pointer-point);
 }
 #game sidebar div.category div.category-header div.chevron {
   display: flex;
@@ -529,7 +642,7 @@ tooltip.item {
   overflow-y: overlay;
   gap: 3px;
   margin: 0.3em;
-  padding: 0.8em 0.3em 0.7em 0.3em;
+  padding: 0.8em 0.3em 1em 0.3em;
 }
 #game sidebar div.category div.category-content::-webkit-scrollbar {
   -webkit-appearance: none;
@@ -541,20 +654,20 @@ tooltip.item {
   border-radius: 16px;
 }
 #game .element-wrapper {
-  cursor: grab;
+  cursor: var(--cursor-pointer-open);
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   max-width: 80px;
-  max-height: 80px;
+  max-height: 104px;
   font-family: var(--font-primary);
   font-size: 0.9rem;
   font-weight: bold;
   border-radius: 50%;
 }
 #game .element-wrapper.ui-draggable-dragging {
-  cursor: grabbing;
+  cursor: var(--cursor-pointer-close);
 }
 #game .element-wrapper.hidden {
   display: none;
@@ -572,6 +685,7 @@ tooltip.item {
 }
 #game .element-wrapper span {
   font-size: 0.8em;
+  margin-top: 0.3em;
 }
 #game .element-wrapper:hover {
   transform: scale(1.08);
@@ -579,10 +693,9 @@ tooltip.item {
 }
 #game .element-wrapper .element-button {
   width: 80px;
-  height: 80px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   border-radius: 50%;
   text-shadow: 2px 2px 4px #000, 0px 0px 7px var(--dark), 0px 0px 10px var(--dark);
@@ -591,7 +704,7 @@ tooltip.item {
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
-  height: 80px;
+  min-height: 80px;
   width: 80px;
   filter: drop-shadow(0px 0px 3px black) contrast(1.2);
 }
@@ -685,7 +798,11 @@ tooltip.item {
   align-items: center;
 }
 #window-settings .content .option input[type=range] {
+  cursor: var(--cursor-pointer-default);
   display: block;
+}
+#window-settings .content .option input[type=range]:active {
+  cursor: var(--cursor-pointer-point);
 }
 #window-settings .content .option input[type=range]:focus {
   outline: none;
@@ -795,6 +912,43 @@ tooltip.item {
   color: var(--color-earth);
 }
 
+#window-credits {
+  display: none;
+  z-index: 5;
+}
+#window-credits .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  height: 100%;
+  width: 90%;
+  gap: 0.6em;
+  overflow: overlay;
+  margin-block: 0.5em;
+  padding-inline: 2.5em;
+  padding-block: 1em 1.5em;
+}
+#window-credits .content div.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5em;
+  margin-bottom: 2em;
+}
+#window-credits .content div.section p {
+  font-size: 1.3em;
+}
+#window-credits .content.empty {
+  align-items: center;
+  justify-content: center;
+}
+#window-credits .container.footer .made-with-love {
+  display: flex;
+  align-items: end;
+  gap: 0.5em;
+}
+
 .button {
   flex: 1;
   display: flex;
@@ -810,16 +964,20 @@ tooltip.item {
   background: linear-gradient(140deg, rgb(253, 173, 69) 10%, rgb(248, 99, 12) 40%, rgb(107, 62, 4) 100%);
   box-shadow: 0px 0px 3px orangered;
   border-radius: 6px;
-  cursor: pointer;
+  cursor: var(--cursor-pointer-default);
   text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.5058823529);
   font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24;
   z-index: 1;
+  max-width: 42px;
+}
+.button:active {
+  cursor: var(--cursor-pointer-point);
 }
 .button.disabled {
   pointer-events: none;
 }
 .button.clear {
-  width: 42px;
+  min-width: 42px;
 }
 .button.clear::after {
   font-family: "Material Symbols Rounded";
@@ -827,7 +985,7 @@ tooltip.item {
   content: "\f0ff";
 }
 .button.settings {
-  width: 42px;
+  min-width: 42px;
 }
 .button.settings::after {
   font-family: "Material Symbols Rounded";
@@ -835,7 +993,7 @@ tooltip.item {
   content: "\e8b8";
 }
 .button.help {
-  width: 42px;
+  min-width: 42px;
 }
 .button.help::after {
   font-family: "Material Symbols Rounded";
@@ -843,7 +1001,7 @@ tooltip.item {
   content: "\eb8b";
 }
 .button.achievements {
-  width: 42px;
+  min-width: 42px;
 }
 .button.achievements::after {
   font-family: "Material Symbols Rounded";
@@ -851,12 +1009,20 @@ tooltip.item {
   content: "\e71a";
 }
 .button.changelog {
-  width: 42px;
+  min-width: 42px;
 }
 .button.changelog::after {
   font-family: "Material Symbols Rounded";
   font-size: 24;
   content: "\e873";
+}
+.button.credits {
+  min-width: 42px;
+}
+.button.credits::after {
+  font-family: "Material Symbols Rounded";
+  font-size: 24;
+  content: "\e8cd";
 }
 .button.ok {
   max-width: 40%;
@@ -882,6 +1048,8 @@ tooltip.item {
   box-shadow: 0px 0px 1px lawngreen;
 }
 .button.red {
+  max-width: 40%;
+  min-height: 40px;
   background: linear-gradient(140deg, #d57070 10%, #bb2323 40%, #810e0e 100%);
   box-shadow: 0px 0px 1px crimson;
 }
@@ -902,9 +1070,20 @@ tooltip.item {
   font-style: italic;
 }
 
+.achievement-container {
+  width: 100%;
+}
+.achievement-container div.disclaimer {
+  text-align: center;
+  margin: 0.5em 0 1em 0;
+  font-size: x-small;
+  font-weight: 400;
+  color: var(--color-air);
+}
+
 .achievement {
   display: flex;
-  cursor: pointer;
+  cursor: var(--cursor-pointer-default);
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
@@ -930,6 +1109,9 @@ tooltip.item {
   height: 60px;
   line-height: 1.5em;
   letter-spacing: 0.2px;
+}
+.achievement:active {
+  cursor: var(--cursor-pointer-point);
 }
 .achievement.expand {
   width: 100%;
@@ -993,23 +1175,10 @@ tooltip.item {
   height: 580px;
   align-items: center;
 }
-.popup .close-x {
-  cursor: pointer;
-  position: absolute;
-  top: 8px;
-  right: 8px;
-}
-.popup .close-x::after {
-  font-family: "Material Symbols Rounded";
-  font-size: 24;
-  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24;
-  content: "\e5cd";
-}
-.popup .close-x:hover {
-  color: wheat;
-}
-.popup .close-x:active {
-  transform: scale(0.9);
+.popup.credits {
+  width: 580px;
+  height: 600px;
+  align-items: center;
 }
 .popup .title {
   margin-block: 1.2em;
@@ -1025,6 +1194,26 @@ tooltip.item {
   gap: 1em;
   justify-content: end;
   margin-bottom: 1em;
+}
+
+.close-x {
+  cursor: var(--cursor-pointer-default);
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+.close-x::after {
+  font-family: "Material Symbols Rounded";
+  font-size: 24;
+  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24;
+  content: "\e5cd";
+}
+.close-x:hover {
+  color: wheat;
+}
+.close-x:active {
+  transform: scale(0.9);
+  cursor: var(--cursor-pointer-point);
 }
 
 ::-webkit-scrollbar {
@@ -1071,5 +1260,39 @@ tooltip.item {
   }
   100% {
     transform: scale(1);
+  }
+}
+@keyframes rotating {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes scale-easeOutElastic {
+  0% {
+    transform: scale(1);
+  }
+  16% {
+    transform: scale(-0.32);
+  }
+  28% {
+    transform: scale(0.13);
+  }
+  44% {
+    transform: scale(-0.05);
+  }
+  59% {
+    transform: scale(0.02);
+  }
+  73% {
+    transform: scale(-0.01);
+  }
+  88% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(0);
   }
 }/*# sourceMappingURL=style.css.map */

@@ -3,8 +3,8 @@ import Combination from "./classes/combination.js";
 import GameLog from "./game_log.js";
 
 import LanguageManager from "../../libs/language_manager.js";
-import GameElements from "./game_elements.js";
 import GameCategories from "./game_categories.js";
+import GameElements from "./game_elements.js";
 
 class GameCombinationManager {
     static #combinations = [];
@@ -238,7 +238,7 @@ class GameCombinationManager {
             this.addCombination({ element1: 'monster', element2: 'workbench', result: 'frankenstein' });
             this.addCombination({ element1: 'human', element2: 'chainsaw', result: 'leatherface' });
             this.addCombination({ element1: 'astronaut', element2: 'moon', result: 'apollo-11' });
-            this.addCombination({ element1: 'spaceship', element2: 'explosion', result: 'challenger' });
+            this.addCombination({ element1: 'spacecraft', element2: 'explosion', result: 'challenger' });
 
             // Food
             this.addCombination({ element1: 'plant', element2: 'field', result: 'wheat' });
@@ -272,7 +272,7 @@ class GameCombinationManager {
             this.addCombination({ element1: 'ship', element2: 'ghost', result: 'ghost-ship' });
             this.addCombination({ element1: 'engine', element2: 'sky', result: 'helicopter' });
             this.addCombination({ element1: 'engine', element2: 'clouds', result: 'airplane' });
-            this.addCombination({ element1: 'engine', element2: 'space', result: 'spaceship' });
+            this.addCombination({ element1: 'engine', element2: 'space', result: 'spacecraft' });
             this.addCombination({ element1: 'engine', element2: 'oceanic-trench', result: 'submarine' });
 
             resolve();
@@ -361,6 +361,10 @@ class GameCombinationManager {
                 .replace('{result}', elementUnlocked.getFormattedColor())
             );
         }
+    }
+
+    static getAllCombinations() {
+        return this.#combinations;
     }
 
     static getElementsUnlocked() {

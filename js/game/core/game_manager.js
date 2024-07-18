@@ -64,16 +64,17 @@ class GameManager {
         const gameManager = this;
         const elements = GameElements.getAll();
         const debugTemplate = `<div id="debug">
+                                    <div id="btn-unlockall" class="button green achievements"></div>
                                     <select id="element-selector"></select>
                                 </div>`;
-        $('.option-buttons').prepend(debugTemplate);
+        $('.board-container').prepend(debugTemplate);
 
         elements.sort((a, b) => a.name.localeCompare(b.name));
 
         for (let i = 0; i < elements.length; i++) {
             const element = elements[i];
 
-            $('#element-selector').append(`<option value="${element.id}">${element.getFixedName()} (${element.id})</option>`);
+            $('#element-selector').append(`<option value="${element.id}">${element.name} (${element.id})</option>`);
         }
 
         $('#element-selector').on('change', function (e) {
@@ -83,6 +84,10 @@ class GameManager {
             gameManager.appendElementToBoard(element, { onBoard: false, shortcut: true });
             gameManager.saveGame();
             e.target.selectedIndex = -1;
+        });
+
+        $('#btn-unlockall').click(function () {
+            gameManager.unlockAll();
         });
     }
 
@@ -112,7 +117,7 @@ class GameManager {
                 const achievementId = this.achievements.unlockeds[i];
                 const achievement = this.achievements.getById(achievementId);
 
-                contentDOM.append(achievement.getDOM(true));
+                contentDOM.append(achievement.getDOM({ expand: true, showDisclaimer: true }));
             }
         }
     }
@@ -339,6 +344,31 @@ class GameManager {
         }
     }
 
+    // unlockOneByOne(element1, element2) {
+    //     const elementResult = GameCombinationManager.findCombination({
+    //         element1: element1,
+    //         element2: element2,
+    //     });
+
+    //     if (elementResult != null && !GameCombinationManager.checkExists(elementResult.result)) {
+    //         this.unlockElement(elementResult, element1, element2);
+    //         GameCategories.addElementToCategory(elementResult.id, { combination: combination });
+    //     }
+    // }
+
+    unlockAll() {
+        const combinations = GameCombinationManager.getAllCombinations();
+        console.log(combinations.length);
+        for (let i = 0; i < combinations.length; i++) {
+            const combination = combinations[i];
+
+            if (!GameCombinationManager.checkExists(combination.result)) {
+                this.unlockElement(combination.result, combination.element1, combination.element2);
+                GameCategories.addElementToCategory(combination.result.id, { combination: combination });
+            }
+        }
+    }
+
     unlockElement(newElement, element1, element2) {
         audioManager.playPlop();
         GameCombinationManager.unlockElement(newElement, element1, element2);
@@ -352,6 +382,33 @@ class GameManager {
 
         this.#loadAchievements();
         this.#updateCurrentDiscoveredElements();
+        this.#showPopupDiscoveredElement(newElement);
+
+    }
+
+    #showPopupDiscoveredElement(element) {
+        const popupDiscoveredElementDOM = $('#popup-discovered-element');
+        const discoveredElementDOM = popupDiscoveredElementDOM.find('div.discovered-element');
+        const lightDOM = popupDiscoveredElementDOM.find('div.light');
+        const nameDOM = discoveredElementDOM.find('div');
+
+        discoveredElementDOM.find('img').attr('src', `../img/elements/${element.id}.png`);
+        nameDOM.html(element.name);
+
+        if (element.isSpecial) {
+            nameDOM.removeClass('common').addClass('special');
+            lightDOM.removeClass('common').addClass('special');
+        } else {
+            nameDOM.removeClass('special').addClass('common');
+            lightDOM.removeClass('special').addClass('common');
+        }
+
+        popupDiscoveredElementDOM.show();
+        discoveredElementDOM.find('img').animate({
+            height: '200px',
+            width: '200px',
+        }, 1000, 'easeOutElastic');
+        audioManager.playUnlock();
     }
 
     showGhostElement(element, position) {

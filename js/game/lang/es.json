@@ -14,7 +14,9 @@
     "achievements": "Logros",
     "help": "Ayuda",
     "changelog": "Cambios de versión",
-    "wipeData": "⚠️ Borra todos los datos del juego y lo reinicia completamente.<br />Esta acción no se puede deshacer."
+    "credits": "Créditos",
+    "wipeData": "⚠️ Borra todos los datos del juego y lo reinicia completamente.<br />Esta acción no se puede deshacer.",
+    "closeGame": "Salir del Juego"
   },
   "windows": {
     "settings": {
@@ -40,12 +42,12 @@
       "title": "BIENVENIDO",
       "ok": "Entendido",
       "elements": ["Aire", "Fuego", "Tierra", "Agua"],
-      "welcome": "Bienvenido a {game}!<br /><br />En este juego tendrás que combinar una gran variedad de elementos entre sí para crear otros nuevos, comenzando con los 4 elementos básicos: {air}, {fire}, {earth} y {water}.<br /><br />Algunos elementos se basan en principios de reglas químicas básicas, mientras que otros no tanto, más bien se aplca el sentido común.",
+      "welcome": "¡Bienvenido a {game}!<br /><br />En este juego tendrás que combinar una gran variedad de elementos entre sí para crear otros nuevos, comenzando con los 4 elementos básicos: {air}, {fire}, {earth} y {water}.<br /><br />Algunos elementos se basan en principios de reglas químicas básicas, mientras que otros no tanto, más bien se aplica el sentido común y/o ingeniería inversa.",
       "elementTypes": {
         "types": ["comunes", "especiales"],
         "description": "Hay dos tipos de elementos distintos: {common} y {special}.",
         "commonElementDesc": "Los elementos {common} son de público conocimiento y podrás desbloquearlos sin ninguna restricción: algunas reglas de química y sentido común, eso es todo.",
-        "specialElementDesc": "Los elementos {special} son principalmente <i>easter eggs</i> y puede que necesites un conocimiento específico mínimo sobre algún tema. Estos elementos comunmente no son reales, de hecho son parte de la ficción, de momentos icónicos de nuestras vidas y del mundo entero (quizá).<br /><br />No te sientas mal si no los encuentras, no son el objetivo principal del juego. Pero, si ere curioso..."
+        "specialElementDesc": "Los elementos {special} son principalmente <i>easter eggs</i> y puede que necesites un conocimiento específico mínimo sobre algún tema. Estos elementos comunmente no son reales, de hecho son parte de la ficción, de momentos icónicos de nuestras vidas y del mundo entero (quizá).<br /><br />No te sientas mal si no los encuentras, no son el objetivo principal del juego. Pero, si eres curioso..."
       },
       "guide": {
         "title": "Cómo funciona el juego 👇:",
@@ -85,12 +87,51 @@
           }
         ]
       },
-      "footer": "Recuerda que también puedes cambiar tu idioma preferido y el volumen de audio en las ⚙️, así como también puedes borrar los datos del juego completamente para comenzar desde cero.<br /><br />Eso es todo. Fácil, ¿verdad?<br />¡Buena suerte, y disfruta del juego! 😊"
+      "footer": "Recuerda que también puedes cambiar tu idioma preferido y el volumen de audio en las opciones ⚙️, así como también puedes borrar los datos del juego completamente para comenzar desde cero.<br /><br />Eso es todo. Fácil, ¿verdad?<br />¡Buena suerte, y disfruta de {game}! 😊"
+    },
+    "credits": {
+      "title": "CRÉDITOS",
+      "footer": {
+        "madeWithLove": "Hecho con 💖 en",
+        "argentina": "Argentina ⭐⭐⭐"
+      },
+      "programming": {
+        "title": "Diseño del Juego y Programación",
+        "authors": [
+          "🔗 <a href='https://flechajm.github.io' target='_blank'>Juan Manuel Flecha</a>"
+        ]
+      },
+      "art": {
+        "title": "Arte e Interfaz de Usuario",
+        "authors": [
+          "Juan Manuel Flecha (IU)",
+          "🔗 <a href='https://x.com/ChemaLuque_dev' target='_blank'>Chemita</a> (Íconos de Elementos)",
+          "🔗 <a href='https://kenney.nl' target='_blank'>Kenney</a> (Cursores del Mouse)"
+        ]
+      },
+      "testers": {
+        "title": "Control de Calidad",
+        "authors": [
+          "Juan Manuel Flecha",
+          "Carolina Andrea D'Alfonso 🥰",
+          "Nazareno Allegue"
+        ]
+      },
+      "bgm": {
+        "title": "Música y Efectos de Sonido",
+        "authors": [
+          "Juan Manuel Flecha (Efectos de Sonido)",
+          "🔗 <a href='https://freesound.org' target='_blank'>freesound.org</a> (Efectos de Sonido)",
+          "🔗 <a href='https://pixabay.com/users/relaxingtime' target='_blank'>Relaxing Time</a> (Música de Fondo)",
+          "🔗 <a href='https://pixabay.com/users/light_music' target='_blank'>Light Music</a> (Música de Fondo)"
+        ]
+      },
+      "disclaimer": "En el juego pueden aparecer elementos con nombres de personajes icónicos de la vida real, series y/o películas. Dichos nombres son propiedad intelectual y marcas registradas de sus respectivos dueños y/o compañías. Kosmolaris no está endosado por ninguna de estas compañías ni recibe regalías por nombrarlos."
     }
   },
   "console": {
     "welcome": "¡Bienvenido a {game}!",
-    "version": "Versión: {version} ({date})",
+    "version": "Versión: {version} ({date}) 📝",
     "lastUpdate": "Actualizado: {date}",
     "saveProgress": "Progreso guardado",
     "specialElement": "especial",
@@ -157,22 +198,26 @@
     {
       "id": 12,
       "title": "A veces envidio a los muertos",
-      "description": "Descubre a Michonne, de The Walking Dead."
+      "description": "Descubre a Michonne, de The Walking Dead.",
+      "disclaimer": "\"Michonne\" es un personaje de \"The Walking Dead\", y es propiedad intelectual de AMC Networks."
     },
     {
       "id": 13,
       "title": "¿Después de todo este tiempo?",
-      "description": "Descubre a Harry Potter."
+      "description": "Descubre a Harry Potter.",
+      "disclaimer": "\"Harry Potter\" es propiedad intelectual de Warner Bros. Entertainment Inc."
     },
     {
       "id": 14,
       "title": "No sabes nada...",
-      "description": "Descubre a Jon Snow, de Game of Thrones."
+      "description": "Descubre a Jon Snow, de Game of Thrones.",
+      "disclaimer": "\"Jon Snow\" es un personaje de \"Game of Thrones\", propiedad intelectual de HBO."
     },
     {
       "id": 15,
       "title": "Es un bate vampiro",
-      "description": "Descubre a Negan y Lucille, de The Walking Dead."
+      "description": "Descubre a Negan y Lucille, de The Walking Dead.",
+      "disclaimer": "\"Negan\" y \"Lucille\" son personajes de \"The Walking Dead\" y son propiedad intelectual de AMC Networks."
     },
     {
       "id": 16,
@@ -182,7 +227,8 @@
     {
       "id": 17,
       "title": "Lucille está sedienta...",
-      "description": "Descubre a Lucille, el bate de Negan de The Walking Dead."
+      "description": "Descubre a Lucille, el bate de Negan de The Walking Dead.",
+      "disclaimer": "El término \"Lucile\" es un nombre utilizado en \"The Walking Dead\" y es propiedad intelectual de AMC Networks."
     },
     {
       "id": 18,
@@ -192,7 +238,8 @@
     {
       "id": 19,
       "title": "Simio no mata simio",
-      "description": "Descubre el planeta de los simios."
+      "description": "Descubre el planeta de los simios.",
+      "disclaimer": "\"El Planeta de los Simios\" es propiedad intelectual de 20th Century Studios."
     },
     {
       "id": 20,
@@ -202,17 +249,20 @@
     {
       "id": 21,
       "title": "Dragón Inmortal",
-      "description": "Descubre a Bruce Lee."
+      "description": "Descubre a Bruce Lee.",
+      "disclaimer": "\"Bruce Lee\" es una figura histórica y cultural, propiedad intelectual de Bruce Lee Enterprises, LLC."
     },
     {
       "id": 22,
       "title": "Soy intrépido, y por lo tanto poderoso.",
-      "description": "Descubre a Frankenstein."
+      "description": "Descubre a Frankenstein.",
+      "disclaimer": "\"Frankenstein\" es una obra original de Mary Shelley."
     },
     {
       "id": 23,
       "title": "Bubba Sawyer",
-      "description": "Descubre a Leatherface."
+      "description": "Descubre a Leatherface.",
+      "disclaimer": "\"Leatherface\" es un personaje de \"La Masacre de Texas\", propiedad intelectual de Vortex, Inc."
     },
     {
       "id": 24,
@@ -222,12 +272,14 @@
     {
       "id": 25,
       "title": "Un gran salto para la humanidad",
-      "description": "Descubre la nave espacial Apolo 11."
+      "description": "Descubre la nave espacial Apolo 11.",
+      "disclaimer": "\"Apollo 11\" es una nave espacial, propiedad de la NASA."
     },
     {
       "id": 26,
       "title": "Después de 73 segundos...",
-      "description": "Descubre la nave espacial Challenger."
+      "description": "Descubre la nave espacial Challenger.",
+      "disclaimer": "\"Challenger\" es una nave espacial, propiedad de la NASA."
     }
   ],
   "elements": [
@@ -338,12 +390,12 @@
     },
     {
       "id": "solar-system",
-      "name": "Sistema<br />Solar",
+      "name": "Sistema Solar",
       "description": ""
     },
     {
       "id": "milky-way",
-      "name": "Vía<br />Láctea",
+      "name": "Vía Láctea",
       "description": ""
     },
     {
@@ -428,7 +480,7 @@
     },
     {
       "id": "planet-apes",
-      "name": "Planeta de<br />los Simios",
+      "name": "Planeta de los Simios",
       "description": ""
     },
     {
@@ -553,7 +605,7 @@
     },
     {
       "id": "mineral-rock",
-      "name": "Roca<br />Mineral",
+      "name": "Roca Mineral",
       "description": ""
     },
     {
@@ -643,7 +695,7 @@
     },
     {
       "id": "soil",
-      "name": "Suelo<br />Orgánico",
+      "name": "Suelo Orgánico",
       "description": ""
     },
     {
@@ -733,7 +785,7 @@
     },
     {
       "id": "magic-wand",
-      "name": "Varita<br />Mágica",
+      "name": "Varita Mágica",
       "description": ""
     },
     {
@@ -778,12 +830,12 @@
     },
     {
       "id": "wild-animal",
-      "name": "Animal<br />Salvaje",
+      "name": "Animal Salvaje",
       "description": ""
     },
     {
       "id": "domestic-animal",
-      "name": "Animal<br />Doméstico",
+      "name": "Animal Doméstico",
       "description": ""
     },
     {
@@ -883,7 +935,7 @@
     },
     {
       "id": "werewolf",
-      "name": "Hombre<br />Lobo",
+      "name": "Hombre Lobo",
       "description": ""
     },
     {
@@ -898,7 +950,7 @@
     },
     {
       "id": "direwolf",
-      "name": "Lobo<br />Huargo",
+      "name": "Lobo Huargo",
       "description": ""
     },
     {
@@ -913,7 +965,7 @@
     },
     {
       "id": "phoenix",
-      "name": "Ave<br />Fénix",
+      "name": "Ave Fénix",
       "description": ""
     },
     {
@@ -948,7 +1000,7 @@
     },
     {
       "id": "big-fish",
-      "name": "Pez<br />Grande",
+      "name": "Pez Grande",
       "description": ""
     },
     {
@@ -973,7 +1025,7 @@
     },
     {
       "id": "swordfish",
-      "name": "Pez<br />Espada",
+      "name": "Pez Espada",
       "description": ""
     },
     {
@@ -983,7 +1035,7 @@
     },
     {
       "id": "hammerhead-shark",
-      "name": "Tiburón<br />Martillo",
+      "name": "Tiburón Martillo",
       "description": ""
     },
     {
@@ -1003,12 +1055,12 @@
     },
     {
       "id": "sulphuric-acid",
-      "name": "Ácido<br />Sulfúrico",
+      "name": "Ácido Sulfúrico",
       "description": ""
     },
     {
       "id": "acid-rain",
-      "name": "Lluvia<br />Ácida",
+      "name": "Lluvia Ácida",
       "description": ""
     },
     {
@@ -1048,7 +1100,7 @@
     },
     {
       "id": "poultry",
-      "name": "Aves de<br />Corral",
+      "name": "Aves de Corral",
       "description": ""
     },
     {
@@ -1108,7 +1160,7 @@
     },
     {
       "id": "blue-cheese",
-      "name": "Queso<br />Azul",
+      "name": "Queso Azul",
       "description": ""
     },
     {
@@ -1133,12 +1185,12 @@
     },
     {
       "id": "beef",
-      "name": "Carne<br />Vacuna",
+      "name": "Carne Vacuna",
       "description": ""
     },
     {
       "id": "pork",
-      "name": "Carne<br />Porcina",
+      "name": "Carne Porcina",
       "description": ""
     },
     {
@@ -1198,7 +1250,7 @@
     },
     {
       "id": "oceanic-trench",
-      "name": "Fosa<br />Oceánica",
+      "name": "Fosa Oceánica",
       "description": ""
     },
     {
@@ -1238,7 +1290,7 @@
     },
     {
       "id": "ghost-ship",
-      "name": "Barco<br />Fantasma",
+      "name": "Barco Fantasma",
       "description": ""
     },
     {
@@ -1252,8 +1304,8 @@
       "description": ""
     },
     {
-      "id": "spaceship",
-      "name": "Nave<br />Espacial",
+      "id": "spacecraft",
+      "name": "Nave Espacial",
       "description": ""
     },
     {
@@ -1303,7 +1355,7 @@
     },
     {
       "id": "smoked-ham",
-      "name": "Jamón<br />Ahumado",
+      "name": "Jamón Ahumado",
       "description": ""
     },
     {

@@ -19,10 +19,10 @@ class GameAchievements {
 
         if (achievement && !isUnlocked) {
             if (audioManager) {
-                audioManager.play('levelup');
+                audioManager.play('achievement');
             }
 
-            const achievementConsoleDOM = achievement.getDOM();
+            const achievementConsoleDOM = achievement.getDOM({});
 
             GameLog.write(`🏆 <span class='achievement-unlocked'>${LanguageManager.getData().console.achievementUnlocked}</span>`);
             GameLog.write(achievementConsoleDOM);
@@ -37,7 +37,7 @@ class GameAchievements {
     }
 
     addAchievementToWindow(achievement) {
-        const achievementWindowDOM = achievement.getDOM(true);
+        const achievementWindowDOM = achievement.getDOM({ expand: true, showDisclaimer: true });
 
         const contentDOM = $('#window-achievements .content');
         contentDOM.append(achievementWindowDOM);
@@ -51,6 +51,7 @@ class GameAchievements {
             if (achievementsInfo) {
                 achievement.title = achievementsInfo.title;
                 achievement.description = achievementsInfo.description;
+                achievement.disclaimer = achievementsInfo.disclaimer;
             }
         });
     }

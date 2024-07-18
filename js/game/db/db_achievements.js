@@ -83,7 +83,7 @@ class DbAchievements {
                 id: 12,
                 rules: [
                     new Rule({ elementToUnlock: 'michonne' })
-                ]
+                ],
             }),
 
             // Harry Potter

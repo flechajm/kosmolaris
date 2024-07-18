@@ -158,6 +158,10 @@ class AudioManager {
         this.play('miss', this.#sfxVolume);
     }
 
+    playUnlock() {
+        this.play('unlock', this.#sfxVolume);
+    }
+
     #shuffleArray(array) {
         for (let i = array.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
@@ -190,7 +194,7 @@ class AudioManager {
      * @param {Number} volume Volume.
      */
     setBGMVolume(volume) {
-        this.#bgmVolume = volume / 100;
+        this.#bgmVolume = volume / 500;
         if (this.#bgm) {
             this.#bgm.volume(this.#bgmVolume);
         }

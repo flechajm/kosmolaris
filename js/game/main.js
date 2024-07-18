@@ -1,15 +1,15 @@
-import GameInfo from "./core/game_info.js";
-import GameElements from "./core/game_elements.js";
-import GameLog from './core/game_log.js';
 import GameCategories from './core/game_categories.js';
-import GameTooltips from './core/game_tooltips.js';
 import GameCombinationManager from './core/game_combination_manager.js';
-import GameStateManager from './core/game_state_manager.js';
 import GameConfig from './core/game_config.js';
+import GameElements from "./core/game_elements.js";
+import GameInfo from "./core/game_info.js";
+import GameLog from './core/game_log.js';
+import GameStateManager from './core/game_state_manager.js';
+import GameTooltips from './core/game_tooltips.js';
 
+import AudioManager from '../libs/audio_manager.js';
 import ImageLoader from '../libs/image_loader.js';
 import LanguageManager from "../libs/language_manager.js";
-import AudioManager from '../libs/audio_manager.js';
 
 var gameManager;
 var audioManager;
@@ -70,7 +70,9 @@ function setTooltips(langData) {
     GameTooltips.bind({ element: $('#btn-achievements'), text: langData.tooltips.achievements });
     GameTooltips.bind({ element: $('#btn-help'), text: langData.tooltips.help });
     GameTooltips.bind({ element: $('#btn-changelog'), text: langData.tooltips.changelog });
+    GameTooltips.bind({ element: $('#btn-credits'), text: langData.tooltips.credits });
     GameTooltips.bind({ element: $('#btn-wipe'), text: langData.tooltips.wipeData });
+    GameTooltips.bind({ element: $('#quit'), text: langData.tooltips.closeGame });
 }
 
 function setupButtons(langData) {
@@ -78,6 +80,8 @@ function setupButtons(langData) {
     const windowAchievementsDOM = $('#window-achievements');
     const windowHelpDOM = $('#window-help');
     const windowChangelogDOM = $('#window-changelog');
+    const windowCreditsDOM = $('#window-credits');
+    const popupDiscoveredElementDOM = $('#popup-discovered-element');
 
     $('.button').on('mouseenter', function () {
         audioManager.playMouseHover();
@@ -102,6 +106,7 @@ function setupButtons(langData) {
         windowAchievementsDOM.hide();
         windowHelpDOM.hide();
         windowChangelogDOM.hide();
+        windowCreditsDOM.hide();
 
         windowSettingsDOM.fadeIn();
     });
@@ -110,14 +115,26 @@ function setupButtons(langData) {
         windowSettingsDOM.hide();
         windowHelpDOM.hide();
         windowChangelogDOM.hide();
+        windowCreditsDOM.hide();
 
         windowAchievementsDOM.fadeIn();
+    });
+
+    $('#btn-credits').click(function () {
+        windowAchievementsDOM.hide();
+        windowSettingsDOM.hide();
+        windowHelpDOM.hide();
+        windowChangelogDOM.hide();
+
+        windowCreditsDOM.fadeIn();
+        windowCreditsDOM.find('.content').scrollTop(0);
     });
 
     $('#btn-help').click(function () {
         windowAchievementsDOM.hide();
         windowSettingsDOM.hide();
         windowChangelogDOM.hide();
+        windowCreditsDOM.hide();
 
         windowHelpDOM.fadeIn();
         windowHelpDOM.find('.content').scrollTop(0);
@@ -128,6 +145,7 @@ function setupButtons(langData) {
         windowAchievementsDOM.hide();
         windowSettingsDOM.hide();
         windowHelpDOM.hide();
+        windowCreditsDOM.hide();
 
         windowChangelogDOM.fadeIn();
     });
@@ -177,7 +195,13 @@ function setupButtons(langData) {
         $(this).parent().parent().fadeOut();
     }).on('mouseup', function () {
         audioManager.playClick();
-    });;
+    });
+
+    $('#quit').unbind().click(function () {
+        window.close();
+    }).on('mouseup', function () {
+        audioManager.playClick();
+    });
 
     $("#volume-control").bind("input", function (e) {
         gameConfig.bgmVolume = e.currentTarget.value;
@@ -186,6 +210,41 @@ function setupButtons(langData) {
         $('#volume-bgm').val(gameConfig.bgmVolume);
         updateVolumeText('bgm', gameConfig.bgmVolume);
         gameConfig.save();
+    });
+
+
+    function hidePopupDiscoveredElement() {
+        const iconDOM = popupDiscoveredElementDOM.find('img');
+        popupDiscoveredElementDOM.find('.discovered-element').fadeOut({
+            'start': function () {
+                $(this).css('transform', 'scale(0)');
+                popupDiscoveredElementDOM.fadeOut(200);
+            },
+            'duration': 200,
+            'complete': function () {
+                $(this).attr('style', '');
+                iconDOM.css({
+                    'width': 0,
+                    'height': 0,
+                });
+            }
+        });
+    }
+
+    popupDiscoveredElementDOM.find('.discovered-element').mouseenter(function () {
+        popupDiscoveredElementDOM.find('.light').addClass('lightHard');
+    }).mouseleave(function () {
+        popupDiscoveredElementDOM.find('.light').removeClass('lightHard');
+    }).click(function () {
+        hidePopupDiscoveredElement();
+    }).mouseup(function () {
+        audioManager.playClick();
+    });
+
+    $(document).mousedown(function (e) {
+        if ($(e.target).closest("#popup-discovered-element").length === 0) {
+            hidePopupDiscoveredElement();
+        }
     });
 }
 
@@ -288,7 +347,6 @@ function setupWindowHelp(langData) {
     const dropHighlight = spanTextColor(langData.windows.help.guide.highlights.drop, "var(--color-common)");
     const middleClickHighlight = spanTextColor(langData.windows.help.guide.highlights.middleClick, "var(--color-green-light)");
 
-
     const tipOne = templateLi
         .replace('{text}', langData.windows.help.guide.list[0].text.replace('{dragAndDrop}', dragAndDropHighlight))
         .replace('{image}', langData.windows.help.guide.list[0].gif);
@@ -328,8 +386,48 @@ function setupWindowHelp(langData) {
         .replace('{specialDescription}', specialDescription)
         .replace('{guideTitle}', langData.windows.help.guide.title)
         .replace('{list}', tipOne + tipTwo + tipThree + tipFour + tipFive + tipSix)
-        .replace('{footer}', langData.windows.help.footer)
+        .replace('{footer}', langData.windows.help.footer.replace('{game}', game))
     );
+}
+
+function setupWindowCredits(langData) {
+    $('#window-credits > .popup > .container > .title').html(langData.windows.credits.title);
+    $('#window-credits .button').html(langData.windows.changelog.ok);
+
+    const programming = getCreditSection(langData.windows.credits.programming);
+    const art = getCreditSection(langData.windows.credits.art);
+    const testers = getCreditSection(langData.windows.credits.testers);
+    const bgm = getCreditSection(langData.windows.credits.bgm);
+    const disclaimerTemplate = `<div class='achievement-container'><div class='disclaimer'>{disclaimer}</div></div>`;
+    const footerTemplate = `<div class="made-with-love">
+                                 <span>{madeWithLove}</span>
+                                 <img src="img/misc/ar.png" />
+                                 <span>{argentina}</span>
+                            </div >`;
+
+    const footer = footerTemplate.replace('{madeWithLove}', langData.windows.credits.footer.madeWithLove).replace('{argentina}', langData.windows.
+        credits.footer.argentina);
+    const disclaimer = disclaimerTemplate.replace('{disclaimer}', langData.windows.credits.disclaimer);
+
+    $('#window-credits .content').html(`${programming}${art}${testers}${bgm}${disclaimer}`);
+    $('#window-credits .made-with-love').html(footer);
+
+}
+
+function getCreditSection(section) {
+    const template = `<div class='section'>
+                                    <p>{title}</p>
+                                    {authors}
+                            </div>`;
+
+    let title = spanTextColor(section.title, "var(--color-green-light)");
+    let authors = '';
+
+    section.authors.forEach(author => {
+        authors += `<span>${author}</span>`
+    });
+
+    return template.replace('{title}', title).replace('{authors}', authors);
 }
 
 async function initialConfig(langData) {
@@ -339,11 +437,12 @@ async function initialConfig(langData) {
     });
 
     welcome(langData);
-    setTooltips(langData);
     setupWindowSettings(langData);
     setupWindowHelp(langData);
     setupWindowChangelog(langData);
+    setupWindowCredits(langData);
     setupButtons(langData);
+    setTooltips(langData);
     setBackground();
     setInterval(() => {
         setBackground();
@@ -377,4 +476,5 @@ async function initialConfig(langData) {
     }
 }
 
-export { gameManager, audioManager };
+export { audioManager, gameManager };
+

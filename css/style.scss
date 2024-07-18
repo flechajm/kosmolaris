@@ -40,6 +40,12 @@
   --color-common: #6baee7;
   --color-special: #f764e3;
   --color-green-light: #00fa9a;
+
+  --cursor-default: url(../img/misc/cursor_default.png) 2 0, auto;
+  --cursor-pointer-default: url(../img/misc/pointer_default.png), auto;
+  --cursor-pointer-point: url(../img/misc/pointer_point.png), auto;
+  --cursor-pointer-open: url(../img/misc/pointer_open.png), auto;
+  --cursor-pointer-close: url(../img/misc/pointer_close.png), auto;
 }
 
 // =======================
@@ -72,6 +78,7 @@ html {
   height: 100%;
   width: 100%;
   overflow: hidden;
+  cursor: var(--cursor-default);
 }
 
 ul {
@@ -84,14 +91,21 @@ li {
 }
 
 a {
+  cursor: var(--cursor-pointer-default);
   color: white;
+  text-underline-offset: 0.2em;
 
   &:hover {
     color: wheat;
   }
+
+  &:active {
+    cursor: var(--cursor-pointer-point);
+  }
 }
 
 select {
+  cursor: var(--cursor-pointer-default);
   background: var(--color-primary);
   color: white;
   border: none;
@@ -101,6 +115,10 @@ select {
   padding: 5px;
   width: 100px;
   outline: 1px solid var(--color-primary-light);
+
+  &:active {
+    cursor: var(--cursor-pointer-point);
+  }
 
   &:focus {
     outline: 1px solid var(--color-primary-bright);
@@ -128,8 +146,12 @@ input[type='search'] {
 
   &::-webkit-search-cancel-button {
     position: relative;
-    cursor: pointer;
+    cursor: var(--cursor-pointer-default);
     padding: 5px;
+
+    &:active {
+      cursor: var(--cursor-pointer-point);
+    }
   }
 }
 
@@ -158,15 +180,11 @@ footer {
     display: flex;
     align-items: center;
     height: 20px;
-    padding: 0 5px 0 10px;
+    padding: 0 10px 0 10px;
     font-size: x-small;
     font-weight: normal;
     font-family: Arial, Helvetica, sans-serif;
     border-left: 1px dotted rgba(128, 128, 128, 0.404);
-
-    .by {
-      margin-right: 8px;
-    }
 
     &.content {
       display: flex;
@@ -211,7 +229,7 @@ footer {
 
         span {
           width: 16px;
-          cursor: pointer;
+          cursor: var(--cursor-pointer-default);
 
           &:hover {
             color: wheat;
@@ -219,6 +237,7 @@ footer {
 
           &:active {
             color: beige;
+            cursor: var(--cursor-pointer-point);
           }
 
           &.previous {
@@ -252,7 +271,6 @@ footer {
       }
 
       span:nth-of-type(1) {
-        cursor: pointer;
         display: flex;
         align-items: center;
 
@@ -268,10 +286,15 @@ footer {
         padding-right: 0;
 
         input[type='range'] {
+          cursor: var(--cursor-pointer-default);
           display: block;
           width: 70px;
           margin-top: 5px;
           margin-right: -15px;
+
+          &:active {
+            cursor: var(--cursor-pointer-point);
+          }
         }
 
         input[type='range']:focus {
@@ -342,6 +365,7 @@ footer {
 
 tooltip {
   position: absolute;
+  color: white;
   background-color: black;
   width: max-content;
   top: 110%;
@@ -389,6 +413,14 @@ tooltip {
 // =======================
 
 #debug {
+  z-index: 10;
+  padding: 10px;
+  width: 380px;
+  display: flex;
+  position: absolute;
+  right: 0;
+  gap: 0.5em;
+
   select {
     width: 100%;
   }
@@ -428,17 +460,6 @@ tooltip {
     position: relative;
     flex: 4;
 
-    .option-buttons {
-      display: flex;
-      align-items: center;
-      position: absolute;
-      top: 0;
-      right: 0;
-      margin: 1em;
-      gap: 0.5em;
-      z-index: 1;
-    }
-
     board {
       flex: 4 0 5%;
       display: flex;
@@ -447,8 +468,108 @@ tooltip {
       height: 100%;
     }
 
+    #popup-discovered-element {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: var(--color-bg-category);
+      opacity: 0.97;
+      z-index: 10;
+
+      .discovered-element {
+        cursor: var(--cursor-pointer-default);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        position: absolute;
+        width: 200px;
+        height: 300px;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        background-position: center;
+        background-size: 200px;
+        background-repeat: no-repeat;
+        -webkit-filter: drop-shadow(0px 0px 10px black);
+        filter: drop-shadow(0px 0px 10px black);
+        transition: transform 0.3s cubic-bezier(0.72, -0.6, 0.32, 2.2);
+        z-index: 11;
+
+        img {
+          width: 0;
+          height: 0;
+        }
+
+        &:hover {
+          cursor: var(--cursor-pointer-default);
+          transform: scale(1.3);
+          transition: transform 150ms ease-in;
+        }
+
+        &:active {
+          cursor: var(--cursor-pointer-point);
+        }
+
+        div:nth-child(2) {
+          font-family: 'Roboto Slab';
+          font-size: 3em;
+          text-wrap: nowrap;
+
+          &.common {
+            text-shadow: 2px 2px 4px var(--dark), 0 0px 6px var(--color-common);
+          }
+
+          &.special {
+            text-shadow: 2px 2px 4px var(--dark), 0 0px 6px var(--color-special);
+          }
+        }
+      }
+
+      .light {
+        position: absolute;
+        width: 835px;
+        height: 641px;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        background-image: url('../img/misc/flare.png');
+        background-position: center;
+        background-size: cover;
+        -webkit-transition: opacity 0.6s ease-in-out;
+        -moz-transition: opacity 0.6s ease-in-out;
+        -ms-transition: opacity 0.6s ease-in-out;
+        -o-transition: opacity 0.6s ease-in-out;
+        transition: opacity 0.6s ease-in-out;
+        -webkit-animation: rotating 10s linear infinite;
+        -moz-animation: rotating 10s linear infinite;
+        -ms-animation: rotating 10s linear infinite;
+        -o-animation: rotating 10s linear infinite;
+        animation: rotating 10s linear infinite;
+        opacity: 0.3;
+
+        &.common {
+          filter: brightness(0.8) contrast(2) hue-rotate(165deg);
+        }
+
+        &.special {
+          filter: brightness(0.8) contrast(2) hue-rotate(260deg);
+        }
+
+        &.lightHard {
+          opacity: 1;
+        }
+      }
+    }
+
     #log {
-      user-select: text;
+      user-select: none;
       display: flex;
       position: relative;
       bottom: 0;
@@ -478,7 +599,7 @@ tooltip {
 
       #show-changelog {
         user-select: none;
-        cursor: pointer;
+        cursor: var(--cursor-pointer-default);
 
         &:hover {
           color: wheat;
@@ -486,6 +607,7 @@ tooltip {
 
         &:active {
           color: beige;
+          cursor: var(--cursor-pointer-point);
         }
       }
     }
@@ -533,6 +655,19 @@ tooltip {
       margin: auto;
       padding-block: 0.5em 1.5em;
       pointer-events: none;
+    }
+
+    .option-buttons {
+      display: flex;
+      justify-content: space-evenly;
+      gap: 0.5em;
+      margin-block: 1em;
+      z-index: 1;
+
+      div.secondary {
+        display: flex;
+        gap: 0.5em;
+      }
     }
 
     div#unlocked-container {
@@ -596,7 +731,7 @@ tooltip {
 
       div.category-header {
         display: flex;
-        cursor: pointer;
+        cursor: var(--cursor-pointer-default);
         justify-content: space-between;
         align-items: center;
         flex-direction: row;
@@ -609,6 +744,10 @@ tooltip {
 
         &:hover {
           filter: brightness(150%);
+        }
+
+        &:active {
+          cursor: var(--cursor-pointer-point);
         }
 
         div.chevron {
@@ -630,7 +769,7 @@ tooltip {
         overflow-y: overlay;
         gap: 3px;
         margin: 0.3em;
-        padding: 0.8em 0.3em 0.7em 0.3em;
+        padding: 0.8em 0.3em 1em 0.3em;
 
         &::-webkit-scrollbar {
           -webkit-appearance: none;
@@ -647,21 +786,20 @@ tooltip {
   }
 
   .element-wrapper {
-    cursor: grab;
+    cursor: var(--cursor-pointer-open);
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     max-width: 80px;
-    max-height: 80px;
-    //max-height: 104px; //TODO: Descomentar cuando estén las imágenes.
+    max-height: 104px;
     font-family: var(--font-primary);
     font-size: 0.9rem;
     font-weight: bold;
     border-radius: 50%;
 
     &.ui-draggable-dragging {
-      cursor: grabbing;
+      cursor: var(--cursor-pointer-close);
     }
 
     &.hidden {
@@ -684,7 +822,7 @@ tooltip {
 
     span {
       font-size: 0.8em;
-      // margin-top: 0.3em; //TODO: Agregar cuando tenga las imágenes.
+      margin-top: 0.3em; //TODO: Agregar cuando tenga las imágenes.
     }
 
     &:hover {
@@ -694,10 +832,10 @@ tooltip {
 
     .element-button {
       width: 80px;
-      height: 80px;
+      // height: 80px;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: start;
       align-items: center;
       border-radius: 50%;
       text-shadow: 2px 2px 4px #000, 0px 0px 7px var(--dark),
@@ -708,15 +846,15 @@ tooltip {
       // background-blend-mode: luminosity;
       // border-style: solid;
 
-      &.shadow {
-        // box-shadow: 0px 0px 10px var(--dark);
-      }
+      // &.shadow {
+      //    box-shadow: 0px 0px 10px var(--dark);
+      // }
 
       .element-image {
         background-position: center;
         background-size: contain;
         background-repeat: no-repeat;
-        height: 80px;
+        min-height: 80px;
         width: 80px;
         -webkit-filter: drop-shadow(0px 0px 3px black) contrast(1.2);
         filter: drop-shadow(0px 0px 3px black) contrast(1.2);
@@ -832,7 +970,12 @@ tooltip {
       }
 
       input[type='range'] {
+        cursor: var(--cursor-pointer-default);
         display: block;
+
+        &:active {
+          cursor: var(--cursor-pointer-point);
+        }
       }
 
       input[type='range']:focus {
@@ -962,6 +1105,53 @@ tooltip {
   }
 }
 
+#window-credits {
+  display: none;
+  z-index: 5;
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    height: 100%;
+    width: 90%;
+    gap: 0.6em;
+    overflow: overlay;
+    margin-block: 0.5em;
+    padding-inline: 2.5em;
+    padding-block: 1em 1.5em;
+
+    div.section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5em;
+
+      margin-bottom: 2em;
+
+      p {
+        font-size: 1.3em;
+      }
+    }
+
+    &.empty {
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  .container {
+    &.footer {
+      .made-with-love {
+        display: flex;
+        align-items: end;
+        gap: 0.5em;
+      }
+    }
+  }
+}
+
 // =======================
 // GLOBAL CLASSES
 // =======================
@@ -986,17 +1176,22 @@ tooltip {
   );
   box-shadow: 0px 0px 3px orangered;
   border-radius: 6px;
-  cursor: pointer;
+  cursor: var(--cursor-pointer-default);
   text-shadow: 2px 2px 1px #00000081;
   font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
   z-index: 1;
+  max-width: 42px;
+
+  &:active {
+    cursor: var(--cursor-pointer-point);
+  }
 
   &.disabled {
     pointer-events: none;
   }
 
   &.clear {
-    width: 42px;
+    min-width: 42px;
 
     &::after {
       font-family: 'Material Symbols Rounded';
@@ -1006,7 +1201,7 @@ tooltip {
   }
 
   &.settings {
-    width: 42px;
+    min-width: 42px;
 
     &::after {
       font-family: 'Material Symbols Rounded';
@@ -1016,7 +1211,7 @@ tooltip {
   }
 
   &.help {
-    width: 42px;
+    min-width: 42px;
 
     &::after {
       font-family: 'Material Symbols Rounded';
@@ -1026,7 +1221,7 @@ tooltip {
   }
 
   &.achievements {
-    width: 42px;
+    min-width: 42px;
 
     &::after {
       font-family: 'Material Symbols Rounded';
@@ -1036,12 +1231,22 @@ tooltip {
   }
 
   &.changelog {
-    width: 42px;
+    min-width: 42px;
 
     &::after {
       font-family: 'Material Symbols Rounded';
       font-size: 24;
       content: '\e873';
+    }
+  }
+
+  &.credits {
+    min-width: 42px;
+
+    &::after {
+      font-family: 'Material Symbols Rounded';
+      font-size: 24;
+      content: '\e8cd';
     }
   }
 
@@ -1085,6 +1290,8 @@ tooltip {
   }
 
   &.red {
+    max-width: 40%;
+    min-height: 40px;
     background: linear-gradient(140deg, #d57070 10%, #bb2323 40%, #810e0e 100%);
     box-shadow: 0px 0px 1px crimson;
   }
@@ -1112,9 +1319,21 @@ tooltip {
   font-style: italic;
 }
 
+.achievement-container {
+  width: 100%;
+
+  div.disclaimer {
+    text-align: center;
+    margin: 0.5em 0 1em 0;
+    font-size: x-small;
+    font-weight: 400;
+    color: var(--color-air);
+  }
+}
+
 .achievement {
   display: flex;
-  cursor: pointer;
+  cursor: var(--cursor-pointer-default);
   user-select: none;
   flex-direction: row;
   justify-content: start;
@@ -1141,6 +1360,10 @@ tooltip {
   height: 60px;
   line-height: 1.5em;
   letter-spacing: 0.2px;
+
+  &:active {
+    cursor: var(--cursor-pointer-point);
+  }
 
   &.expand {
     width: 100%;
@@ -1215,26 +1438,10 @@ tooltip {
     align-items: center;
   }
 
-  .close-x {
-    cursor: pointer;
-    position: absolute;
-    top: 8px;
-    right: 8px;
-
-    &::after {
-      font-family: 'Material Symbols Rounded';
-      font-size: 24;
-      font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-      content: '\e5cd';
-    }
-
-    &:hover {
-      color: wheat;
-    }
-
-    &:active {
-      transform: scale(0.9);
-    }
+  &.credits {
+    width: 580px;
+    height: 600px;
+    align-items: center;
   }
 
   .title {
@@ -1253,6 +1460,29 @@ tooltip {
       justify-content: end;
       margin-bottom: 1em;
     }
+  }
+}
+
+.close-x {
+  cursor: var(--cursor-pointer-default);
+  position: absolute;
+  top: 8px;
+  right: 8px;
+
+  &::after {
+    font-family: 'Material Symbols Rounded';
+    font-size: 24;
+    font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    content: '\e5cd';
+  }
+
+  &:hover {
+    color: wheat;
+  }
+
+  &:active {
+    transform: scale(0.9);
+    cursor: var(--cursor-pointer-point);
   }
 }
 
@@ -1312,5 +1542,56 @@ tooltip {
   }
   100% {
     transform: scale(1);
+  }
+}
+
+@keyframes rotating {
+  from {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes scale-easeOutElastic {
+  0% {
+    transform: scale(1);
+  }
+
+  16% {
+    transform: scale(-0.32);
+  }
+
+  28% {
+    transform: scale(0.13);
+  }
+
+  44% {
+    transform: scale(-0.05);
+  }
+
+  59% {
+    transform: scale(0.02);
+  }
+
+  73% {
+    transform: scale(-0.01);
+  }
+
+  88% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(0);
   }
 }

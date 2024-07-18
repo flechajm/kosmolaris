@@ -1578,9 +1578,9 @@ class DbElements {
                 category: 16,
             }),
 
-            // Spaceship
+            // Spacecraft
             new Element({
-                id: 'spaceship',
+                id: 'spacecraft',
                 color: '#855542',
                 category: 16,
             }),
