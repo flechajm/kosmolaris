@@ -358,7 +358,7 @@ class GameCombinationManager {
                 .replace('{special}', special)
                 .replace('{element1}', element1.getFormattedColor())
                 .replace('{element2}', element2.getFormattedColor())
-                .replace('{result}', elementUnlocked.getFormattedColor())
+                .replace('{result}', elementUnlocked.getFormattedColor(true))
             );
         }
     }

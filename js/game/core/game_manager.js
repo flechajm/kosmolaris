@@ -550,6 +550,9 @@ class GameManager {
             if (e.which === 1) {
                 $(this).addClass('ui-draggable-dragging');
                 audioManager.playClick();
+            } else if (e.which === 2) {
+                e.preventDefault();
+                return false;
             }
         }).on('mouseup', function (e) {
             if (e.which === 2) {

@@ -135,7 +135,7 @@
     "lastUpdate": "Actualizado: {date}",
     "saveProgress": "Progreso guardado",
     "specialElement": "especial",
-    "newElement": "{emoji} ¡Has descubierto un nuevo elemento{special} combinando {element1} y {element2} ➜ {result}!",
+    "newElement": "{emoji} ¡Has descubierto un nuevo elemento{special} combinando {element1} + {element2} ➜ {result}!",
     "combinationInfo": "🧪 {result} ➜ {element1} + {element2}.",
     "achievementUnlocked": "¡Logro desbloqueado!"
   },

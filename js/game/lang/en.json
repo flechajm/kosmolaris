@@ -136,7 +136,7 @@
     "lastUpdate": "Updated: {date}",
     "saveProgress": "Progress saved",
     "specialElement": "special",
-    "newElement": "{emoji} You have discovered a new{special} element combining {element1} and {element2} ➜ {result}!",
+    "newElement": "{emoji} You have discovered a new{special} element combining {element1} + {element2} ➜ {result}!",
     "combinationInfo": "🧪 {result} ➜ {element1} + {element2}.",
     "achievementUnlocked": "Achievement unlocked!"
   },

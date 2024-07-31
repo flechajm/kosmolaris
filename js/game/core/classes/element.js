@@ -6,7 +6,6 @@ class Element {
         name,
         description,
         category,
-        color,
         isSpecial,
         uuid,
     }) {
@@ -14,7 +13,6 @@ class Element {
         this.name = name;
         this.description = description;
         this.category = category;
-        this.color = color;
         this.isSpecial = isSpecial ?? false;
         this.uuid = uuid;
     }
@@ -26,7 +24,6 @@ class Element {
             name: element.name,
             description: element.description,
             category: element.category,
-            color: element.color,
             isSpecial: element.isSpecial,
             uuid: this.generateUUID(),
         });
@@ -36,8 +33,9 @@ class Element {
         return Math.random().toString(36).slice(-8);
     }
 
-    getFormattedColor() {
-        return `<span style='color: ${this.color}'>${this.name}</span>`;
+    getFormattedColor(useTypeColor = false) {
+        let color = useTypeColor ? this.isSpecial ? '--color-special' : '--color-common' : '--color-green-light';
+        return `<span style='color: var(${color})'>${this.name}</span>`;
     }
 
     createElementDOM({ onBoard, posX, posY, ghost, shortcut, combination }) {
@@ -49,7 +47,6 @@ class Element {
         const classGhost = `${ghost ? ' ghost' : ''}`;
         const position = `${onBoard ? `style="left:${posX}px; top:${posY};"` : ""}`;
         const classShortcut = `${shortcut ? ' shortcut' : ''}`;
-        //const styleColor = `style="background-color: ${this.color}; border-color: ${this.color};"`;
         const elementIcon = `style="background-image: url('img/elements/${this.id}.png')"`;
         const attrCombination = combination ? `combination="${combination.element1};${combination.element2}"` : '';
 

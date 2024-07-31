@@ -56,7 +56,7 @@ class GameElements {
         const langData = LanguageManager.getData();
 
         return langData.console.combinationInfo
-            .replace('{result}', result.getFormattedColor())
+            .replace('{result}', result.getFormattedColor(true))
             .replace('{element1}', element1.getFormattedColor())
             .replace('{element2}', element2.getFormattedColor());
     }

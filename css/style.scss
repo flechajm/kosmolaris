@@ -503,6 +503,7 @@ tooltip {
         img {
           width: 0;
           height: 0;
+          filter: contrast(1.1);
         }
 
         &:hover {
@@ -856,8 +857,8 @@ tooltip {
         background-repeat: no-repeat;
         min-height: 80px;
         width: 80px;
-        -webkit-filter: drop-shadow(0px 0px 3px black) contrast(1.2);
-        filter: drop-shadow(0px 0px 3px black) contrast(1.2);
+        -webkit-filter: drop-shadow(0px 0px 3px black) contrast(1.05);
+        filter: drop-shadow(0px 0px 3px black) contrast(1.05);
 
         &.glow {
           animation: glowing 1.3s infinite ease-in-out;
