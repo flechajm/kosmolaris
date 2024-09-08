@@ -836,6 +836,12 @@ class DbElements {
                 category: 10,
             }),
 
+            // Hand Saw
+            new Element({
+                id: 'hand-saw',
+                category: 10,
+            }),
+
             // Engine
             new Element({
                 id: 'engine',
@@ -1208,6 +1214,20 @@ class DbElements {
             // Challenger
             new Element({
                 id: 'challenger',
+                category: 14,
+                isSpecial: true,
+            }),
+
+            // LOST
+            new Element({
+                id: 'lost',
+                category: 14,
+                isSpecial: true,
+            }),
+
+            // Titanic
+            new Element({
+                id: 'titanic',
                 category: 14,
                 isSpecial: true,
             }),

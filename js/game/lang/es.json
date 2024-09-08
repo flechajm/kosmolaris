@@ -106,7 +106,8 @@
         "authors": [
           "Juan Manuel Flecha (IU)",
           "🔗 <a href='https://x.com/ChemaLuque_dev' target='_blank'>Chemita</a> (Íconos de Elementos)",
-          "🔗 <a href='https://kenney.nl' target='_blank'>Kenney</a> (Cursores del Mouse)"
+          "🔗 <a href='https://kenney.nl' target='_blank'>Kenney</a> (Cursores del Mouse)",
+          "🔗 <a href='https://iconarchive.com' target='_blank'>Icon Archive</a> (Ícono de Trofeo)"
         ]
       },
       "testers": {
@@ -280,6 +281,17 @@
       "title": "Después de 73 segundos...",
       "description": "Descubre la nave espacial Challenger.",
       "disclaimer": "\"Challenger\" es una nave espacial, propiedad de la NASA."
+    },
+    {
+      "id": 27,
+      "title": "No es el barco de Penny",
+      "description": "Descubre LOST, la serie.",
+      "disclaimer": "\"LOST\" es propiedad intelectual de ABC Studios y sus afiliados."
+    },
+    {
+      "id": 28,
+      "title": "¡Mujeres y niños primero!",
+      "description": "Descubre al RMS Titanic."
     }
   ],
   "elements": [
@@ -1209,6 +1221,11 @@
       "description": ""
     },
     {
+      "id": "hand-saw",
+      "name": "Serrucho",
+      "description": ""
+    },
+    {
       "id": "asteroid",
       "name": "Asteroide",
       "description": ""
@@ -1326,6 +1343,16 @@
     {
       "id": "challenger",
       "name": "Challenger",
+      "description": ""
+    },
+    {
+      "id": "lost",
+      "name": "LOST",
+      "description": ""
+    },
+    {
+      "id": "titanic",
+      "name": "RMS Titanic",
       "description": ""
     },
     {

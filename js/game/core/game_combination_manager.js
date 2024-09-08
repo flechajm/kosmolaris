@@ -153,9 +153,17 @@ class GameCombinationManager {
             this.addCombination({ element1: 'life', element2: 'death', result: 'ghost' });
 
             // Objects
+            this.addCombination({ element1: 'wood', element2: 'metal', result: 'workbench' });
             this.addCombination({ element1: 'stick', element2: 'stick', result: 'baseball-bat' });
             this.addCombination({ element1: 'metal', element2: 'workbench', result: 'blade' });
-            this.addCombination({ element1: 'wood', element2: 'metal', result: 'workbench' });
+            this.addCombination({ element1: 'metal', element2: 'stone', result: 'blade' });
+            this.addCombination({ element1: 'saw', element2: 'wood', result: 'hand-saw' });
+            /* NUEVOS
+            this.addCombination({ element1: 'blade', element2: 'wood', result: 'knife' });
+            this.addCombination({ element1: 'saw', element2: 'workbench', result: 'circular-saw-blade' });
+            this.addCombination({ element1: 'circular-saw-blade', element2: 'engine', result: 'circular-saw' });
+            */
+            this.addCombination({ element1: 'saw', element2: 'wood', result: 'hand-saw' });
             this.addCombination({ element1: 'blade', element2: 'stick', result: 'sword' });
             this.addCombination({ element1: 'sword', element2: 'workbench', result: 'katana' });
             this.addCombination({ element1: 'lens', element2: 'glass', result: 'microscope' });
@@ -170,7 +178,6 @@ class GameCombinationManager {
             this.addCombination({ element1: 'wheel', element2: 'wind', result: 'windmill' });
             this.addCombination({ element1: 'blade', element2: 'workbench', result: 'saw' });
             this.addCombination({ element1: 'combustion', element2: 'energy', result: 'engine' });
-            this.addCombination({ element1: 'saw', element2: 'engine', result: 'chainsaw' });
             this.addCombination({ element1: 'chain', element2: 'saw', result: 'chainsaw' });
             this.addCombination({ element1: 'workbench', element2: 'fire', result: 'oven' });
 
@@ -239,6 +246,8 @@ class GameCombinationManager {
             this.addCombination({ element1: 'human', element2: 'chainsaw', result: 'leatherface' });
             this.addCombination({ element1: 'astronaut', element2: 'moon', result: 'apollo-11' });
             this.addCombination({ element1: 'spacecraft', element2: 'explosion', result: 'challenger' });
+            this.addCombination({ element1: 'airplane', element2: 'island', result: 'lost' });
+            this.addCombination({ element1: 'ship', element2: 'iceberg', result: 'titanic' });
 
             // Food
             this.addCombination({ element1: 'plant', element2: 'field', result: 'wheat' });

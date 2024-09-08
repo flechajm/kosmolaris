@@ -17,8 +17,7 @@ class Achievement {
         return `<div class='achievement-container'>
                     <div class='achievement${expandClass}'>
                         <div class='icon'>
-                            🏆
-                            <!-- <img src='img/${this.icon}.png' /> -->
+                        <img src='img/${this.icon ? `elements/${this.icon}` : 'misc/trophy'}.png' />    
                         </div>
                         <div>
                             <div class='title'>${this.title}</div>

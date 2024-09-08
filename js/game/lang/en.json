@@ -106,7 +106,8 @@
         "authors": [
           "Juan Manuel Flecha (UI)",
           "🔗 <a href='https://x.com/ChemaLuque_dev' target='_blank'>Chemita</a> (Elements Icons)",
-          "🔗 <a href='https://kenney.nl' target='_blank'>Kenney</a> (Mouse Cursors)"
+          "🔗 <a href='https://kenney.nl' target='_blank'>Kenney</a> (Mouse Cursors)",
+          "🔗 <a href='https://iconarchive.com' target='_blank'>Icon Archive</a> (Trophy Icon)"
         ]
       },
       "testers": {
@@ -281,6 +282,17 @@
       "title": "After 73 seconds...",
       "description": "Discover the spacecraft Challenger.",
       "disclaimer": "\"Challenger\" is a spacecraft, property of NASA."
+    },
+    {
+      "id": 27,
+      "title": "Not Penny's Boat",
+      "description": "Discover LOST, the serie.",
+      "disclaimer": "\"LOST\" is the intellectual property of ABC Studios and its affiliates."
+    },
+    {
+      "id": 28,
+      "title": "Women and children first!",
+      "description": "Discover the RMS Titanic."
     }
   ],
   "elements": [
@@ -1210,6 +1222,11 @@
       "description": ""
     },
     {
+      "id": "hand-saw",
+      "name": "Hand Saw",
+      "description": ""
+    },
+    {
       "id": "asteroid",
       "name": "Asteroid",
       "description": ""
@@ -1327,6 +1344,16 @@
     {
       "id": "challenger",
       "name": "Challenger",
+      "description": ""
+    },
+    {
+      "id": "lost",
+      "name": "LOST",
+      "description": ""
+    },
+    {
+      "id": "titanic",
+      "name": "RMS Titanic",
       "description": ""
     },
     {

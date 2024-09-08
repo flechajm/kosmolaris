@@ -84,6 +84,7 @@ class DbAchievements {
                 rules: [
                     new Rule({ elementToUnlock: 'michonne' })
                 ],
+                icon: 'michonne'
             }),
 
             // Harry Potter
@@ -91,7 +92,8 @@ class DbAchievements {
                 id: 13,
                 rules: [
                     new Rule({ elementToUnlock: 'harry-potter' })
-                ]
+                ],
+                icon: 'harry-potter'
             }),
 
             // Jon Snow
@@ -99,7 +101,8 @@ class DbAchievements {
                 id: 14,
                 rules: [
                     new Rule({ elementToUnlock: 'jon-snow' })
-                ]
+                ],
+                icon: 'jon-snow'
             }),
 
             // Negan & Lucille
@@ -107,7 +110,8 @@ class DbAchievements {
                 id: 15,
                 rules: [
                     new Rule({ elementToUnlock: 'negan' })
-                ]
+                ],
+                icon: 'negan'
             }),
 
             // COVID-19
@@ -123,7 +127,8 @@ class DbAchievements {
                 id: 17,
                 rules: [
                     new Rule({ elementToUnlock: 'lucille' })
-                ]
+                ],
+                icon: 'lucille'
             }),
 
             // World
@@ -131,7 +136,8 @@ class DbAchievements {
                 id: 18,
                 rules: [
                     new Rule({ elementToUnlock: 'world' })
-                ]
+                ],
+                icon: 'world'
             }),
 
             // Planet of Apes
@@ -139,7 +145,8 @@ class DbAchievements {
                 id: 19,
                 rules: [
                     new Rule({ elementToUnlock: 'planet-apes' })
-                ]
+                ],
+                icon: 'planet-apes'
             }),
 
             // Don't be cruel
@@ -150,7 +157,8 @@ class DbAchievements {
                         elementToUnlock: 'science',
                         elementRequired: 'monkey',
                     })
-                ]
+                ],
+                icon: 'science'
             }),
 
             // Bruce Lee
@@ -158,7 +166,8 @@ class DbAchievements {
                 id: 21,
                 rules: [
                     new Rule({ elementToUnlock: 'bruce-lee' })
-                ]
+                ],
+                icon: 'bruce-lee'
             }),
 
             // Frankenstein
@@ -166,7 +175,8 @@ class DbAchievements {
                 id: 22,
                 rules: [
                     new Rule({ elementToUnlock: 'frankenstein' })
-                ]
+                ],
+                icon: 'frankenstein'
             }),
 
             // Leatherface
@@ -197,7 +207,8 @@ class DbAchievements {
                 id: 25,
                 rules: [
                     new Rule({ elementToUnlock: 'apollo-11' })
-                ]
+                ],
+                icon: 'apollo-11'
             }),
 
             // Challenger
@@ -205,7 +216,27 @@ class DbAchievements {
                 id: 26,
                 rules: [
                     new Rule({ elementToUnlock: 'challenger' })
-                ]
+                ],
+                icon: 'challenger'
+            }),
+
+            // LOST
+            new Achievement({
+                id: 27,
+                rules: [
+                    new Rule({ elementToUnlock: 'lost' })
+                ],
+                icon: 'lost'
+            }),
+
+
+            // Titanic
+            new Achievement({
+                id: 28,
+                rules: [
+                    new Rule({ elementToUnlock: 'titanic' })
+                ],
+                icon: 'titanic'
             }),
         ];
     }
