@@ -27,6 +27,34 @@ class GameInfo {
    */
   static changelog = [
     {
+      "version": "1.1.0",
+      "date": new Date(2024, 10, 3),
+      "changelog": {
+        "es": [
+          "¡Kosmolaris pasó a ser versión estable! 🥳",
+          "NEW: Se agregaron imágenes a todos los elementos.",
+          "NEW: Se agregaron 2 nuevos elementos comunes (de 200 a 202).",
+          "NEW: Se agregaron 4 nuevos elementos especiales (de 12 a 16).",
+          "NEW: Se agregaron 9 nuevos logros (de 20 a 29).",
+          "NEW: Se agregó un efecto especial al descubrir un nuevo elemento.",
+          "FIX: Mejoras generales.",
+          "FIX: Correcciones en las localizaciones.",
+          "CHANGE: Se reorganizó la IU y se agregó una ventana de créditos.",
+        ],
+        "en": [
+          "Kosmolaris has become a stable version! 🥳",
+          "NEW: Added images to all elements.",
+          "NEW: Added 2 new common elements (from 200 to 202).",
+          "NEW: Added 4 new special elements (from 12 to 16).",
+          "NEW: Added 9 new achievements (from 20 to 29).",
+          "NEW: Added a new special effect when discovering a new element.",
+          "FIX: General improvements.",
+          "FIX: Localization corrections.",
+          "CHANGE: The UI was reorganized, and a credits window was added.",
+        ],
+      }
+    },
+    {
       "version": "1.0.4",
       "date": new Date(2023, 10, 20),
       "changelog": {
@@ -61,7 +89,7 @@ class GameInfo {
           "FIX: Se corrigió un error en el cuál los fondos no se precargaban correctamente.",
         ],
         "en": [
-          "¡New domain: <a href='https://kosmolaris.com' target='_blank'>https://kosmolaris.com</a> 🤩!",
+          "New domain: <a href='https://kosmolaris.com' target='_blank'>https://kosmolaris.com</a> 🤩!",
           "NEW: Added SFX to the UI's buttons.",
           "FIX: Improved the <i>glowing</i> animation when elements overlap.",
           "FIX: Fixed a bug where background images were not preload correctly."
