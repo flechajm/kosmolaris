@@ -137,7 +137,7 @@
     "saveProgress": "Progreso guardado",
     "specialElement": "especial",
     "newElement": "{emoji} ¡Has descubierto un nuevo elemento{special} combinando {element1} + {element2} ➜ {result}!",
-    "combinationInfo": "🧪 {result} ➜ {element1} + {element2}.",
+    "combinationInfo": "{emoji} {result} ➜ {element1} + {element2}.",
     "achievementUnlocked": "¡Logro desbloqueado!"
   },
   "achievements": [
@@ -149,149 +149,156 @@
     {
       "id": 2,
       "title": "Nada mal...",
-      "description": "Descubre 50 elementos."
+      "description": "Descubre 10 elementos."
     },
     {
       "id": 3,
       "title": "¡Alguien está en racha!",
-      "description": "Descubre 100 elementos."
+      "description": "Descubre 25 elementos."
     },
     {
       "id": 4,
-      "title": "Mmm, ¿van 150?",
-      "description": "Descubre 150 elementos."
+      "title": "Genial, sigue así!",
+      "description": "Descubre 50 elementos."
     },
     {
       "id": 5,
-      "title": "Wow, 200!",
-      "description": "Descubre 200 elementos."
+      "title": "Supongo que van 75 en fila...",
+      "description": "Descubre 75 elementos."
     },
     {
       "id": 6,
-      "title": "Supongo que van 250...",
-      "description": "Descubre 250 elementos."
+      "title": "Espera, ¿y ahora cuántos van?",
+      "description": "Descubre 100 elementos."
     },
     {
       "id": 7,
-      "title": "¿Y ahora cuántos van?",
-      "description": "Descubre 300 elementos."
+      "title": "Creo que perdí la cuenta...",
+      "description": "Descubre 125 elementos."
     },
     {
       "id": 8,
-      "title": "Creo que perdí la cuenta...",
-      "description": "Descubre 350 elementos."
+      "title": "Es una racha de descubrimientos",
+      "description": "Descubre 150 elementos."
     },
     {
       "id": 9,
-      "title": "Supongo que es una racha larga",
-      "description": "Descubre 400 elementos."
+      "title": "No tengo idea de cuántos van",
+      "description": "Descubre 175 elementos."
     },
     {
       "id": 10,
-      "title": "No tengo idea de cuántos van",
-      "description": "Descubre 450 elementos."
+      "title": "¡Dios, eres imparable!",
+      "description": "Descubre 200 elementos."
     },
     {
-      "id": 11,
-      "title": "¡Y todos caen!",
-      "description": "Descubre 500 elementos."
-    },
-    {
-      "id": 12,
+      "id": 23,
       "title": "A veces envidio a los muertos",
       "description": "Descubre a Michonne, de The Walking Dead.",
-      "disclaimer": "\"Michonne\" es un personaje de \"The Walking Dead\", y es propiedad intelectual de AMC Networks."
+      "disclaimer": "<b>Michonne</b> es un personaje de <b>The Walking Dead</b>, y es propiedad intelectual de AMC Networks."
     },
     {
-      "id": 13,
+      "id": 24,
       "title": "¿Después de todo este tiempo?",
       "description": "Descubre a Harry Potter.",
-      "disclaimer": "\"Harry Potter\" es propiedad intelectual de Warner Bros. Entertainment Inc."
+      "disclaimer": "<b>Harry Potter</b> es propiedad intelectual de Warner Bros. Entertainment Inc."
     },
     {
-      "id": 14,
+      "id": 25,
       "title": "No sabes nada...",
       "description": "Descubre a Jon Snow, de Game of Thrones.",
-      "disclaimer": "\"Jon Snow\" es un personaje de \"Game of Thrones\", propiedad intelectual de HBO."
+      "disclaimer": "<b>Jon Snow</b> es un personaje de <b>Game of Thrones</b>, propiedad intelectual de HBO."
     },
     {
-      "id": 15,
+      "id": 26,
       "title": "Es un bate vampiro",
       "description": "Descubre a Negan y Lucille, de The Walking Dead.",
-      "disclaimer": "\"Negan\" y \"Lucille\" son personajes de \"The Walking Dead\" y son propiedad intelectual de AMC Networks."
+      "disclaimer": "<b>Negan</b> y <b>Lucille</b> son personajes de <b>The Walking Dead</b> y son propiedad intelectual de AMC Networks."
     },
     {
-      "id": 16,
+      "id": 27,
       "title": "COVID-19",
       "description": "Descubre el COVID-19, pero no lo propagues, por favor."
     },
     {
-      "id": 17,
+      "id": 28,
       "title": "Lucille está sedienta...",
       "description": "Descubre a Lucille, el bate de Negan de The Walking Dead.",
-      "disclaimer": "El término \"Lucile\" es un nombre utilizado en \"The Walking Dead\" y es propiedad intelectual de AMC Networks."
+      "disclaimer": "El término <b>Lucile</b> es un nombre utilizado en <b>The Walking Dead</b> y es propiedad intelectual de AMC Networks."
     },
     {
-      "id": 18,
+      "id": 29,
       "title": "A tu imagen y semejanza",
       "description": "Descubre el Mundo donde vivimos."
     },
     {
-      "id": 19,
+      "id": 30,
       "title": "Simio no mata simio",
       "description": "Descubre el planeta de los simios.",
-      "disclaimer": "\"El Planeta de los Simios\" es propiedad intelectual de 20th Century Studios."
+      "disclaimer": "<b>El Planeta de los Simios</b> es propiedad intelectual de 20th Century Studios."
     },
     {
-      "id": 20,
+      "id": 31,
       "title": "No seas tan cruel...",
       "description": "Descubre Ciencia usando un Mono."
     },
     {
-      "id": 21,
+      "id": 32,
       "title": "Dragón Inmortal",
       "description": "Descubre a Bruce Lee.",
-      "disclaimer": "\"Bruce Lee\" es una figura histórica y cultural, propiedad intelectual de Bruce Lee Enterprises, LLC."
+      "disclaimer": "<b>Bruce Lee</b> es una figura histórica y cultural, propiedad intelectual de Bruce Lee Enterprises, LLC."
     },
     {
-      "id": 22,
+      "id": 33,
       "title": "Soy intrépido, y por lo tanto poderoso.",
       "description": "Descubre a Frankenstein.",
-      "disclaimer": "\"Frankenstein\" es una obra original de Mary Shelley."
+      "disclaimer": "<b>Frankenstein</b> es una obra original de Mary Shelley."
     },
     {
-      "id": 23,
+      "id": 34,
       "title": "Bubba Sawyer",
       "description": "Descubre a Leatherface.",
-      "disclaimer": "\"Leatherface\" es un personaje de \"La Masacre de Texas\", propiedad intelectual de Vortex, Inc."
+      "disclaimer": "<b>Leatherface</b> es un personaje de <b>La Masacre de Texas</b>, propiedad intelectual de Vortex, Inc."
     },
     {
-      "id": 24,
+      "id": 35,
       "title": "La Masacre de Kosmolaris",
       "description": "Descubre la Carne Vacuna y la Carne Porcina usando a Leatherface."
     },
     {
-      "id": 25,
+      "id": 36,
       "title": "Un gran salto para la humanidad",
       "description": "Descubre la nave espacial Apolo 11.",
-      "disclaimer": "\"Apollo 11\" es una nave espacial, propiedad de la NASA."
+      "disclaimer": "<b>Apollo 11</b> es una nave espacial, propiedad de la NASA."
     },
     {
-      "id": 26,
+      "id": 37,
       "title": "Después de 73 segundos...",
       "description": "Descubre la nave espacial Challenger.",
-      "disclaimer": "\"Challenger\" es una nave espacial, propiedad de la NASA."
+      "disclaimer": "<b>Challenger</b> es una nave espacial, propiedad de la NASA."
     },
     {
-      "id": 27,
+      "id": 38,
       "title": "No es el barco de Penny",
       "description": "Descubre LOST, la serie.",
-      "disclaimer": "\"LOST\" es propiedad intelectual de ABC Studios y sus afiliados."
+      "disclaimer": "<b>LOST</b> es propiedad intelectual de ABC Studios y sus afiliados."
     },
     {
-      "id": 28,
+      "id": 39,
       "title": "¡Mujeres y niños primero!",
       "description": "Descubre al RMS Titanic."
+    },
+    {
+      "id": 40,
+      "title": "Lanza una moneda a tu brujo",
+      "description": "Descubre The Witcher.",
+      "disclaimer": "<b>The Witcher</b> es propiedad intelectual de CD Projekt Red, Andrzej Sapkowski y Netflix."
+    },
+    {
+      "id": 41,
+      "title": "Bienvenidos a Jurassic Park",
+      "description": "Descubre Jurassic Park.",
+      "disclaimer": "<b>Jurassic Park</b> es propiedad intelectual Universal Pictures."
     }
   ],
   "elements": [
@@ -1162,7 +1169,7 @@
     },
     {
       "id": "batter",
-      "name": "Batido",
+      "name": "Mezcla",
       "description": ""
     },
     {
@@ -1207,7 +1214,7 @@
     },
     {
       "id": "butcher",
-      "name": "Carnciero",
+      "name": "Carnicero",
       "description": ""
     },
     {
@@ -1356,6 +1363,16 @@
       "description": ""
     },
     {
+      "id": "the-witcher",
+      "name": "The Witcher",
+      "description": ""
+    },
+    {
+      "id": "jurassic-park",
+      "name": "Jurassic Park",
+      "description": ""
+    },
+    {
       "id": "oven",
       "name": "Horno",
       "description": ""
@@ -1372,7 +1389,7 @@
     },
     {
       "id": "burger",
-      "name": "Burger",
+      "name": "Hamburguesa",
       "description": ""
     },
     {
@@ -1388,6 +1405,11 @@
     {
       "id": "chef",
       "name": "Cocinero",
+      "description": ""
+    },
+    {
+      "id": "milkshake",
+      "name": "Batido",
       "description": ""
     }
   ],

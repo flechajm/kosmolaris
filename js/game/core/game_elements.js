@@ -54,8 +54,10 @@ class GameElements {
 
     static getCombinationText(result, element1, element2) {
         const langData = LanguageManager.getData();
+        const emoji = result.isSpecial ? '✨' : '🧪';
 
         return langData.console.combinationInfo
+            .replace('{emoji}', emoji)
             .replace('{result}', result.getFormattedColor(true))
             .replace('{element1}', element1.getFormattedColor())
             .replace('{element2}', element2.getFormattedColor());

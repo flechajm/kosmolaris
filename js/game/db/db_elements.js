@@ -1232,6 +1232,20 @@ class DbElements {
                 isSpecial: true,
             }),
 
+            // The Witcher
+            new Element({
+                id: 'the-witcher',
+                category: 14,
+                isSpecial: true,
+            }),
+
+            // Jurassic Park
+            new Element({
+                id: 'jurassic-park',
+                category: 14,
+                isSpecial: true,
+            }),
+
             // ============================
             // FOOD
             // ============================
@@ -1323,6 +1337,12 @@ class DbElements {
             // Smoked Ham
             new Element({
                 id: 'smoked-ham',
+                category: 15,
+            }),
+
+            // Milkshake
+            new Element({
+                id: 'milkshake',
                 category: 15,
             }),
 

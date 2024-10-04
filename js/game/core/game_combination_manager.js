@@ -179,6 +179,7 @@ class GameCombinationManager {
             this.addCombination({ element1: 'blade', element2: 'workbench', result: 'saw' });
             this.addCombination({ element1: 'combustion', element2: 'energy', result: 'engine' });
             this.addCombination({ element1: 'chain', element2: 'saw', result: 'chainsaw' });
+            this.addCombination({ element1: 'engine', element2: 'saw', result: 'chainsaw' });
             this.addCombination({ element1: 'workbench', element2: 'fire', result: 'oven' });
 
             // Lifeforms
@@ -209,7 +210,7 @@ class GameCombinationManager {
             this.addCombination({ element1: 'egg', element2: 'ocean', result: 'fish' });
             this.addCombination({ element1: 'fish', element2: 'fish', result: 'big-fish' });
             this.addCombination({ element1: 'big-fish', element2: 'wild-animal', result: 'shark' });
-            this.addCombination({ element1: 'big-fish', element2: 'fountain', result: 'whale' });
+            this.addCombination({ element1: 'big-fish', element2: 'ocean', result: 'whale' });
             this.addCombination({ element1: 'whale', element2: 'cold', result: 'orca' });
             this.addCombination({ element1: 'whale', element2: 'ice', result: 'orca' });
             this.addCombination({ element1: 'big-fish', element2: 'sword', result: 'swordfish' });
@@ -248,6 +249,8 @@ class GameCombinationManager {
             this.addCombination({ element1: 'spacecraft', element2: 'explosion', result: 'challenger' });
             this.addCombination({ element1: 'airplane', element2: 'island', result: 'lost' });
             this.addCombination({ element1: 'ship', element2: 'iceberg', result: 'titanic' });
+            this.addCombination({ element1: 'wizard', element2: 'swordsman', result: 'the-witcher' });
+            this.addCombination({ element1: 'dinosaur', element2: 'science', result: 'jurassic-park' });
 
             // Food
             this.addCombination({ element1: 'plant', element2: 'field', result: 'wheat' });
@@ -269,6 +272,7 @@ class GameCombinationManager {
             this.addCombination({ element1: 'beef', element2: 'bread', result: 'burger' });
             this.addCombination({ element1: 'pork', element2: 'oven', result: 'ham' });
             this.addCombination({ element1: 'ham', element2: 'smoke', result: 'smoked-ham' });
+            this.addCombination({ element1: 'milk', element2: 'ice', result: 'milkshake' });
 
             // Vehicles
             this.addCombination({ element1: 'wheel', element2: 'wheel', result: 'bicycle' });
@@ -359,7 +363,7 @@ class GameCombinationManager {
             }
 
             const langData = LanguageManager.getData();
-            const emoji = elementUnlocked.isSpecial ? '🍭' : '✨';
+            const emoji = elementUnlocked.isSpecial ? '✨' : '🧪';
             const special = elementUnlocked.isSpecial ? ` ${spanTextColor(langData.console.specialElement, "var(--color-special)")}` : '';
 
             GameLog.write(langData.console.newElement

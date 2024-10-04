@@ -138,7 +138,7 @@
     "saveProgress": "Progress saved",
     "specialElement": "special",
     "newElement": "{emoji} You have discovered a new{special} element combining {element1} + {element2} ➜ {result}!",
-    "combinationInfo": "🧪 {result} ➜ {element1} + {element2}.",
+    "combinationInfo": "{emoji} {result} ➜ {element1} + {element2}.",
     "achievementUnlocked": "Achievement unlocked!"
   },
   "achievements": [
@@ -150,149 +150,156 @@
     {
       "id": 2,
       "title": "Not bad...",
-      "description": "Discover 50 elements."
+      "description": "Discover 10 elements."
     },
     {
       "id": 3,
       "title": "Somebody's on a roll!",
-      "description": "Discover 100 elements."
+      "description": "Discover 25 elements."
     },
     {
       "id": 4,
-      "title": "Mmm, is that 150?",
-      "description": "Discover 150 elements."
+      "title": "Great, keep going!",
+      "description": "Discover 50 elements."
     },
     {
       "id": 5,
-      "title": "Wow, 200!",
-      "description": "Discover 200 elements."
+      "title": "Guess that's 75 in a row",
+      "description": "Discover 75 elements."
     },
     {
       "id": 6,
-      "title": "Guess that's 250 in a row",
-      "description": "Discover 250 elements."
+      "title": "Wait, how many is that now?",
+      "description": "Discover 100 elements."
     },
     {
       "id": 7,
-      "title": "Wait how many is that now?",
-      "description": "Discover 300 elements."
+      "title": "Think I lost count...",
+      "description": "Discover 125 elements."
     },
     {
       "id": 8,
-      "title": "Think I lost count...",
-      "description": "Discover 350 elements."
+      "title": "It's a discoveries streak",
+      "description": "Discover 150 elements."
     },
     {
       "id": 9,
-      "title": "It's a winning streak",
-      "description": "Discover 400 elements."
+      "title": "No idea how many that was",
+      "description": "Discover 175 elements."
     },
     {
       "id": 10,
-      "title": "No idea how many that was",
-      "description": "Discover 450 elements."
+      "title": "God, you are unstoppable!",
+      "description": "Discover 200 elements."
     },
     {
-      "id": 11,
-      "title": "And down they all go!",
-      "description": "Discover 500 elements."
-    },
-    {
-      "id": 12,
+      "id": 23,
       "title": "Sometimes I envy the dead",
       "description": "Discover Michonne, from The Walking Dead.",
-      "disclaimer": "\"Michonne\" is a character of \"The Walking Dead\", intellectual property of AMC Networks."
+      "disclaimer": "<b>Michonne</b> is a character of <b>The Walking Dead</b>, intellectual property of AMC Networks."
     },
     {
-      "id": 13,
+      "id": 24,
       "title": "After all this time?",
       "description": "Discover Harry Potter.",
-      "disclaimer": "\"Harry Potter\" is the intellectual property of Warner Bros. Entertainment Inc."
+      "disclaimer": "<b>Harry Potter</b> is the intellectual property of Warner Bros. Entertainment Inc."
     },
     {
-      "id": 14,
+      "id": 25,
       "title": "You know nothing...",
       "description": "Discover Jon Snow, from Game of Thrones.",
-      "disclaimer": "\"Jon Snow\" is a character of \"Game of Thrones\", intellectual property of HBO."
+      "disclaimer": "<b>Jon Snow</b> is a character of <b>Game of Thrones</b>, intellectual property of HBO."
     },
     {
-      "id": 15,
+      "id": 26,
       "title": "She's a vampire bat",
       "description": "Discover Negan and Lucille, from The Walking Dead.",
-      "disclaimer": "\"Negan\" and \"Lucille\" are characters of \"The Walking Dead\", intellectual property of AMC Networks."
+      "disclaimer": "<b>Negan</b> and <b>Lucille</b> are characters of <b>The Walking Dead</b>, intellectual property of AMC Networks."
     },
     {
-      "id": 16,
+      "id": 27,
       "title": "COVID-19",
       "description": "Discover COVID-19, but doesn't spread it, please."
     },
     {
-      "id": 17,
+      "id": 28,
       "title": "Lucille is thirsty...",
       "description": "Discover Lucille, Negan's bat from The Walking Dead.",
-      "disclaimer": "The term \"Lucille\" is a name used in \"The Walking Dead\", intellectual property of AMC Networks."
+      "disclaimer": "The term <b>Lucille</b> is a name used in <b>The Walking Dead</b>, intellectual property of AMC Networks."
     },
     {
-      "id": 18,
+      "id": 29,
       "title": "In your image and likeness",
       "description": "Discover the World where we live."
     },
     {
-      "id": 19,
+      "id": 30,
       "title": "Ape shall not kill ape",
       "description": "Discover the planet of the apes.",
-      "disclaimer": "\"Planet of the Apes\" is the intellectual property of 20th Century Studios."
+      "disclaimer": "<b>Planet of the Apes</b> is the intellectual property of 20th Century Studios."
     },
     {
-      "id": 20,
+      "id": 31,
       "title": "Don't be so cruel...",
       "description": "Discover Science using a Monkey."
     },
     {
-      "id": 21,
+      "id": 32,
       "title": "Immortal Dragon",
       "description": "Discover Bruce Lee.",
-      "disclaimer": "\"Bruce Lee\" is a historical and cultural figure, intellectual property of Bruce Lee Enterprises, LLC."
+      "disclaimer": "<b>Bruce Lee</b> is a historical and cultural figure, intellectual property of Bruce Lee Enterprises, LLC."
     },
     {
-      "id": 22,
+      "id": 33,
       "title": "I am fearless, and therefore powerful",
       "description": "Discover Frankenstein.",
-      "disclaimer": "\"Frankenstein\" is an original work by Mary Shelley."
+      "disclaimer": "<b>Frankenstein</b> is an original work by Mary Shelley."
     },
     {
-      "id": 23,
+      "id": 34,
       "title": "Bubba Sawyer",
       "description": "Discover Leatherface.",
-      "disclaimer": "\"Leatherface\" is a character from \"The Texas Chainsaw Massacre\", intellectual property of Vortex, Inc."
+      "disclaimer": "<b>Leatherface</b> is a character from <b>The Texas Chainsaw Massacre</b>, intellectual property of Vortex, Inc."
     },
     {
-      "id": 24,
+      "id": 35,
       "title": "The Kosmolaris Chainsaw Massacre",
       "description": "Discover Beef and Pork using Leatherface."
     },
     {
-      "id": 25,
+      "id": 36,
       "title": "One giant leap for mankind",
       "description": "Discover the spacecraft Apollo 11.",
-      "disclaimer": "\"Apollo 11\" is a spacecraft, property of NASA."
+      "disclaimer": "<b>Apollo 11</b> is a spacecraft, property of NASA."
     },
     {
-      "id": 26,
+      "id": 37,
       "title": "After 73 seconds...",
       "description": "Discover the spacecraft Challenger.",
-      "disclaimer": "\"Challenger\" is a spacecraft, property of NASA."
+      "disclaimer": "<b>Challenger</b> is a spacecraft, property of NASA."
     },
     {
-      "id": 27,
+      "id": 38,
       "title": "Not Penny's Boat",
       "description": "Discover LOST, the serie.",
-      "disclaimer": "\"LOST\" is the intellectual property of ABC Studios and its affiliates."
+      "disclaimer": "<b>LOST</b> is the intellectual property of ABC Studios and its affiliates."
     },
     {
-      "id": 28,
+      "id": 39,
       "title": "Women and children first!",
       "description": "Discover the RMS Titanic."
+    },
+    {
+      "id": 40,
+      "title": "Toss a coin to your witcher",
+      "description": "Discover The Witcher.",
+      "disclaimer": "<b>The Witcher</b> is the intellectual property of CD Projekt Red, Andrzej Sapkowski and Netflix."
+    },
+    {
+      "id": 41,
+      "title": "Welcome to Jurassic Park",
+      "description": "Discover Jurassic Park.",
+      "disclaimer": "<b>Jurassic Park</b> is the intellectual property of Universal Pictures."
     }
   ],
   "elements": [
@@ -1357,6 +1364,16 @@
       "description": ""
     },
     {
+      "id": "the-witcher",
+      "name": "The Witcher",
+      "description": ""
+    },
+    {
+      "id": "jurassic-park",
+      "name": "Jurassic Park",
+      "description": ""
+    },
+    {
       "id": "oven",
       "name": "Oven",
       "description": ""
@@ -1389,6 +1406,11 @@
     {
       "id": "chef",
       "name": "Chef",
+      "description": ""
+    },
+    {
+      "id": "milkshake",
+      "name": "Milkshake",
       "description": ""
     }
   ],

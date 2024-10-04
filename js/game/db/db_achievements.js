@@ -12,75 +12,147 @@ class DbAchievements {
                 discoveredElements: 1,
             }),
 
-            // 50 Elements
+            // 10 Elements
             new Achievement({
                 id: 2,
+                discoveredElements: 10,
+            }),
+
+            // 25 Elements
+            new Achievement({
+                id: 3,
+                discoveredElements: 25,
+            }),
+
+            // 50 Elements
+            new Achievement({
+                id: 4,
                 discoveredElements: 50,
+            }),
+
+            // 75 Elements
+            new Achievement({
+                id: 5,
+                discoveredElements: 75,
             }),
 
             // 100 Elements
             new Achievement({
-                id: 3,
+                id: 6,
                 discoveredElements: 100,
+            }),
+
+            // 125 Elements
+            new Achievement({
+                id: 7,
+                discoveredElements: 125,
             }),
 
             // 150 Elements
             new Achievement({
-                id: 4,
+                id: 8,
                 discoveredElements: 150,
+            }),
+
+            // 175 Elements
+            new Achievement({
+                id: 9,
+                discoveredElements: 175,
             }),
 
             // 200 Elements
             new Achievement({
-                id: 5,
+                id: 10,
                 discoveredElements: 200,
+            }),
+
+            // 225 Elements
+            new Achievement({
+                id: 11,
+                discoveredElements: 225,
+                enabled: false,
             }),
 
             // 250 Elements
             new Achievement({
-                id: 6,
+                id: 12,
                 discoveredElements: 250,
+                enabled: false,
+            }),
+
+            // 275 Elements
+            new Achievement({
+                id: 13,
+                discoveredElements: 275,
                 enabled: false,
             }),
 
             // 300 Elements
             new Achievement({
-                id: 7,
+                id: 14,
                 discoveredElements: 300,
+                enabled: false,
+            }),
+
+            // 325 Elements
+            new Achievement({
+                id: 15,
+                discoveredElements: 325,
                 enabled: false,
             }),
 
             // 350 Elements
             new Achievement({
-                id: 8,
+                id: 16,
                 discoveredElements: 350,
+                enabled: false,
+            }),
+
+            // 375 Elements
+            new Achievement({
+                id: 17,
+                discoveredElements: 375,
                 enabled: false,
             }),
 
             // 400 Elements
             new Achievement({
-                id: 9,
+                id: 18,
                 discoveredElements: 400,
+                enabled: false,
+            }),
+
+            // 425 Elements
+            new Achievement({
+                id: 19,
+                discoveredElements: 425,
                 enabled: false,
             }),
 
             // 450 Elements
             new Achievement({
-                id: 10,
+                id: 20,
                 discoveredElements: 450,
+                enabled: false,
+            }),
+
+            // 475 Elements
+            new Achievement({
+                id: 21,
+                discoveredElements: 475,
                 enabled: false,
             }),
 
             // 500 Elements
             new Achievement({
-                id: 11,
+                id: 22,
                 discoveredElements: 500,
                 enabled: false,
             }),
 
             // Michonne
             new Achievement({
-                id: 12,
+                id: 23,
                 rules: [
                     new Rule({ elementToUnlock: 'michonne' })
                 ],
@@ -89,7 +161,7 @@ class DbAchievements {
 
             // Harry Potter
             new Achievement({
-                id: 13,
+                id: 24,
                 rules: [
                     new Rule({ elementToUnlock: 'harry-potter' })
                 ],
@@ -98,7 +170,7 @@ class DbAchievements {
 
             // Jon Snow
             new Achievement({
-                id: 14,
+                id: 25,
                 rules: [
                     new Rule({ elementToUnlock: 'jon-snow' })
                 ],
@@ -107,7 +179,7 @@ class DbAchievements {
 
             // Negan & Lucille
             new Achievement({
-                id: 15,
+                id: 26,
                 rules: [
                     new Rule({ elementToUnlock: 'negan' })
                 ],
@@ -116,7 +188,7 @@ class DbAchievements {
 
             // COVID-19
             new Achievement({
-                id: 16,
+                id: 27,
                 rules: [
                     new Rule({ elementToUnlock: 'covid' })
                 ]
@@ -124,7 +196,7 @@ class DbAchievements {
 
             // Lucille
             new Achievement({
-                id: 17,
+                id: 28,
                 rules: [
                     new Rule({ elementToUnlock: 'lucille' })
                 ],
@@ -133,7 +205,7 @@ class DbAchievements {
 
             // World
             new Achievement({
-                id: 18,
+                id: 29,
                 rules: [
                     new Rule({ elementToUnlock: 'world' })
                 ],
@@ -142,7 +214,7 @@ class DbAchievements {
 
             // Planet of Apes
             new Achievement({
-                id: 19,
+                id: 30,
                 rules: [
                     new Rule({ elementToUnlock: 'planet-apes' })
                 ],
@@ -151,7 +223,7 @@ class DbAchievements {
 
             // Don't be cruel
             new Achievement({
-                id: 20,
+                id: 31,
                 rules: [
                     new Rule({
                         elementToUnlock: 'science',
@@ -163,7 +235,7 @@ class DbAchievements {
 
             // Bruce Lee
             new Achievement({
-                id: 21,
+                id: 32,
                 rules: [
                     new Rule({ elementToUnlock: 'bruce-lee' })
                 ],
@@ -172,7 +244,7 @@ class DbAchievements {
 
             // Frankenstein
             new Achievement({
-                id: 22,
+                id: 33,
                 rules: [
                     new Rule({ elementToUnlock: 'frankenstein' })
                 ],
@@ -181,15 +253,16 @@ class DbAchievements {
 
             // Leatherface
             new Achievement({
-                id: 23,
+                id: 34,
                 rules: [
                     new Rule({ elementToUnlock: 'leatherface' })
-                ]
+                ],
+                icon: 'leatherface'
             }),
 
             // The Kosmolaris Chainsaw Massacre
             new Achievement({
-                id: 24,
+                id: 35,
                 rules: [
                     new Rule({
                         elementToUnlock: 'beef',
@@ -204,7 +277,7 @@ class DbAchievements {
 
             // Apollo 11
             new Achievement({
-                id: 25,
+                id: 36,
                 rules: [
                     new Rule({ elementToUnlock: 'apollo-11' })
                 ],
@@ -213,7 +286,7 @@ class DbAchievements {
 
             // Challenger
             new Achievement({
-                id: 26,
+                id: 37,
                 rules: [
                     new Rule({ elementToUnlock: 'challenger' })
                 ],
@@ -222,7 +295,7 @@ class DbAchievements {
 
             // LOST
             new Achievement({
-                id: 27,
+                id: 38,
                 rules: [
                     new Rule({ elementToUnlock: 'lost' })
                 ],
@@ -232,11 +305,32 @@ class DbAchievements {
 
             // Titanic
             new Achievement({
-                id: 28,
+                id: 39,
                 rules: [
                     new Rule({ elementToUnlock: 'titanic' })
                 ],
                 icon: 'titanic'
+            }),
+
+            // The Witcher
+            new Achievement({
+                id: 40,
+                rules: [
+                    new Rule({ elementToUnlock: 'the-witcher' })
+                ],
+                icon: 'the-witcher'
+            }),
+
+            // Jurassic Park
+            new Achievement({
+                id: 41,
+                rules: [
+                    new Rule({
+                        elementToUnlock: 'jurassic-park',
+                        elementRequired: 'science'
+                    })
+                ],
+                icon: 'jurassic-park'
             }),
         ];
     }
