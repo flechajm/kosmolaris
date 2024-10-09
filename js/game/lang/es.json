@@ -6,6 +6,10 @@
       "title": "ELEMENTOS DESCUBIERTOS",
       "common": "Comunes",
       "special": "Especiales"
+    },
+    "footer": {
+      "donate": "Apoya el juego",
+      "coffee": "Invítame un café"
     }
   },
   "tooltips": {
@@ -41,7 +45,7 @@
     "help": {
       "title": "BIENVENIDO",
       "ok": "Entendido",
-      "elements": ["Aire", "Fuego", "Tierra", "Agua"],
+      "elements": ["Aire 💨", "Fuego 🔥", "Tierra 🍃", "Agua 💧"],
       "welcome": "¡Bienvenido a {game}!<br /><br />En este juego tendrás que combinar una gran variedad de elementos entre sí para crear otros nuevos, comenzando con los 4 elementos básicos: {air}, {fire}, {earth} y {water}.<br /><br />Algunos elementos se basan en principios de reglas químicas básicas, mientras que otros no tanto, más bien se aplica el sentido común y/o ingeniería inversa.",
       "elementTypes": {
         "types": ["comunes", "especiales"],

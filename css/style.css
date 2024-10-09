@@ -131,10 +131,8 @@ footer {
   justify-content: space-between;
   align-items: center;
   position: relative;
-  margin: 0;
-  padding: 0;
+  height: 35px;
   width: 100%;
-  height: 25px;
   background: url(../img/misc/top_bar.jpg);
   background-size: contain;
   background-color: var(--dark);
@@ -148,15 +146,18 @@ footer a {
 footer div {
   display: flex;
   align-items: center;
-  height: 20px;
   padding: 0 10px 0 10px;
-  font-size: x-small;
+  font-size: 0.7rem;
   font-weight: normal;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-primary);
   border-left: 1px dotted rgba(128, 128, 128, 0.404);
+}
+footer div:first-child {
+  border-left: 0;
 }
 footer div.content {
   display: flex;
+  height: 17px;
   transform: rotateX(180deg);
   padding-left: 0;
   border-left: 0;
@@ -369,7 +370,7 @@ tooltip.item {
 
 #game {
   display: none;
-  height: calc(100% - 25px);
+  height: calc(100% - 35px);
 }
 #game.invisible {
   visibility: hidden;
@@ -723,7 +724,7 @@ tooltip.item {
   flex-direction: column;
   align-items: start;
   justify-content: start;
-  margin-block: 0.5em 2em;
+  padding-block: 0.5em 2em;
   height: 100%;
   width: 90%;
   gap: 0.6em;
@@ -739,7 +740,7 @@ tooltip.item {
   padding-block: 2.5em 2em;
 }
 #window-help .content img {
-  width: 75%;
+  width: 50%;
   border: 1px solid var(--color-secondary);
   border-radius: 8px;
   margin-block: 1em;
@@ -865,7 +866,6 @@ tooltip.item {
   width: 90%;
   gap: 0.6em;
   overflow: overlay;
-  margin-block: 0.5em;
   padding-inline: 2.5em;
   padding-block: 1em 1.5em;
 }
@@ -887,7 +887,6 @@ tooltip.item {
   width: 90%;
   gap: 0.6em;
   overflow: overlay;
-  margin-top: 0.5em;
   padding-inline: 2.5em;
   padding-block: 1em 1.5em;
   line-height: 1.5em;
@@ -926,7 +925,6 @@ tooltip.item {
   width: 90%;
   gap: 0.6em;
   overflow: overlay;
-  margin-block: 0.5em;
   padding-inline: 2.5em;
   padding-block: 1em 1.5em;
 }
@@ -1026,7 +1024,7 @@ tooltip.item {
   content: "\e8cd";
 }
 .button.ok {
-  max-width: 40%;
+  max-width: 200px;
   min-height: 40px;
 }
 .button:hover {
@@ -1041,8 +1039,8 @@ tooltip.item {
   box-shadow: 0px 0px 5px gray;
 }
 .button.blue {
-  background: linear-gradient(140deg, rgb(108, 174, 249) 10%, rgb(11, 61, 199) 40%, rgb(14, 35, 129) 100%);
-  box-shadow: 0px 0px 1px royalblue;
+  background: linear-gradient(140deg, rgb(193, 132, 247) 10%, rgb(123, 67, 231) 40%, rgb(19, 34, 153) 100%);
+  box-shadow: 0px 0px 1px #7741e1;
 }
 .button.green {
   background: linear-gradient(140deg, #6af17d 10%, #149931 40%, #0e4603 100%);
@@ -1167,13 +1165,13 @@ tooltip.item {
   align-items: center;
 }
 .popup.changelog {
-  width: 740px;
-  height: 580px;
+  width: 40vw;
+  height: 70vh;
   align-items: center;
 }
 .popup.help {
-  width: 680px;
-  height: 580px;
+  width: 50vw;
+  height: 75vh;
   align-items: center;
 }
 .popup.credits {
@@ -1183,6 +1181,7 @@ tooltip.item {
 }
 .popup .title {
   margin-block: 1.2em;
+  font-size: large;
 }
 .popup .container {
   display: flex;
@@ -1200,8 +1199,8 @@ tooltip.item {
 .close-x {
   cursor: var(--cursor-pointer-default);
   position: absolute;
-  top: 8px;
-  right: 8px;
+  top: 1.2em;
+  right: 1.2em;
 }
 .close-x::after {
   font-family: "Material Symbols Rounded";

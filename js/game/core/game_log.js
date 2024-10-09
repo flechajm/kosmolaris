@@ -24,9 +24,9 @@ class GameLog {
     }
   }
 
-  static write(html, color) {
+  static write({ html, color, fontSize }) {
     this.#append(`<div class="message-log">
-                    <span style="color: ${color ?? "inherit"};">${html}</span>
+                    <span style="color: ${color ?? "inherit"}; font-size: ${fontSize ?? "inherit"};">${html}</span>
                     <br />
                   </div>`);
   }
@@ -38,7 +38,7 @@ class GameLog {
   }
 
   static writeSaveProgress() {
-    this.write(`> ${LanguageManager.getData().saveProgress} [${new Date().toLocaleString()}]`, "grey");
+    this.write({ html: `> ${LanguageManager.getData().saveProgress} [${new Date().toLocaleString()}]`, color: "grey" });
   }
 }
 

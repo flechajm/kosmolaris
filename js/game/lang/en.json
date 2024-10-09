@@ -6,6 +6,10 @@
       "title": "DISCOVERED ELEMENTS",
       "common": "Common",
       "special": "Special"
+    },
+    "footer": {
+      "donate": "Support the game",
+      "coffee": "Buy me a coffee"
     }
   },
   "tooltips": {
@@ -41,8 +45,8 @@
     "help": {
       "title": "WELCOME",
       "ok": "Got it",
-      "elements": ["Air", "Fire", "Earth", "Water"],
-      "welcome": "Welcome to {game}!<br /><br />In this game you'll have to combine a large kind of elements each other to create a new ones, starting with the 4 basic elements: {air}, {fire}, {earth} and {water}.<br /><br />Some elements are based on principles chemical rules, while some others are not so much, rather in common sense and/or reverse engineering.",
+      "elements": ["Air 💨", "Fire 🔥", "Earth 🍃", "Water 💧"],
+      "welcome": "Welcome to {game}!<br /><br />In this game you'll have to combine a large variety of elements with each other to create new ones, starting with the 4 basic elements: {air}, {fire}, {earth} and {water}.<br /><br />Some elements are based on principles chemical rules, while some others are not so much, rather in common sense and/or reverse engineering.",
       "elementTypes": {
         "types": ["Common", "Special"],
         "description": "There are two types of elements: {common} and {special}.",

@@ -607,7 +607,7 @@ class GameManager {
             const element1 = GameElements.getById(combination.element1);
             const element2 = GameElements.getById(combination.element2);
 
-            GameLog.write(GameElements.getCombinationText(result, element1, element2));
+            GameLog.write({ html: GameElements.getCombinationText(result, element1, element2) });
         }
     }
 

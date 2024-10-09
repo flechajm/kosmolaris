@@ -366,12 +366,14 @@ class GameCombinationManager {
             const emoji = elementUnlocked.isSpecial ? '✨' : '🧪';
             const special = elementUnlocked.isSpecial ? ` ${spanTextColor(langData.console.specialElement, "var(--color-special)")}` : '';
 
-            GameLog.write(langData.console.newElement
-                .replace('{emoji}', emoji)
-                .replace('{special}', special)
-                .replace('{element1}', element1.getFormattedColor())
-                .replace('{element2}', element2.getFormattedColor())
-                .replace('{result}', elementUnlocked.getFormattedColor(true))
+            GameLog.write({
+                html: langData.console.newElement
+                    .replace('{emoji}', emoji)
+                    .replace('{special}', special)
+                    .replace('{element1}', element1.getFormattedColor())
+                    .replace('{element2}', element2.getFormattedColor())
+                    .replace('{result}', elementUnlocked.getFormattedColor(true))
+            }
             );
         }
     }

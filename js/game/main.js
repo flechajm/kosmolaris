@@ -51,9 +51,9 @@ function welcome(langData) {
         .replace('{date}', versionData.date.toLocaleString(gameConfig.lang, options))
 
 
-    GameLog.write(langData.console.welcome.replace('{game}', gameName));
+    GameLog.write({ html: langData.console.welcome.replace('{game}', gameName), fontSize: 'larger' });
     GameLog.newLine(1);
-    GameLog.write(`<span id="show-changelog">${version}</span>`, "grey");
+    GameLog.write({ html: `<span id="show-changelog">${version}</span>`, color: "grey" });
     GameLog.newLine(1);
 }
 
@@ -252,6 +252,13 @@ function updateVolumeText(type, volume) {
     $(`#option-${type}`).find('.slide-volume-container > span:last').html(volume);
 }
 
+function setupDonation(langData) {
+    const donate = $('footer > .content > .donate');
+
+    donate.html(`${langData.common.footer.donate}: ☕
+          <a href="https://cafecito.app/kosmolaris" target="_blank">${langData.common.footer.coffee}</a>`)
+}
+
 function setupWindowSettings(langData) {
     $('#search-element').attr('placeholder', langData.common.searchElement);
 
@@ -437,6 +444,7 @@ async function initialConfig(langData) {
     });
 
     welcome(langData);
+    setupDonation(langData);
     setupWindowSettings(langData);
     setupWindowHelp(langData);
     setupWindowChangelog(langData);
