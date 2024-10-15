@@ -13,4 +13,5 @@
 _Kosmolaris is a puzzle game about combining elements to create new ones, starting with the 4 basic elements: Aire, Fire, Earth and Water_
 <br />
 <br />
-# [Play Kosmolaris](https://flechajm.github.io/kosmolaris/)
+
+# [Play Kosmolaris](https://kosmolaris.com)
