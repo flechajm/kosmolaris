@@ -31,7 +31,7 @@ class GameInfo {
       "date": new Date(2024, 10, 3),
       "changelog": {
         "es": [
-          "¡Kosmolaris pasó a ser versión estable! 🥳",
+          "¡Kosmolaris pasó a ser versión estable y está disponible en <a href='https://store.steampowered.com/app/3284610/Kosmolaris/' target='_blank'>Steam</a>! 🥳",
           "NEW: Se agregaron imágenes a todos los elementos.",
           "NEW: Se agregaron 2 nuevos elementos comunes (de 200 a 202).",
           "NEW: Se agregaron 4 nuevos elementos especiales (de 12 a 16).",
@@ -42,7 +42,7 @@ class GameInfo {
           "CHANGE: Se reorganizó la IU y se agregó una ventana de créditos.",
         ],
         "en": [
-          "Kosmolaris has become a stable version! 🥳",
+          "Kosmolaris has become a stable version and is available on <a href='https://store.steampowered.com/app/3284610/Kosmolaris/' target='_blank'>Steam</a>! 🥳",
           "NEW: Added images to all elements.",
           "NEW: Added 2 new common elements (from 200 to 202).",
           "NEW: Added 4 new special elements (from 12 to 16).",

@@ -56,15 +56,15 @@
       "guide": {
         "title": "Cómo funciona el juego 👇:",
         "highlights": {
-          "dragAndDrop": "Arrastra y suelta",
-          "doubleClick": "doble clic",
+          "dragAndDrop": "Arrastra y Suelta",
+          "doubleClick": "Doble Clic",
           "copy": "copia",
-          "rightClick": "clic derecho",
+          "rightClick": "Clic Derecho",
           "delete": "eliminarlo",
           "twoElements": "dos elementos",
           "drag": "arrastra",
           "drop": "suéltalo",
-          "middleClick": "clic medio"
+          "middleClick": "Clic Medio"
         },
         "list": [
           {

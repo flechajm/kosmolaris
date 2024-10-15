@@ -964,7 +964,7 @@ tooltip.item {
   box-shadow: 0px 0px 3px orangered;
   border-radius: 6px;
   cursor: var(--cursor-pointer-default);
-  text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.5058823529);
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.65);
   font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24;
   z-index: 1;
   max-width: 42px;

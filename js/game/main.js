@@ -349,7 +349,7 @@ function setupWindowHelp(langData) {
     const copyHighlight = spanTextColor(langData.windows.help.guide.highlights.copy, "var(--color-common)");
     const rightClickHighlight = spanTextColor(langData.windows.help.guide.highlights.rightClick, "var(--color-green-light)");
     const deleteHighlight = spanTextColor(langData.windows.help.guide.highlights.delete, "var(--color-negative)");
-    const twoElementsHighlight = spanTextColor(langData.windows.help.guide.highlights.twoElements, "var(--color-green-light)")
+    const twoElementsHighlight = spanTextColor(langData.windows.help.guide.highlights.twoElements, "var(--color-gold)")
     const dragHighlight = spanTextColor(langData.windows.help.guide.highlights.drag, "var(--color-common)");
     const dropHighlight = spanTextColor(langData.windows.help.guide.highlights.drop, "var(--color-common)");
     const middleClickHighlight = spanTextColor(langData.windows.help.guide.highlights.middleClick, "var(--color-green-light)");

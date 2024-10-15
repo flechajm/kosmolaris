@@ -46,25 +46,25 @@
       "title": "WELCOME",
       "ok": "Got it",
       "elements": ["Air 💨", "Fire 🔥", "Earth 🍃", "Water 💧"],
-      "welcome": "Welcome to {game}!<br /><br />In this game you'll have to combine a large variety of elements with each other to create new ones, starting with the 4 basic elements: {air}, {fire}, {earth} and {water}.<br /><br />Some elements are based on principles chemical rules, while some others are not so much, rather in common sense and/or reverse engineering.",
+      "welcome": "Welcome to {game}!<br /><br />In this game you'll have to combine a wide variety of elements to create new ones, starting with four basic elements: {air}, {fire}, {earth} and {water}.<br /><br />Some elements are based on chemical principles, while others rely more on common sense or reverse engineering.",
       "elementTypes": {
         "types": ["Common", "Special"],
         "description": "There are two types of elements: {common} and {special}.",
-        "commonElementDesc": "{common} elements are public knowledge and you can achieve all of them without restrictions at all: some chemical rules and common sense, that's all.",
-        "specialElementDesc": "{special} elements are mainly <i>easter eggs</i> and you may need a specific minimum knowledge about some topic. These elements commonly are not real, indeed they are part of a fiction, from iconic moments of our lives and the entire world (maybe).<br /><br />Don't feel bad if you don't find them, they are not the main goal of the game. But, if you are curious..."
+        "commonElementDesc": "{common} elements are public knowledge, and you can unlock all of them without any restrictions, just by applying chemical principles and common sense.",
+        "specialElementDesc": "{special} elements are mainly <i>easter eggs</i>, and unlocking them may require specific knowledge about certain topics. They often aren't real elements but come from fictional sources or iconic moments from our lives and the world at large (possibly).<br /><br />Don't worry if you don't find them—they aren't the main goal of the game. But if you're curious..."
       },
       "guide": {
         "title": "How the game works 👇:",
         "highlights": {
-          "dragAndDrop": "Drag and drop",
-          "doubleClick": "double click",
+          "dragAndDrop": "Drag and Drop",
+          "doubleClick": "Double Click",
           "copy": "copy",
-          "rightClick": "right click",
+          "rightClick": "Right Click",
           "delete": "delete",
           "twoElements": "two elements",
           "drag": "drag",
           "drop": "drop",
-          "middleClick": "middle click"
+          "middleClick": "Middle Click"
         },
         "list": [
           {
@@ -72,11 +72,11 @@
             "gif": "drag"
           },
           {
-            "text": "Do {doubleClick} on an element from the board to create a {copy} of it. Also, you can perform {doubleClick} on a sidebar element to directly stack it to the top left corner on the board.",
+            "text": "{doubleClick} on an element from the board to create a {copy} of it. Also, you can perform {doubleClick} on a sidebar element to directly stack it to the top left corner on the board.",
             "gif": "dblclick"
           },
           {
-            "text": "Do {rightClick} on an element from the board to {delete} it.",
+            "text": "{rightClick} on an element from the board to {delete} it.",
             "gif": "rightclick"
           },
           {

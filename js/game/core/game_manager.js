@@ -392,7 +392,7 @@ class GameManager {
         const lightDOM = popupDiscoveredElementDOM.find('div.light');
         const nameDOM = discoveredElementDOM.find('div');
 
-        discoveredElementDOM.find('img').attr('src', `../img/elements/${element.id}.png`);
+        discoveredElementDOM.find('img').attr('src', `img/elements/${element.id}.png`);
         nameDOM.html(element.name);
 
         if (element.isSpecial) {
