@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab&display=block");
+:root {
+  --font-primary: "Roboto Slab";
+  --font-primary-color: #ccc;
+  --dark: #0e0e0e;
+  --color-primary: #3b1d42;
+  --color-primary-light: #54305f;
+  --color-primary-bright: #7b4f88;
+  --color-secondary: #6e583c;
+  --color-gold: #ffcc33;
+  --color-negative: #ff4949;
+  --color-new: #6baee7;
+  --color-fix: #32cd32;
+  --color-change: #e94979;
+  --color-bg-category: #160f16;
+  --color-air: #b8a4c4;
+  --color-fire: crimson;
+  --color-earth: #b67048;
+  --color-water: #6baee7;
+  --color-common: #6baee7;
+  --color-special: #f764e3;
+  --color-green-light: #00fa9a;
+  --cursor-default: url(../../img/misc/cursor_default.png) 2 0, auto;
+  --cursor-pointer-default: url(../../img/misc/pointer_default.png), auto;
+  --cursor-pointer-point: url(../../img/misc/pointer_point.png), auto;
+  --cursor-pointer-open: url(../../img/misc/pointer_open.png), auto;
+  --cursor-pointer-close: url(../../img/misc/pointer_close.png), auto;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  background-color: #0c0c0c;
+  -webkit-font-smoothing: antialiased;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: -moz-none;
+  -moz-user-select: none;
+  user-select: none;
+  font-family: var(--font-primary);
+  color: var(--font-primary-color);
+  text-shadow: 2px 2px 4px #000;
+  font-size: medium;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  cursor: var(--cursor-default);
+}
+
+a {
+  cursor: var(--cursor-pointer-default);
+  color: white;
+  text-underline-offset: 0.2em;
+}
+a:hover {
+  color: wheat;
+}
+a:active {
+  cursor: var(--cursor-pointer-point);
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-image: url(../../img/bg/bg7.jpg);
+  background-size: cover;
+  height: 100vh;
+}
+.wrapper .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.wrapper .content .widget {
+  filter: drop-shadow(0px 0px 8px var(--color-new));
+}
+.wrapper .content .logo {
+  content: url(../../img/logo/logo_xl.png);
+  margin-bottom: 10rem;
+  filter: drop-shadow(0px 0px 10px black) drop-shadow(0px 0px 15px black);
+}
+.wrapper .footer {
+  font-size: large;
+  margin-top: 10em;
+}
+
+@media screen and (max-width: 1920px) {
+  .content .logo {
+    width: 50%;
+  }
+}/*# sourceMappingURL=style.css.map */

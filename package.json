@@ -5,7 +5,7 @@
     "netlify-plugin-js-obfuscator": "^1.0.21"
   },
   "name": "kosmolaris",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "<br />\r <br />\r <p align=\"center\">\r   <img src=\"https://github.com/flechajm/kosmolaris/blob/main/img/logo/logo_m.png\">\r </p>\r <br />\r <br />",
   "main": "main.js",
   "dependencies": {
@@ -27,9 +27,9 @@
   "scripts": {
     "start": "electron .",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "package-mac": "npx @electron/packager . --overwrite --platform=darwin --arch=x64 --icon=icon.icns --prune=true --out=builds",
-    "package-win": "npx @electron/packager . Kosmolaris --overwrite --asar --platform=win32 --arch=ia32 --icon=icon.ico --prune=true --out=builds --version-string.CompanyName=John Arrow Games --version-string.FileDescription=Prueba --version-string.ProductName=\"Kosmolaris\"",
-    "package-linux": "npx @electron/packager . Kosmolaris --overwrite --asar --platform=linux --arch=x64 --icon=icon.ico --prune=true --out=builds"
+    "package-mac": "npx @electron/packager . Kosmolaris --overwrite --platform=darwin --arch=x64 --icon=icon.icns --prune=true --out=builds --app-copyright=\"Kosmolaris © 2024\" --version-string.CompanyName=\"John Arrow Games\" --version-string.ProductName=\"Kosmolaris\" --version-string.FileDescription=\"Relaxing puzzle game\"",
+    "package-win": "npx @electron/packager . Kosmolaris --overwrite --asar --platform=win32 --arch=x64 --icon=icon.ico --prune=true --out=builds --app-copyright=\"Kosmolaris © 2024\" --version-string.CompanyName=\"John Arrow Games\" --version-string.ProductName=\"Kosmolaris\" --version-string.FileDescription=\"Relaxing puzzle game\"",
+    "package-linux": "npx @electron/packager . Kosmolaris --overwrite --asar --platform=linux --arch=x64 --icon=icon.ico --prune=true --out=builds --app-copyright=\"Kosmolaris © 2024\" --version-string.CompanyName=\"John Arrow Games\" --version-string.ProductName=\"Kosmolaris\" --version-string.FileDescription=\"Relaxing puzzle game\""
   },
   "keywords": [],
   "author": "John Arrow Games",

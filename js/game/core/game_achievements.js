@@ -24,8 +24,8 @@ class GameAchievements {
 
             const achievementConsoleDOM = achievement.getDOM({});
 
-            GameLog.write(`🏆 <span class='achievement-unlocked'>${LanguageManager.getData().console.achievementUnlocked}</span>`);
-            GameLog.write(achievementConsoleDOM);
+            GameLog.write({ html: `🏆 <span class='achievement-unlocked'>${LanguageManager.getData().console.achievementUnlocked}</span>` });
+            GameLog.write({ html: achievementConsoleDOM });
 
             this.unlockeds.push(achievement.id);
             $('#log').find('.achievement').click(function () {
