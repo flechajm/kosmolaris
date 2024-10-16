@@ -928,6 +928,9 @@ tooltip.item {
   padding-inline: 2.5em;
   padding-block: 1em 1.5em;
 }
+#window-credits .content img {
+  margin-block: 1.5em;
+}
 #window-credits .content div.section {
   display: flex;
   flex-direction: column;
@@ -936,7 +939,21 @@ tooltip.item {
   margin-bottom: 2em;
 }
 #window-credits .content div.section p {
-  font-size: 1.3em;
+  font-size: 1.4em;
+}
+#window-credits .content div.section p span {
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 0.3em;
+  text-decoration-thickness: from-font;
+}
+#window-credits .content div.section .comment {
+  font-size: small;
+  color: var(--color-primary-bright);
+  margin-bottom: 1.5em;
+}
+#window-credits .content div.section .comment:last-child {
+  margin-bottom: unset;
 }
 #window-credits .content.empty {
   align-items: center;
@@ -1176,7 +1193,7 @@ tooltip.item {
 }
 .popup.credits {
   width: 580px;
-  height: 600px;
+  height: 650px;
   align-items: center;
 }
 .popup .title {

@@ -99,38 +99,87 @@
         "madeWithLove": "Hecho con 💖 en",
         "argentina": "Argentina ⭐⭐⭐"
       },
-      "programming": {
-        "title": "Diseño del Juego y Programación",
-        "authors": [
-          "🔗 <a href='https://flechajm.github.io' target='_blank'>Juan Manuel Flecha</a>"
-        ]
-      },
-      "art": {
-        "title": "Arte e Interfaz de Usuario",
-        "authors": [
-          "Juan Manuel Flecha (IU)",
-          "🔗 <a href='https://x.com/ChemaLuque_dev' target='_blank'>Chemita</a> (Íconos de Elementos)",
-          "🔗 <a href='https://kenney.nl' target='_blank'>Kenney</a> (Cursores del Mouse)",
-          "🔗 <a href='https://iconarchive.com' target='_blank'>Icon Archive</a> (Ícono de Trofeo)"
-        ]
-      },
-      "testers": {
-        "title": "Control de Calidad",
-        "authors": [
-          "Juan Manuel Flecha",
-          "Carolina Andrea D'Alfonso 🥰",
-          "Nazareno Allegue"
-        ]
-      },
-      "bgm": {
-        "title": "Música y Efectos de Sonido",
-        "authors": [
-          "Juan Manuel Flecha (Efectos de Sonido)",
-          "🔗 <a href='https://freesound.org' target='_blank'>freesound.org</a> (Efectos de Sonido)",
-          "🔗 <a href='https://pixabay.com/users/relaxingtime' target='_blank'>Relaxing Time</a> (Música de Fondo)",
-          "🔗 <a href='https://pixabay.com/users/light_music' target='_blank'>Light Music</a> (Música de Fondo)"
-        ]
-      },
+      "sections": [
+        {
+          "title": "Creado por",
+          "authors": [
+            {
+              "name": "🔗 <a href='https://flechajm.github.io' target='_blank'>Juan Manuel Flecha</a>",
+              "comment": "Diseño del juego y programación"
+            }
+          ]
+        },
+        {
+          "title": "Arte y Diseño",
+          "authors": [
+            {
+              "name": "Juan Manuel Flecha",
+              "comment": "Interfaz de Usuario"
+            },
+            {
+              "name": "🔗 <a href='https://x.com/ChemaLuque_dev' target='_blank'>Chemita</a>",
+              "comment": "Íconos de los elementos"
+            },
+            {
+              "name": "🔗 <a href='https://kenney.nl' target='_blank'>Kenney</a>",
+              "comment": "Cursores del mouse"
+            },
+            {
+              "name": "🔗 <a href='https://iconarchive.com' target='_blank'>Icon Archive</a>",
+              "comment": "Ícono de Trofeo"
+            }
+          ]
+        },
+        {
+          "title": "Control de Calidad",
+          "authors": [
+            {
+              "name": "Juan Manuel Flecha"
+            },
+            {
+              "name": "Carolina Andrea D'Alfonso"
+            }
+          ]
+        },
+        {
+          "title": "Música y Efectos de Sonido",
+          "authors": [
+            {
+              "name": "Juan Manuel Flecha",
+              "comment": "Efectos de Sonido"
+            },
+            {
+              "name": "🔗 <a href='https://freesound.org' target='_blank'>freesound.org</a>",
+              "comment": "Efectos de Sonido"
+            },
+            {
+              "name": "🔗 <a href='https://pixabay.com/users/relaxingtime' target='_blank'>Relaxing Time</a>",
+              "comment": "Música de Fondo"
+            },
+            {
+              "name": "🔗 <a href='https://pixabay.com/users/light_music' target='_blank'>Light Music</a>",
+              "comment": "Música de Fondo"
+            }
+          ]
+        },
+        {
+          "title": "Agradecimientos Especiales",
+          "authors": [
+            {
+              "name": "Carolina Andrea D'Alfonso",
+              "comment": "Soporte constante 🥰"
+            },
+            {
+              "name": "Nazareno Allegue",
+              "comment": "BetaTester"
+            },
+            {
+              "name": "Gabriel Agustín García",
+              "comment": "Mejora de localización en Inglés"
+            }
+          ]
+        }
+      ],
       "disclaimer": "En el juego pueden aparecer elementos con nombres de personajes icónicos de la vida real, series y/o películas. Dichos nombres son propiedad intelectual y marcas registradas de sus respectivos dueños y/o compañías. Kosmolaris no está endosado por ninguna de estas compañías ni recibe regalías por nombrarlos."
     }
   },

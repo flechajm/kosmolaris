@@ -401,10 +401,13 @@ function setupWindowCredits(langData) {
     $('#window-credits > .popup > .container > .title').html(langData.windows.credits.title);
     $('#window-credits .button').html(langData.windows.changelog.ok);
 
-    const programming = getCreditSection(langData.windows.credits.programming);
-    const art = getCreditSection(langData.windows.credits.art);
-    const testers = getCreditSection(langData.windows.credits.testers);
-    const bgm = getCreditSection(langData.windows.credits.bgm);
+    let sections = '';
+    for (let index = 0; index < langData.windows.credits.sections.length; index++) {
+        const section = getCreditSection(langData.windows.credits.sections[index]);
+
+        sections += section;
+    }
+
     const disclaimerTemplate = `<div class='achievement-container'><div class='disclaimer'>{disclaimer}</div></div>`;
     const footerTemplate = `<div class="made-with-love">
                                  <span>{madeWithLove}</span>
@@ -416,7 +419,7 @@ function setupWindowCredits(langData) {
         credits.footer.argentina);
     const disclaimer = disclaimerTemplate.replace('{disclaimer}', langData.windows.credits.disclaimer);
 
-    $('#window-credits .content').html(`${programming}${art}${testers}${bgm}${disclaimer}`);
+    $('#window-credits .content').append(`${sections}${disclaimer}`);
     $('#window-credits .made-with-love').html(footer);
 
 }
@@ -427,11 +430,15 @@ function getCreditSection(section) {
                                     {authors}
                             </div>`;
 
-    let title = spanTextColor(section.title, "var(--color-green-light)");
+    let title = spanTextColor(section.title.toUpperCase(), "var(--color-green-light)");
     let authors = '';
 
     section.authors.forEach(author => {
-        authors += `<span>${author}</span>`
+        authors += `<span>${author.name}</span>`
+
+        if (author.comment) {
+            authors += `<span class='comment'>${author.comment}</span>`
+        }
     });
 
     return template.replace('{title}', title).replace('{authors}', authors);

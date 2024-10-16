@@ -99,38 +99,87 @@
         "madeWithLove": "Made with 💖 in",
         "argentina": "Argentina ⭐⭐⭐"
       },
-      "programming": {
-        "title": "Game Design & Programming",
-        "authors": [
-          "🔗 <a href='https://flechajm.github.io' target='_blank'>Juan Manuel Flecha</a>"
-        ]
-      },
-      "art": {
-        "title": "Art & User Interface",
-        "authors": [
-          "Juan Manuel Flecha (UI)",
-          "🔗 <a href='https://x.com/ChemaLuque_dev' target='_blank'>Chemita</a> (Elements Icons)",
-          "🔗 <a href='https://kenney.nl' target='_blank'>Kenney</a> (Mouse Cursors)",
-          "🔗 <a href='https://iconarchive.com' target='_blank'>Icon Archive</a> (Trophy Icon)"
-        ]
-      },
-      "testers": {
-        "title": "Quality Assurance",
-        "authors": [
-          "Juan Manuel Flecha",
-          "Carolina Andrea D'Alfonso 🥰",
-          "Nazareno Allegue"
-        ]
-      },
-      "bgm": {
-        "title": "Music & Sound Effects",
-        "authors": [
-          "Juan Manuel Flecha (Sound Effects)",
-          "🔗 <a href='https://freesound.org' target='_blank'>freesound.org</a> (Sound Effects)",
-          "🔗 <a href='https://pixabay.com/users/relaxingtime' target='_blank'>Relaxing Time</a> (Background Music)",
-          "🔗 <a href='https://pixabay.com/users/light_music' target='_blank'>Light Music</a> (Background Music)"
-        ]
-      },
+      "sections": [
+        {
+          "title": "Created by",
+          "authors": [
+            {
+              "name": "🔗 <a href='https://flechajm.github.io' target='_blank'>Juan Manuel Flecha</a>",
+              "comment": "Game design and programming"
+            }
+          ]
+        },
+        {
+          "title": "Art & Design",
+          "authors": [
+            {
+              "name": "Juan Manuel Flecha",
+              "comment": "User Interface"
+            },
+            {
+              "name": "🔗 <a href='https://x.com/ChemaLuque_dev' target='_blank'>Chemita</a>",
+              "comment": "Elements Icons"
+            },
+            {
+              "name": "🔗 <a href='https://kenney.nl' target='_blank'>Kenney</a>",
+              "comment": "Mouse cursors"
+            },
+            {
+              "name": "🔗 <a href='https://iconarchive.com' target='_blank'>Icon Archive</a>",
+              "comment": "Trophy Icon"
+            }
+          ]
+        },
+        {
+          "title": "Quality Assurance",
+          "authors": [
+            {
+              "name": "Juan Manuel Flecha"
+            },
+            {
+              "name": "Carolina Andrea D'Alfonso"
+            }
+          ]
+        },
+        {
+          "title": "Music & Sound Effects",
+          "authors": [
+            {
+              "name": "Juan Manuel Flecha",
+              "comment": "Sound Effects"
+            },
+            {
+              "name": "🔗 <a href='https://freesound.org' target='_blank'>freesound.org</a>",
+              "comment": "Sound Effects"
+            },
+            {
+              "name": "🔗 <a href='https://pixabay.com/users/relaxingtime' target='_blank'>Relaxing Time</a>",
+              "comment": "Background Music"
+            },
+            {
+              "name": "🔗 <a href='https://pixabay.com/users/light_music' target='_blank'>Light Music</a>",
+              "comment": "Background Music"
+            }
+          ]
+        },
+        {
+          "title": "Special Thanks",
+          "authors": [
+            {
+              "name": "Carolina Andrea D'Alfonso",
+              "comment": "Constant support 🥰"
+            },
+            {
+              "name": "Nazareno Allegue",
+              "comment": "BetaTester"
+            },
+            {
+              "name": "Gabriel Agustín García",
+              "comment": "English localization improvements"
+            }
+          ]
+        }
+      ],
       "disclaimer": "The game may feature elements with names of iconic characters from real life, series, and/or movies. These names are the intellectual property and registered trademarks of their respective owners and/or companies. Kosmolaris is not endorsed by any of these companies and does not receive royalties for mentioning them."
     }
   },
