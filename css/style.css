@@ -965,6 +965,33 @@ tooltip.item {
   gap: 0.5em;
 }
 
+#window-wipe {
+  display: none;
+  z-index: 5;
+}
+#window-wipe.modal {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+#window-wipe .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 90%;
+  gap: 0.6em;
+  overflow: overlay;
+  padding-inline: 2.5em;
+  padding-block: 1em 1.5em;
+}
+#window-wipe .content.empty {
+  align-items: center;
+  justify-content: center;
+}
+
 .button {
   flex: 1;
   display: flex;
@@ -1064,7 +1091,7 @@ tooltip.item {
   box-shadow: 0px 0px 1px lawngreen;
 }
 .button.red {
-  max-width: 40%;
+  max-width: 200px;
   min-height: 40px;
   background: linear-gradient(140deg, #d57070 10%, #bb2323 40%, #810e0e 100%);
   box-shadow: 0px 0px 1px crimson;
@@ -1195,6 +1222,18 @@ tooltip.item {
   width: 580px;
   height: 650px;
   align-items: center;
+}
+.popup.wipe {
+  width: 500px;
+  height: 230px;
+  align-items: center;
+}
+.popup.wipe .buttons {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  gap: 2em;
+  padding-inline: 5em;
 }
 .popup .title {
   margin-block: 1.2em;

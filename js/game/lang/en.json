@@ -30,8 +30,7 @@
       "bgm": "Music Volume",
       "resetGame": "Reset game",
       "wipeData": "Wipe data",
-      "apply": "Apply",
-      "promptWipe": "Are you sure you want to erase all saved data?"
+      "apply": "Apply"
     },
     "changelog": {
       "title": "VERSION CHANGELOG",
@@ -174,6 +173,10 @@
               "comment": "BetaTester"
             },
             {
+              "name": "Mauro Bernabeu",
+              "comment": "BetaTester"
+            },
+            {
               "name": "Gabriel Agustín García",
               "comment": "English localization improvements"
             }
@@ -181,9 +184,14 @@
         }
       ],
       "disclaimer": "The game may feature elements with names of iconic characters from real life, series, and/or movies. These names are the intellectual property and registered trademarks of their respective owners and/or companies. Kosmolaris is not endorsed by any of these companies and does not receive royalties for mentioning them."
+    },
+    "wipe": {
+      "title": "WIPE DATA",
+      "message": "Are you sure you want to erase all your progress?",
+      "yes": "Yes, erase",
+      "no": "No, cancel"
     }
   },
-
   "console": {
     "welcome": "Welcome to {game}!",
     "version": "Version: {version} ({date}) 📝",

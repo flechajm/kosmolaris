@@ -30,8 +30,7 @@
       "bgm": "Volumen de Música",
       "resetGame": "Reiniciar juego",
       "wipeData": "Borrar datos",
-      "apply": "Aplicar",
-      "promptWipe": "¿Estás seguro que quieres borrar todos los datos guardados?"
+      "apply": "Aplicar"
     },
     "changelog": {
       "title": "REGISTRO DE CAMBIOS DE VERSIÓN",
@@ -174,6 +173,10 @@
               "comment": "BetaTester"
             },
             {
+              "name": "Mauro Bernabeu",
+              "comment": "BetaTester"
+            },
+            {
               "name": "Gabriel Agustín García",
               "comment": "Mejora de localización en Inglés"
             }
@@ -181,6 +184,12 @@
         }
       ],
       "disclaimer": "En el juego pueden aparecer elementos con nombres de personajes icónicos de la vida real, series y/o películas. Dichos nombres son propiedad intelectual y marcas registradas de sus respectivos dueños y/o compañías. Kosmolaris no está endosado por ninguna de estas compañías ni recibe regalías por nombrarlos."
+    },
+    "wipe": {
+      "title": "BORRAR DATOS",
+      "message": "¿Estás seguro que quieres borrar todo tu progreso?",
+      "yes": "Sí, borrar",
+      "no": "No, cancelar"
     }
   },
   "console": {

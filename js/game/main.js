@@ -81,6 +81,7 @@ function setupButtons(langData) {
     const windowHelpDOM = $('#window-help');
     const windowChangelogDOM = $('#window-changelog');
     const windowCreditsDOM = $('#window-credits');
+    const windowWipeDOM = $('#window-wipe');
     const popupDiscoveredElementDOM = $('#popup-discovered-element');
 
     $('.button').on('mouseenter', function () {
@@ -151,10 +152,8 @@ function setupButtons(langData) {
     });
 
     $('#btn-wipe').click(function () {
-        if (confirm(langData.windows.settings.promptWipe) == true) {
-            localStorage.removeItem(GameInfo.storageName);
-            location.reload();
-        }
+        windowWipeDOM.addClass('modal');
+        windowWipeDOM.fadeIn();
     });
 
     $('#volume-sfx').bind("input", function (e) {
@@ -189,6 +188,16 @@ function setupButtons(langData) {
 
     $('.button.ok').click(function () {
         $(this).parent().parent().parent().fadeOut();
+    });
+
+    $('#btn-wipe-yes').unbind('click').click(function () {
+        localStorage.removeItem(GameInfo.storageName);
+        location.reload();
+    });
+
+    $('#btn-wipe-no').unbind('click').click(function () {
+        windowWipeDOM.removeClass('modal');
+        windowWipeDOM.hide();
     });
 
     $('.close-x').click(function () {
@@ -424,6 +433,13 @@ function setupWindowCredits(langData) {
 
 }
 
+function setupWindowWipe(langData) {
+    $('#window-wipe > .popup > .container > .title').html(langData.windows.wipe.title);
+    $('#window-wipe .content').html(langData.windows.wipe.message);
+    $('#window-wipe #btn-wipe-yes').html(langData.windows.wipe.yes);
+    $('#window-wipe #btn-wipe-no').html(langData.windows.wipe.no);
+}
+
 function getCreditSection(section) {
     const template = `<div class='section'>
                                     <p>{title}</p>
@@ -456,6 +472,7 @@ async function initialConfig(langData) {
     setupWindowHelp(langData);
     setupWindowChangelog(langData);
     setupWindowCredits(langData);
+    setupWindowWipe(langData);
     setupButtons(langData);
     setTooltips(langData);
     setBackground();
