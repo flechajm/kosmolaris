@@ -19,7 +19,6 @@ const createWindow = () => {
         },
     })
 
-    win.openDevTools()
     win.loadFile('index.html')
     win.setMenu(null)
     win.webContents.setWindowOpenHandler(({ url }) => {
@@ -34,14 +33,14 @@ const createWindow = () => {
     });
 
     ipcMain.on("set-status", (event, status) => {
-        // const steamworks = require("steamworks.js");
-        // const client = steamworks.init(3284610);
+        const steamworks = require("steamworks.js");
+        const client = steamworks.init(3284610);
 
-        // client.localplayer.setRichPresence('common_current', status.commonCurrent);
-        // client.localplayer.setRichPresence('common_total', status.commonTotal);
-        // client.localplayer.setRichPresence('special_current', status.specialCurrent);
-        // client.localplayer.setRichPresence('special_total', status.specialTotal);
-        // client.localplayer.setRichPresence('steam_display', "#StatusWithScore");
+        client.localplayer.setRichPresence('common_current', status.commonCurrent);
+        client.localplayer.setRichPresence('common_total', status.commonTotal);
+        client.localplayer.setRichPresence('special_current', status.specialCurrent);
+        client.localplayer.setRichPresence('special_total', status.specialTotal);
+        client.localplayer.setRichPresence('steam_display', "#StatusWithScore");
     });
 }
 
