@@ -27,7 +27,6 @@
 
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="preload" href="fonts/CenturyGothic.ttf" as="font" crossorigin />
 
     <!-- Google tag (gtag.js) -->
     <script
@@ -43,9 +42,19 @@
 
       gtag('config', 'G-85GZGVT6GT');
     </script>
+    <script>
+      if (typeof module === 'object') {
+        window.module = module;
+        module = undefined;
+      }
+    </script>
     <script src="js/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     <script src="js/libs/helper.js"></script>
+    <!-- Insert this line after script imports -->
+    <script>
+      if (window.module) module = window.module;
+    </script>
   </head>
 
   <body>
@@ -103,6 +112,7 @@
             id="search-element"
             placeholder=""
             maxlength="20"
+            autocomplete="off"
           />
         </div>
         <div id="sidebar-elements"></div>

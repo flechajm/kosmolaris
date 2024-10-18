@@ -187,7 +187,7 @@
     },
     "wipe": {
       "title": "BORRAR DATOS",
-      "message": "¿Estás seguro que quieres borrar todo tu progreso?",
+      "message": "¿Estás seguro que quieres borrar todo tu progreso?<br /><br /><i>Los logros dentro del juego se perderán, pero los logros de Steam se mantendrán intactos.</i>",
       "yes": "Sí, borrar",
       "no": "No, cancelar"
     }
@@ -200,7 +200,12 @@
     "specialElement": "especial",
     "newElement": "{emoji} ¡Has descubierto un nuevo elemento{special} combinando {element1} + {element2} ➜ {result}!",
     "combinationInfo": "{emoji} {result} ➜ {element1} + {element2}.",
-    "achievementUnlocked": "¡Logro desbloqueado!"
+    "achievements": {
+      "unlocked": "¡Logro desbloqueado!",
+      "milestone": "Hito",
+      "rare": "Raro",
+      "ultraRare": "Ultra Raro"
+    }
   },
   "achievements": [
     {
@@ -220,17 +225,17 @@
     },
     {
       "id": 4,
-      "title": "Genial, sigue así!",
+      "title": "¡Genial, sigue así!",
       "description": "Descubre 50 elementos."
     },
     {
       "id": 5,
-      "title": "Supongo que van 75 en fila...",
+      "title": "Supongo que van 75 y contando...",
       "description": "Descubre 75 elementos."
     },
     {
       "id": 6,
-      "title": "Espera, ¿y ahora cuántos van?",
+      "title": "¡Eres como un Dios!",
       "description": "Descubre 100 elementos."
     },
     {
@@ -240,7 +245,7 @@
     },
     {
       "id": 8,
-      "title": "Es una racha de descubrimientos",
+      "title": "Una racha de descubrimientos",
       "description": "Descubre 150 elementos."
     },
     {
@@ -250,7 +255,7 @@
     },
     {
       "id": 10,
-      "title": "¡Dios, eres imparable!",
+      "title": "¡Eres imparable!",
       "description": "Descubre 200 elementos."
     },
     {
@@ -290,7 +295,7 @@
     },
     {
       "id": 29,
-      "title": "A tu imagen y semejanza",
+      "title": "A su imagen y semejanza",
       "description": "Descubre el Mundo donde vivimos."
     },
     {
@@ -312,7 +317,7 @@
     },
     {
       "id": 33,
-      "title": "Soy intrépido, y por lo tanto poderoso.",
+      "title": "Soy intrépido, y por lo tanto poderoso",
       "description": "Descubre a Frankenstein.",
       "disclaimer": "<b>Frankenstein</b> es una obra original de Mary Shelley."
     },
@@ -342,7 +347,7 @@
     {
       "id": 38,
       "title": "No es el barco de Penny",
-      "description": "Descubre LOST, la serie.",
+      "description": "Descubre a LOST, la serie.",
       "disclaimer": "<b>LOST</b> es propiedad intelectual de ABC Studios y sus afiliados."
     },
     {
@@ -352,15 +357,15 @@
     },
     {
       "id": 40,
-      "title": "Lanza una moneda a tu brujo",
-      "description": "Descubre The Witcher.",
+      "title": "Lánzale una moneda a tu brujo",
+      "description": "Descubre a The Witcher.",
       "disclaimer": "<b>The Witcher</b> es propiedad intelectual de CD Projekt Red, Andrzej Sapkowski y Netflix."
     },
     {
       "id": 41,
-      "title": "Bienvenidos a Jurassic Park",
-      "description": "Descubre Jurassic Park.",
-      "disclaimer": "<b>Jurassic Park</b> es propiedad intelectual Universal Pictures."
+      "title": "Bienvenidos a Kosmolaris Park",
+      "description": "Descubre a Kosmolaris Park.",
+      "disclaimer": "El logo de <b>Jurassic Park</b> es propiedad intelectual Universal Pictures."
     }
   ],
   "elements": [
@@ -1430,8 +1435,8 @@
       "description": ""
     },
     {
-      "id": "jurassic-park",
-      "name": "Jurassic Park",
+      "id": "kosmolaris-park",
+      "name": "Kosmolaris Park",
       "description": ""
     },
     {

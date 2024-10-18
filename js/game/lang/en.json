@@ -187,7 +187,7 @@
     },
     "wipe": {
       "title": "WIPE DATA",
-      "message": "Are you sure you want to erase all your progress?",
+      "message": "Are you sure you want to erase all your progress?<br /><br /><i>In-game achievements will be lost, but Steam achievements will remain intact.</i>",
       "yes": "Yes, erase",
       "no": "No, cancel"
     }
@@ -200,7 +200,13 @@
     "specialElement": "special",
     "newElement": "{emoji} You have discovered a new{special} element combining {element1} + {element2} ➜ {result}!",
     "combinationInfo": "{emoji} {result} ➜ {element1} + {element2}.",
-    "achievementUnlocked": "Achievement unlocked!"
+    "achievementUnlocked": "Achievement unlocked!",
+    "achievements": {
+      "unlocked": "Achievement unlocked!",
+      "milestone": "Milestone",
+      "rare": "Rare",
+      "ultraRare": "Ultra Rare"
+    }
   },
   "achievements": [
     {
@@ -230,7 +236,7 @@
     },
     {
       "id": 6,
-      "title": "Wait, how many is that now?",
+      "title": "Godlike!",
       "description": "Discover 100 elements."
     },
     {
@@ -250,7 +256,7 @@
     },
     {
       "id": 10,
-      "title": "God, you are unstoppable!",
+      "title": "Unstoppable!",
       "description": "Discover 200 elements."
     },
     {
@@ -267,7 +273,7 @@
     },
     {
       "id": 25,
-      "title": "You know nothing...",
+      "title": "You know nothig...",
       "description": "Discover Jon Snow, from Game of Thrones.",
       "disclaimer": "<b>Jon Snow</b> is a character of <b>Game of Thrones</b>, intellectual property of HBO."
     },
@@ -290,7 +296,7 @@
     },
     {
       "id": 29,
-      "title": "In your image and likeness",
+      "title": "In His image and likeness",
       "description": "Discover the World where we live."
     },
     {
@@ -358,9 +364,9 @@
     },
     {
       "id": 41,
-      "title": "Welcome to Jurassic Park",
-      "description": "Discover Jurassic Park.",
-      "disclaimer": "<b>Jurassic Park</b> is the intellectual property of Universal Pictures."
+      "title": "Welcome to Kosmolaris Park",
+      "description": "Discover Kosmolaris Park.",
+      "disclaimer": "<b>Jurassic Park</b> logo is the intellectual property of Universal Pictures."
     }
   ],
   "elements": [
@@ -1430,8 +1436,8 @@
       "description": ""
     },
     {
-      "id": "jurassic-park",
-      "name": "Jurassic Park",
+      "id": "kosmolaris-park",
+      "name": "Kosmolaris Park",
       "description": ""
     },
     {

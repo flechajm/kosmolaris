@@ -1,4 +1,4 @@
-import Achievement from "../core/classes/achievement.js";
+import Achievement, { achievementType } from "../core/classes/achievement.js";
 import Rule from "../core/classes/rule.js";
 
 class DbAchievements {
@@ -40,6 +40,7 @@ class DbAchievements {
             new Achievement({
                 id: 6,
                 discoveredElements: 100,
+                type: achievementType.milestone,
             }),
 
             // 125 Elements
@@ -64,6 +65,7 @@ class DbAchievements {
             new Achievement({
                 id: 10,
                 discoveredElements: 200,
+                type: achievementType.milestone,
             }),
 
             // 225 Elements
@@ -156,7 +158,6 @@ class DbAchievements {
                 rules: [
                     new Rule({ elementToUnlock: 'michonne' })
                 ],
-                icon: 'michonne'
             }),
 
             // Harry Potter
@@ -165,7 +166,6 @@ class DbAchievements {
                 rules: [
                     new Rule({ elementToUnlock: 'harry-potter' })
                 ],
-                icon: 'harry-potter'
             }),
 
             // Jon Snow
@@ -174,7 +174,6 @@ class DbAchievements {
                 rules: [
                     new Rule({ elementToUnlock: 'jon-snow' })
                 ],
-                icon: 'jon-snow'
             }),
 
             // Negan & Lucille
@@ -183,7 +182,6 @@ class DbAchievements {
                 rules: [
                     new Rule({ elementToUnlock: 'negan' })
                 ],
-                icon: 'negan'
             }),
 
             // COVID-19
@@ -191,7 +189,8 @@ class DbAchievements {
                 id: 27,
                 rules: [
                     new Rule({ elementToUnlock: 'covid' })
-                ]
+                ],
+                type: achievementType.rare,
             }),
 
             // Lucille
@@ -200,7 +199,6 @@ class DbAchievements {
                 rules: [
                     new Rule({ elementToUnlock: 'lucille' })
                 ],
-                icon: 'lucille'
             }),
 
             // World
@@ -209,7 +207,7 @@ class DbAchievements {
                 rules: [
                     new Rule({ elementToUnlock: 'world' })
                 ],
-                icon: 'world'
+                type: achievementType.rare,
             }),
 
             // Planet of Apes
@@ -218,7 +216,6 @@ class DbAchievements {
                 rules: [
                     new Rule({ elementToUnlock: 'planet-apes' })
                 ],
-                icon: 'planet-apes'
             }),
 
             // Don't be cruel
@@ -230,7 +227,7 @@ class DbAchievements {
                         elementRequired: 'monkey',
                     })
                 ],
-                icon: 'science'
+                type: achievementType.rare,
             }),
 
             // Bruce Lee
@@ -239,7 +236,6 @@ class DbAchievements {
                 rules: [
                     new Rule({ elementToUnlock: 'bruce-lee' })
                 ],
-                icon: 'bruce-lee'
             }),
 
             // Frankenstein
@@ -248,7 +244,6 @@ class DbAchievements {
                 rules: [
                     new Rule({ elementToUnlock: 'frankenstein' })
                 ],
-                icon: 'frankenstein'
             }),
 
             // Leatherface
@@ -257,7 +252,6 @@ class DbAchievements {
                 rules: [
                     new Rule({ elementToUnlock: 'leatherface' })
                 ],
-                icon: 'leatherface'
             }),
 
             // The Kosmolaris Chainsaw Massacre
@@ -273,6 +267,7 @@ class DbAchievements {
                         elementRequired: 'leatherface'
                     })
                 ],
+                type: achievementType.ultraRare,
             }),
 
             // Apollo 11
@@ -281,7 +276,6 @@ class DbAchievements {
                 rules: [
                     new Rule({ elementToUnlock: 'apollo-11' })
                 ],
-                icon: 'apollo-11'
             }),
 
             // Challenger
@@ -290,7 +284,6 @@ class DbAchievements {
                 rules: [
                     new Rule({ elementToUnlock: 'challenger' })
                 ],
-                icon: 'challenger'
             }),
 
             // LOST
@@ -299,7 +292,6 @@ class DbAchievements {
                 rules: [
                     new Rule({ elementToUnlock: 'lost' })
                 ],
-                icon: 'lost'
             }),
 
 
@@ -309,7 +301,6 @@ class DbAchievements {
                 rules: [
                     new Rule({ elementToUnlock: 'titanic' })
                 ],
-                icon: 'titanic'
             }),
 
             // The Witcher
@@ -318,19 +309,18 @@ class DbAchievements {
                 rules: [
                     new Rule({ elementToUnlock: 'the-witcher' })
                 ],
-                icon: 'the-witcher'
             }),
 
-            // Jurassic Park
+            // Kosmolaris Park
             new Achievement({
                 id: 41,
                 rules: [
                     new Rule({
-                        elementToUnlock: 'jurassic-park',
+                        elementToUnlock: 'kosmolaris-park',
                         elementRequired: 'science'
                     })
                 ],
-                icon: 'jurassic-park'
+                type: achievementType.rare,
             }),
         ];
     }

@@ -250,7 +250,7 @@ class GameCombinationManager {
             this.addCombination({ element1: 'airplane', element2: 'island', result: 'lost' });
             this.addCombination({ element1: 'ship', element2: 'iceberg', result: 'titanic' });
             this.addCombination({ element1: 'wizard', element2: 'swordsman', result: 'the-witcher' });
-            this.addCombination({ element1: 'dinosaur', element2: 'science', result: 'jurassic-park' });
+            this.addCombination({ element1: 'dinosaur', element2: 'science', result: 'kosmolaris-park' });
 
             // Food
             this.addCombination({ element1: 'plant', element2: 'field', result: 'wheat' });

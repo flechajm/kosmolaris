@@ -3,6 +3,7 @@ import GameLog from "./game_log.js";
 
 import LanguageManager from "../../libs/language_manager.js";
 import { audioManager } from "../main.js";
+import { achievementType } from "./classes/achievement.js";
 
 class GameAchievements {
     #achievements = [];
@@ -14,6 +15,7 @@ class GameAchievements {
     }
 
     unlock(id) {
+        const langData = LanguageManager.getData();
         const achievement = this.#achievements.find((a) => a.id == id);
         const isUnlocked = this.unlockeds.some((a) => a == id);
 
@@ -24,10 +26,18 @@ class GameAchievements {
 
             const achievementConsoleDOM = achievement.getDOM({});
 
-            GameLog.write({ html: `🏆 <span class='achievement-unlocked'>${LanguageManager.getData().console.achievementUnlocked}</span>` });
+            const typeClass = achievement.getTypeClass();
+            const typeText = achievement.getTypeText(langData);
+            const achievementTypeDOM = achievement.type !== achievementType.common ? `<span class='achievement-type ${typeClass}'> [${typeText}]</span>` : '';
+
+            GameLog.write({ html: `🏆 <span class='achievement-unlocked'>${langData.console.achievements.unlocked}</span>${achievementTypeDOM}` });
             GameLog.write({ html: achievementConsoleDOM });
 
             this.unlockeds.push(achievement.id);
+            if (window.electronAPI) {
+                window.electronAPI.unlockAchievement(String(achievement.id));
+            }
+
             $('#log').find('.achievement').click(function () {
                 $('#btn-achievements').click();
             });

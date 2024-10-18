@@ -260,13 +260,30 @@ class GameManager {
     #updateCurrentDiscoveredElements() {
         const langData = LanguageManager.getData();
 
+        const commonTotal = GameElements.getTotalElements();
+        const specialTotal = GameElements.getTotalSpecialElements();
+
+
+
+        if (window.electronAPI) {
+            const status = {
+                commonCurrent: String(this.elementsUnlocked.length),
+                commonTotal: String(commonTotal),
+                specialCurrent: String(this.specialElementsUnlocked.length),
+                specialTotal: String(specialTotal),
+            }
+
+            window.electronAPI.setStatus(status);
+        }
+
+
         const commonTextColor = spanTextColor(langData.common.discoveredElements.common, "var(--color-common)");
         const commonCurrentColor = spanTextColor(this.elementsUnlocked.length, "var(--color-green-light)");
-        const commonTotalColor = spanTextColor(GameElements.getTotalElements(), "var(--color-common)");
+        const commonTotalColor = spanTextColor(commonTotal, "var(--color-common)");
 
         const specailTextColor = spanTextColor(langData.common.discoveredElements.special, "var(--color-special)");
         const specialCurrentColor = spanTextColor(this.specialElementsUnlocked.length, "var(--color-green-light)");
-        const specialTotalColor = spanTextColor(GameElements.getTotalSpecialElements(), "var(--color-special)");
+        const specialTotalColor = spanTextColor(specialTotal, "var(--color-special)");
 
         const commonTemplate = `${commonTextColor}: ${commonCurrentColor} / ${commonTotalColor}`;
         const specialTemplate = `${specailTextColor}: ${specialCurrentColor} / ${specialTotalColor}`;

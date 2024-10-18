@@ -1239,9 +1239,9 @@ class DbElements {
                 isSpecial: true,
             }),
 
-            // Jurassic Park
+            // Kosmolaris Park
             new Element({
-                id: 'jurassic-park',
+                id: 'kosmolaris-park',
                 category: 14,
                 isSpecial: true,
             }),
