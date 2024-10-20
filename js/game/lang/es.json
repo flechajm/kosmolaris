@@ -193,7 +193,7 @@
     }
   },
   "console": {
-    "welcome": "¡Bienvenido a {game}!",
+    "welcome": "¡Bienvenido a {game}, {player}!",
     "version": "Versión: {version} ({date}) 📝",
     "lastUpdate": "Actualizado: {date}",
     "saveProgress": "Progreso guardado",

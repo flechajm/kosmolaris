@@ -1,10 +1,12 @@
 process.env['ELECTRON_DISABLE_SECURITY_WARNINGS'] = true
 
-const { app, BrowserWindow, nativeImage, shell, ipcMain } = require('electron')
+const { app, BrowserWindow, nativeImage, shell, ipcMain, ipcRenderer } = require('electron')
 const path = require('node:path')
-
 const appIcon = nativeImage.createFromPath('icon.ico')
+
+const appId = 3284610;
 const steamworks = require('steamworks.js')
+const client = steamworks.init(appId);
 
 const createWindow = () => {
     const win = new BrowserWindow({
@@ -19,23 +21,23 @@ const createWindow = () => {
         },
     })
 
-    win.loadFile('index.html')
     win.setMenu(null)
     win.webContents.setWindowOpenHandler(({ url }) => {
         shell.openExternal(url);
         return { action: 'deny' };
     });
 
+    win.loadFile('index.html');
+
     ipcMain.on("unlock-achievement", (event, id) => {
-        const steamworks = require("steamworks.js");
-        const client = steamworks.init(3284610);
         client.achievement.activate(id);
     });
 
-    ipcMain.on("set-status", (event, status) => {
-        const steamworks = require("steamworks.js");
-        const client = steamworks.init(3284610);
+    ipcMain.on('player-name', (event) => {
+        event.sender.send('player-name', client.localplayer.getName());
+    });
 
+    ipcMain.on("set-status", (event, status) => {
         client.localplayer.setRichPresence('common_current', status.commonCurrent);
         client.localplayer.setRichPresence('common_total', status.commonTotal);
         client.localplayer.setRichPresence('special_current', status.specialCurrent);
@@ -45,13 +47,11 @@ const createWindow = () => {
 }
 
 app.whenReady().then(() => {
-    createWindow()
+    createWindow();
 })
 
 app.on('window-all-closed', () => {
     app.quit()
 })
 
-
 steamworks.electronEnableSteamOverlay()
-steamworks.init(3284610);

@@ -15,8 +15,10 @@ var gameManager;
 var audioManager;
 let gameConfig;
 let imageLoader;
+let playerName = 'Player';
 
 (async () => {
+    requestPlayerName();
     gameConfig = GameConfig.load();
 
     gameManager = GameStateManager.load(gameConfig);
@@ -40,7 +42,18 @@ let imageLoader;
             loader.remove();
         });
     });
+
+
 })();
+
+function requestPlayerName() {
+    if (window.electronAPI) {
+        window.electronAPI.sendMessage('player-name');
+        window.electronAPI.onMessage('player-name', (data) => {
+            playerName = data;
+        });
+    }
+}
 
 function welcome(langData) {
     const gameName = `<span style='color: var(--color-green-light);'><b>${GameInfo.title}</b></span>`;
@@ -50,8 +63,7 @@ function welcome(langData) {
         .replace('{version}', versionData.version)
         .replace('{date}', versionData.date.toLocaleString(gameConfig.lang, options))
 
-
-    GameLog.write({ html: langData.console.welcome.replace('{game}', gameName), fontSize: 'larger' });
+    GameLog.write({ html: langData.console.welcome.replace('{game}', gameName).replace('{player}', playerName), fontSize: 'larger' });
     GameLog.newLine(1);
     GameLog.write({ html: `<span id="show-changelog">${version}</span>`, color: "grey" });
     GameLog.newLine(1);

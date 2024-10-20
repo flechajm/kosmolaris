@@ -28,9 +28,9 @@
   "scripts": {
     "start": "electron .",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "package-mac": "npx @electron/packager . Kosmolaris --overwrite --platform=darwin --arch=x64 --icon=icon.icns --prune=true --out=builds --app-copyright=\"Kosmolaris © 2024\" --version-string.CompanyName=\"John Arrow Games\" --version-string.ProductName=\"Kosmolaris\" --version-string.FileDescription=\"Relaxing puzzle game\"",
-    "package-win": "npx @electron/packager . Kosmolaris --overwrite --asar --platform=win32 --arch=x64 --icon=icon.ico --prune=true --out=builds --app-copyright=\"Kosmolaris © 2024\" --version-string.CompanyName=\"John Arrow Games\" --version-string.ProductName=\"Kosmolaris\" --version-string.FileDescription=\"Relaxing puzzle game\"",
-    "package-linux": "npx @electron/packager . Kosmolaris --overwrite --asar --platform=linux --arch=x64 --icon=icon.ico --prune=true --out=builds --app-copyright=\"Kosmolaris © 2024\" --version-string.CompanyName=\"John Arrow Games\" --version-string.ProductName=\"Kosmolaris\" --version-string.FileDescription=\"Relaxing puzzle game\""
+    "package-mac": "npx @electron/packager . Kosmolaris --overwrite --platform=darwin --arch=x64 --icon=icon.icns --prune=true --out=builds --app-copyright=\"Kosmolaris © 2024\" --version-string.CompanyName=\"John Arrow Games\" --version-string.ProductName=\"Kosmolaris\" --version-string.FileDescription=\"Relaxing puzzle game\" && node copy_steam_lib.js darwin x64",
+    "package-win": "npx @electron/packager . Kosmolaris --overwrite --asar --platform=win32 --arch=x64 --icon=icon.ico --prune=true --out=builds --app-copyright=\"Kosmolaris © 2024\" --version-string.CompanyName=\"John Arrow Games\" --version-string.ProductName=\"Kosmolaris\" --version-string.FileDescription=\"Relaxing puzzle game\" --ignore='^/.netlify' --ignore='^/.steamlibs' --ignore='^/.vscode' --ignore='^/design' --ignore='^/docs' --ignore='netlify.toml' --ignore='copy_steam_lib.js' --ignore='jsconfig.json' --ignore='.gitignore' --ignore='README.md' && node copy_steam_lib.js win32 x64",
+    "package-linux": "npx @electron/packager . Kosmolaris --overwrite --asar --platform=linux --arch=x64 --icon=icon.ico --prune=true --out=builds --app-copyright=\"Kosmolaris © 2024\" --version-string.CompanyName=\"John Arrow Games\" --version-string.ProductName=\"Kosmolaris\" --version-string.FileDescription=\"Relaxing puzzle game\" && node copy_steam_lib.js linux x64"
   },
   "keywords": [],
   "author": "John Arrow Games",
