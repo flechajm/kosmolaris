@@ -65,16 +65,37 @@ a:active {
 }
 .wrapper .content .logo {
   content: url(../img/logo_xl.png);
-  margin-bottom: 10rem;
+  margin-block: 10rem;
   filter: drop-shadow(0px 0px 10px black) drop-shadow(0px 0px 15px black);
+}
+.wrapper .content .discord {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3em;
+  font-size: larger;
+}
+.wrapper .content .discord div {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+.wrapper .content .discord div img {
+  margin-top: 2px;
 }
 .wrapper .footer {
   font-size: large;
-  margin-top: 10em;
 }
 
 @media screen and (max-width: 1920px) {
   .content .logo {
+    margin-block: 5rem !important;
     width: 70%;
+  }
+}
+@media screen and (max-width: 400px) {
+  .content .widget {
+    width: 300px;
   }
 }/*# sourceMappingURL=style.css.map */
