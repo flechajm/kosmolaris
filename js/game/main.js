@@ -71,8 +71,7 @@ function welcome(langData) {
 
 function setBackground() {
     let number = randomBetween(1, 17);
-    let src = imageLoader.getPreloadedBackgrounds()[number - 1].src;
-
+    let src = imageLoader.getPreloadedBackgrounds()[number - 1];
     $(".background").css("background-image", `url(${src})`);
 }
 
